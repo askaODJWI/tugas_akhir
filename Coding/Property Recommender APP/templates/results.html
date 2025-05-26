@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head><title>Results</title></head>
+<body>
+  <h2>Top Property Recommendations</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Ads ID</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Type</th>
+        <th>Land Area</th>
+        <th>Building Area</th>
+        <th>Bedrooms</th>
+        <th>Bathrooms</th>
+        <th>Maid Bedrooms</th>
+        <th>Maid Bathrooms</th>
+        <th>Ruang Tamu</th>
+        <th>Ruang Makan</th>
+        <th>Additional Rooms</th>
+        <th>Floors</th>
+        <th>Certificate</th>
+        <th>Address</th>
+        <th>Address Road</th>
+        <th>Address City</th>
+        <th>Address District</th>
+        <th>Address Subdistrict</th>
+        <th>Garage Capacity</th>
+        <th>Carport Capacity</th>
+        <th>Facilities</th>
+        <th>Description</th>
+        <th>Posting Date</th>
+        <th>Posting Date Month</th>
+        <th>Posting Date Year</th>
+        <th>Poster</th>
+        <th>Electricity Capacity</th>
+        <th>House Orientation</th>
+        <th>Image URL</th>
+        <th>School</th>
+        <th>University</th>
+        <th>Hospital</th>
+        <th>Mall</th>
+        <th>Market</th>
+        <th>Transport</th>
+        <th>Worship</th>
+        <th>Best Persona Match</th>
+        <th>Match Score</th>
+        <th>Facilities Clean</th>
+        <th>Entity Clean</th>
+        <th>Similarity Score</th>
+        <th>Gap Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for property in properties %}
+      <tr>
+        <td>{{ property.url }}</td>
+        <td>{{ property.ads_id }}</td>
+        <td>{{ property.title }}</td>
+        <td>{{ property.price }}</td>
+        <td>{{ property.type }}</td>
+        <td>{{ property.land_area }}</td>
+        <td>{{ property.building_area }}</td>
+        <td>{{ property.bedrooms }}</td>
+        <td>{{ property.bathrooms }}</td>
+        <td>{{ property.maid_bedrooms }}</td>
+        <td>{{ property.maid_bathrooms }}</td>
+        <td>{{ property.ruang_tamu }}</td>
+        <td>{{ property.ruang_makan }}</td>
+        <td>{{ property.additional_rooms }}</td>
+        <td>{{ property.floors }}</td>
+        <td>{{ property.certificate }}</td>
+        <td>{{ property.address }}</td>
+        <td>{{ property.address_road }}</td>
+        <td>{{ property.address_city }}</td>
+        <td>{{ property.address_district }}</td>
+        <td>{{ property.address_subdistrict }}</td>
+        <td>{{ property.garage_capacity }}</td>
+        <td>{{ property.carport_capacity }}</td>
+        <td>{{ property.facilities }}</td>
+        <td>{{ property.description }}</td>
+        <td>{{ property.posting_date }}</td>
+        <td>{{ property.posting_date_month }}</td>
+        <td>{{ property.posting_date_year }}</td>
+        <td>{{ property.poster }}</td>
+        <td>{{ property.electricity_capacity }}</td>
+        <td>{{ property.house_orientation }}</td>
+        <td>{{ property.image_url }}</td>
+        <td>{{ property.SCHOOL }}</td>
+        <td>{{ property.UNIVERSITY }}</td>
+        <td>{{ property.HOSPITAL }}</td>
+        <td>{{ property.MALL }}</td>
+        <td>{{ property.MARKET }}</td>
+        <td>{{ property.TRANSPORT }}</td>
+        <td>{{ property.WORSHIP }}</td>
+        <td>{{ property.best_persona_match }}</td>
+        <td>{{ property.match_score }}</td>
+        <td>{{ property.facilities_clean }}</td>
+        <td>{{ property.entity_clean }}</td>
+        <td>{{ property.similarity_score }}</td>
+        <td>{{ property.gap_score }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/">Back to form</a>
+</body>
+</html>
