@@ -221,4 +221,4 @@ def run_algorithm(user_input):
     filepath.parent.mkdir(parents=True, exist_ok=True)
     df_sorted.to_csv(filepath, index=False)
 
-    return df_sorted[["title", "type", "bedrooms", "bathrooms", "similarity_score", "gap_score"]].head(10).to_dict(orient="records")
+    return df_sorted.head(10).to_dict(orient="records")

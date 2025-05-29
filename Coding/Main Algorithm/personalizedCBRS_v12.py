@@ -60,7 +60,6 @@ user_input = {
     "city": "Bekasi Kota"
 }
 
-
 def normalize_text_column(val):
     if pd.isna(val):
         return ''
