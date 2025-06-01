@@ -45,23 +45,8 @@ ideal_personas = {
     }
 }
 
-# === USER INPUT ===
-user_input = {
-    "type": "Rumah",
-    "land_area": 200,
-    "building_area": 50,
-    "bedrooms": 2,
-    "bathrooms": 2,
-    "floors": 2,
-    "SCHOOL": 0,
-    "HOSPITAL": 1,
-    "TRANSPORT": 1,
-    "MARKET": 0,
-    "MALL": 1,
-    "city": "Bekasi Kota"
-}
-
 def run_algorithm(user_input):
+    N = 10
     def normalize_text_column(val):
         if pd.isna(val):
             return ''
@@ -160,7 +145,7 @@ def run_algorithm(user_input):
     tfidf_ent = vectorizer_ent.fit_transform(filtered_df['entity_clean'])
 
     # Apply weights
-    weight_fac, weight_ent = 0.4, 0.6
+    weight_fac, weight_ent = 0.5, 0.5
     tfidf_matrix = hstack([
         tfidf_fac.multiply(weight_fac),
         tfidf_ent.multiply(weight_ent)
@@ -195,14 +180,13 @@ def run_algorithm(user_input):
     similarity_scores = cosine_similarity(user_vector, property_matrix)[0]
 
     # === Top-N Results ===
-    top_n = 10
-    top_indices = np.argsort(similarity_scores)[::-1][:top_n]
-    recommended = filtered_df.iloc[top_indices].copy()
-    recommended['similarity_score'] = similarity_scores[top_indices]
+    top_indices = np.argsort(similarity_scores)[::-1][:N]
+    df_sorted_by_cosine = filtered_df.iloc[top_indices].copy()
+    df_sorted_by_cosine['similarity_score'] = similarity_scores[top_indices]
 
     filepath_cbrs = Path('combined_algorithm/hasil_cbrs.csv')
     filepath_cbrs.parent.mkdir(parents=True, exist_ok=True)
-    recommended.to_csv(filepath_cbrs, index=False)
+    df_sorted_by_cosine.to_csv(filepath_cbrs, index=False)
 
     # Bobot kriteria (bisa disesuaikan)
     weights = {
@@ -256,18 +240,17 @@ def run_algorithm(user_input):
         return total_score / total_weight if total_weight else 0
 
     # Hitung skor untuk semua properti
-    recommended["gap_score"] = recommended.apply(calculate_total_score, axis=1)
+    df_sorted_by_cosine["gap_score"] = df_sorted_by_cosine.apply(calculate_total_score, axis=1)
 
     # Urutkan berdasarkan skor tertinggi
-    df_sorted = recommended.sort_values(by="gap_score", ascending=False)
+    df_sorted_by_final_score = df_sorted_by_cosine.sort_values(by="gap_score", ascending=False)
 
     # Save the final DataFrame to CSV
     filepath = Path('combined_algorithm/hasil.csv')
     filepath.parent.mkdir(parents=True, exist_ok=True)
-    df_sorted.to_csv(filepath, index=False)
+    df_sorted_by_final_score.to_csv(filepath, index=False)
 
-    return df_sorted[[
-    "title", "type", "land_area", "building_area", "bedrooms", "bathrooms",
-    "floors", "certificate", "facilities", "image_url", "similarity_score",
-    "gap_score", "best_persona_match"
-    ]].head(10).to_dict(orient="records")
+    full_results = df_sorted_by_final_score[:N].to_dict(orient="records")
+    cbrs_results = df_sorted_by_cosine[:N].to_dict(orient="records")
+
+    return full_results, cbrs_results, user_scores

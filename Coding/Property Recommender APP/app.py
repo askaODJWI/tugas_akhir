@@ -5,6 +5,46 @@ import ast
 app = Flask(__name__)
 results_cache = {}  # Temporary cache for user session result
 
+def preprocess_results(results):
+    amenity_columns = [
+        "SCHOOL", "HOSPITAL", "TRANSPORT", "MARKET", "MALL"
+    ]
+
+    processed = []
+    for row in results:
+        # Parse image_url
+        img_raw = row.get('image_url')
+        try:
+            parsed_imgs = ast.literal_eval(img_raw) if isinstance(img_raw, str) else img_raw
+            row['image_url'] = parsed_imgs if isinstance(parsed_imgs, list) else []
+        except (ValueError, SyntaxError):
+            row['image_url'] = []
+
+        # Parse description from stringified list
+        if isinstance(row.get("description"), str):
+            try:
+                desc = eval(row["description"]) if row["description"].startswith("[") else [row["description"]]
+                row["description"] = " ".join(desc).replace(" .", ".").replace(".dekat", ". Dekat")
+            except Exception:
+                pass
+
+        # Format price as int
+        if "price" in row and row["price"] not in [None, ""]:
+            try:
+                row["price"] = int(float(row["price"]))
+            except:
+                row["price"] = None
+
+        # Extract amenities from binary columns
+        row["amenities"] = [col for col in amenity_columns if row.get(col) == 1]
+
+        # Remove unused fields
+        row.pop("type", None)
+        row.pop("address_city", None)
+
+        processed.append(row)
+    return processed
+
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
@@ -23,24 +63,19 @@ def home():
             "facilities": request.form.getlist("facilities"),
             "city": request.form["city"]
         }
-        results_from_algorithm = run_algorithm(user_input)
-        
-        processed_results = []
-        for row in results_from_algorithm:
-            img_raw = row.get('image_url')
-            try:
-                parsed_imgs = ast.literal_eval(img_raw) if isinstance(img_raw, str) else img_raw
-                row['image_url'] = parsed_imgs if isinstance(parsed_imgs, list) else []
-            except (ValueError, SyntaxError):
-                row['image_url'] = []
-            row.pop("type", None)
-            row.pop("address_city", None)
-            processed_results.append(row)
+        full_results, cbrs_results, persona_scores = run_algorithm(user_input)
 
-        # Save results and metadata in memory (or pass via redirect/session if needed)
-        results_cache["results"] = processed_results
+        # Preprocess both result sets
+        processed_full = preprocess_results(full_results)
+        processed_cbrs = preprocess_results(cbrs_results)
+
+        # Cache results
+        results_cache["full"] = processed_full
+        results_cache["cbrs"] = processed_cbrs
         results_cache["type"] = user_input["type"]
         results_cache["city"] = user_input["city"]
+        results_cache["persona_scores"] = persona_scores
+
 
         return redirect(url_for("results"))
 
@@ -48,18 +83,14 @@ def home():
 
 @app.route("/results")
 def results():
-    properties_data = results_cache.get("results", [])
-    prop_type = results_cache.get("type", "property")
-    city = results_cache.get("city", "your city")
-
-    
-    # print("Properties data for template:", properties_data)
-    # if properties_data:
-    #     print("First property image_url type:", type(properties_data[0].get('image_url')))
-    #     print("First property facilities type:", type(properties_data[0].get('facilities')))
-    #     print("First property best_persona_match:", properties_data[0].get('best_persona_match'))
-
-    return render_template("results_v2.html", properties=properties_data, prop_type=prop_type, city=city)
+    return render_template(
+        "results_v2.html",
+        full_results=results_cache.get("full", []),
+        cbrs_results=results_cache.get("cbrs", []),
+        prop_type=results_cache.get("type", "Property"),
+        city=results_cache.get("city", "Your City"),
+        persona_scores=results_cache.get("persona_scores", {})
+    )
 
 @app.route("/listing-map")
 def listing_map():

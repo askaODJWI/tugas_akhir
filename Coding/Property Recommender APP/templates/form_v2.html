@@ -7,120 +7,8 @@
     <title>Property Recommendation Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Styles adapted from results_v2.html for consistency */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-            /* Light grey background */
-            padding-top: 20px;
-            padding-bottom: 40px;
-            /* Added more space at bottom */
-        }
-
-        .container.form-container {
-            background-color: #ffffff;
-            /* White container for the form */
-            padding: 35px;
-            /* Slightly more padding */
-            border-radius: 10px;
-            /* Rounded corners */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
-            /* Subtle shadow */
-            max-width: 800px;
-            /* Control form width */
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            color: #212529;
-            /* Darker heading color */
-            margin-bottom: 30px;
-            /* More space after title */
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .form-label {
-            font-weight: 500;
-            /* Slightly bolder labels */
-            margin-bottom: 0.4rem;
-            color: #495057;
-            /* Label color */
-        }
-
-        .form-control,
-        .form-select {
-            border-radius: 0.375rem;
-            /* Standard Bootstrap rounding */
-            border: 1px solid #ced4da;
-            /* Standard border */
-        }
-
-        .form-control:focus,
-        .form-select:focus {
-            border-color: #86b7fe;
-            /* Bootstrap focus color */
-            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-        }
-
-        .btn-primary {
-            /* Main action button style */
-            background-color: #007bff;
-            border-color: #007bff;
-            padding: 10px 25px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            border-radius: 0.375rem;
-        }
-
-        .btn-primary:hover {
-            background-color: #0069d9;
-            border-color: #0062cc;
-        }
-
-        /* Form sections for better visual grouping */
-        .form-section {
-            margin-bottom: 2.5rem;
-            /* Space between sections */
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #e9ecef;
-            /* Lighter separator */
-        }
-
-        .form-section:last-of-type {
-            border-bottom: none;
-            /* No border for the last section */
-            margin-bottom: 0.5rem;
-            /* Less margin if it's the last */
-        }
-
-        .form-section h4 {
-            /* Sub-headings for sections */
-            font-weight: 600;
-            color: #343a40;
-            margin-bottom: 1.25rem;
-            font-size: 1.3rem;
-        }
-
-        .form-check-label {
-            margin-left: 0.25rem;
-            color: #495057;
-        }
-
-        .form-check-input:checked {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .text-muted.small {
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/css/formStyle.css">
 </head>
-
 <body>
     <div class="container form-container">
         <h1>Find Your Ideal Property</h1>
@@ -221,7 +109,7 @@
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" value="1" id="MARKET"
                                 name="MARKET">
-                            <label class="form-check-label" for="MARKET">Traditional Market</label>
+                            <label class="form-check-label" for="MARKET">Market</label>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
@@ -267,7 +155,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="form-check"><input class="form-check-input" type="checkbox" value="Gordyn"
                                 id="facility_gordyn" name="facilities"><label class="form-check-label"
-                                for="facility_gordyn">Gordyn (Curtains)</label></div>
+                                for="facility_gordyn">Gordyn</label></div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="form-check"><input class="form-check-input" type="checkbox" value="Microwave"
@@ -282,7 +170,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="form-check"><input class="form-check-input" type="checkbox" value="PAM"
                                 id="facility_pam" name="facilities"><label class="form-check-label"
-                                for="facility_pam">PAM (Water Supply)</label></div>
+                                for="facility_pam">PAM</label></div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="form-check"><input class="form-check-input" type="checkbox" value="Refrigerator"
@@ -317,12 +205,11 @@
             </div>
 
             <div class="text-center mt-3">
-                <a href="/listing-map" class="btn btn-outline-secondary">View Listing Map</a>
+                <a target="_blank" href="/listing-map" class="btn btn-outline-secondary">View Listing Map</a>
             </div>
 
         </form>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
