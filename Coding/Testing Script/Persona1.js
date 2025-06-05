@@ -17,7 +17,7 @@
 
     const preferredCity = document.getElementById('city');
     if (preferredCity) {
-        preferredCity.value = 'Surabaya Kota'; // Choose from available options
+        preferredCity.value = 'Depok Kota'; // Choose from available options
         dispatchChangeEvent(preferredCity);
     }
 
@@ -135,6 +135,12 @@
     if (facilityWaterHeater) {
         facilityWaterHeater.checked = true;
         dispatchChangeEvent(facilityWaterHeater);
+    }
+
+    const facilityGordyn = document.getElementById('facility_gordyn');
+    if (facilityGordyn) {
+        facilityGordyn.checked = true;
+        dispatchChangeEvent(facilityGordyn);
     }
 
     console.log('Form fields have been filled.');

@@ -22,7 +22,8 @@ ideal_personas = {
         "SCHOOL": 1,
         "HOSPITAL": 1,
         "TRANSPORT": 1,
-        "MARKET": 1
+        "MARKET": 1,
+        "facilities": ["AC", "Carport", "Garden", "Garasi", "Stove", "Oven", "Refrigerator", "Microwave", "PAM", "Water Heater"]
     },
     "Pasangan Bekerja tanpa Anak": {
         "type": ["Apartemen", "Rumah"],  # Multiple allowed
@@ -31,7 +32,8 @@ ideal_personas = {
         "bedrooms": [2],
         "bathrooms": [2],
         "MALL": 1,
-        "TRANSPORT": 1
+        "TRANSPORT": 1,
+        "facilities": ["AC", "Carport", "Garasi", "Stove", "Oven", "Refrigerator", "PAM"]
     },
     "Individu Lajang": {
         "type": "Apartemen",
@@ -41,7 +43,8 @@ ideal_personas = {
         "bathrooms": [1, 2],
         "MALL": 1,
         "MARKET": 1,
-        "TRANSPORT": 1
+        "TRANSPORT": 1,
+        "facilities": ["AC", "Stove", "Refrigerator", "PAM"]
     }
 }
 
