@@ -114,10 +114,7 @@
                 <!-- Description Section (newly added) -->
                 <div class="property-description mb-3">
                     <h5>Reasoning</h5>
-                    <p>This is a placeholder for the property description. In the future, this can be
-                        populated
-                        with details like location benefits, recent renovations, or neighborhood highlights.
-                    </p>
+                    <p>{{ property.reasoning | default("No reasoning available.") }}</p>
                 </div>
             </div>
         </div>
