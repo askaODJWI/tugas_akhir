@@ -9,9 +9,74 @@ import ast
 from pathlib import Path
 from ProfileMatching_v2 import determine_persona
 from PropertyProfileMatching import apply_profile_matching
+import random
 
 # === Load dataset ===
 df = pd.read_csv(r'C:\Users\madea\OneDrive\Documents\Kuliah\Semester 8\Tugas Akhir\Coding\Main Algorithm\KBRS\kbrs_dataset_2.csv')
+
+def generate_reasoning(user_input: dict, property_row: dict) -> str:
+    reasons = []
+
+    # --- Bedrooms & Bathrooms ---
+    if "bedrooms" in user_input:
+        user_bed = user_input["bedrooms"]
+        prop_bed = int(property_row.get("bedrooms", 0))
+        if prop_bed >= user_bed:
+            templates = [
+                f"You were looking for at least {user_bed} bedroom(s), and this one has {prop_bed}.",
+                f"This property matches your bedroom need of {user_bed} — it offers {prop_bed}.",
+                f"With {prop_bed} bedroom(s), it fulfills your minimum request of {user_bed}."
+            ]
+        else:
+            templates = [
+                f"You wanted {user_bed} bedroom(s), but this one only has {prop_bed}.",
+                f"This home falls short on bedrooms — you asked for {user_bed}, it has {prop_bed}."
+            ]
+        reasons.append(random.choice(templates))
+
+    if "bathrooms" in user_input:
+        user_bath = user_input["bathrooms"]
+        prop_bath = int(property_row.get("bathrooms", 0))
+        if prop_bath >= user_bath:
+            templates = [
+                f"It offers {prop_bath} bathroom(s), meeting your need for at least {user_bath}.",
+                f"Your bathroom preference of {user_bath} is covered here with {prop_bath} available.",
+                f"With {prop_bath} bathrooms, it's aligned with your request for {user_bath}."
+            ]
+            reasons.append(random.choice(templates))
+
+    # --- Nearby Amenities ---
+    nearby_amenities = []
+    for amenity in ["SCHOOL", "HOSPITAL", "TRANSPORT", "MARKET", "MALL"]:
+        if user_input.get(amenity, 0) == 1 and property_row.get(amenity, 0) == 1:
+            nearby_amenities.append(amenity.title())
+
+    if nearby_amenities:
+        joined = ", ".join(nearby_amenities[:-1]) + f", and {nearby_amenities[-1]}" if len(nearby_amenities) > 1 else nearby_amenities[0]
+        templates = [
+            f"It's conveniently located near {joined}, just as you preferred.",
+            f"This property is close to your desired amenities: {joined}.",
+            f"Nearby access to {joined} aligns with your preferences."
+        ]
+        reasons.append(random.choice(templates))
+
+    # --- Facilities ---
+    matched_facilities = []
+    if "facilities" in user_input:
+        for facility in user_input["facilities"]:
+            if facility.upper() in str(property_row.get("facilities_clean", "")).upper():
+                matched_facilities.append(facility)
+
+    if matched_facilities:
+        joined = ", ".join(matched_facilities[:-1]) + f", and {matched_facilities[-1]}" if len(matched_facilities) > 1 else matched_facilities[0]
+        templates = [
+            f"The property includes the facilities you wanted: {joined}.",
+            f"It comes with key features you prefer, such as {joined}.",
+            f"You’ll find facilities like {joined}, matching your preferences."
+        ]
+        reasons.append(random.choice(templates))
+
+    return " ".join(reasons) if reasons else "This property aligns well with your preferences."
 
 def run_algorithm(user_input):
     N = 10
@@ -130,39 +195,10 @@ def run_algorithm(user_input):
     filepath_cbrs.parent.mkdir(parents=True, exist_ok=True)
     df_sorted_by_cosine.to_csv(filepath_cbrs, index=False)
 
-    # Bobot kriteria (bisa disesuaikan)
-    weights = {
-        "type": 5,
-        "land_area": 4,
-        "building_area": 4,
-        "bedrooms": 3,
-        "bathrooms": 3,
-        "floors": 2,
-        "SCHOOL": 2,
-        "HOSPITAL": 3,
-        "TRANSPORT": 3,
-        "MARKET": 2,
-        "MALL": 3
-    }
-
-    # Skala konversi gap (selisih -> nilai skor)
-    def gap_to_score(gap):
-        if gap == 0:
-            return 5
-        elif gap == 1 or gap == -1:
-            return 4.5
-        elif gap == 2 or gap == -2:
-            return 4
-        elif gap == 3 or gap == -3:
-            return 3.5
-        elif gap == 4 or gap == -4:
-            return 3
-        elif gap >= 5 or gap <= -5:
-            return 2.5
-        else:
-            return 1  # fallback
-
     df_sorted_by_final_score = apply_profile_matching(df_sorted_by_cosine)
+    df_sorted_by_final_score["reasoning"] = df_sorted_by_final_score.apply(
+        lambda row: generate_reasoning(user_input, row), axis=1
+    )
 
     # Save the final DataFrame to CSV
     filepath = Path('combined_algorithm/hasil2.csv')
