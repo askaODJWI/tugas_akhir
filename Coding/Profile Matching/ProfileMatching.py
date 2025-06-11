@@ -32,34 +32,41 @@ user_input = {
 # --- Karakteristik Hunian (Bobot: 40%) ---
 def score_building_area(value, persona):
     if persona == 'Individu Lajang':
-        return 5 if value <= 72 else 4 if value <= 99 else 3 if value <= 149 else 2 if value <= 200 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
-        return 1 if value <= 72 else 2 if value <= 99 else 3 if value <= 149 else 4 if value <= 200 else 5
-    elif persona == 'Berkeluarga dengan Anak':
-        return 1 if value <= 72 else 2 if value <= 99 else 3 if value <= 149 else 4 if value <= 200 else 5
+        if value <= 72: return 5
+        if value <= 99: return 4
+        if value <= 149: return 3
+        if value <= 200: return 2
+        return 1
+    elif persona in ['Pasangan Bekerja tanpa Anak', 'Pasangan Bekerja dengan Anak']:
+        if value <= 72: return 1
+        if value <= 99: return 2
+        if value <= 149: return 3
+        if value <= 200: return 4
+        return 5
+    return 1
 
 def score_bedrooms(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value <= 1 else 3 if value == 2 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value <= 2 else 3 if value == 3 else 2
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 1 if value <= 1 else 3 if value == 2 else 5
 
 def score_bathrooms(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 1 else 3 if value == 2 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 3 if value == 2 else 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 1 if value <= 1 else 3 if value == 2 else 5
 
 def score_floors(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 1 else 3 if value == 2 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 3 if value == 2 else 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 1 if value == 1 else 3 if value == 2 else 5
 
 def score_type(value, persona):
@@ -72,41 +79,41 @@ def score_type(value, persona):
 def score_hospital(value, persona):
     if persona == 'Individu Lajang':
         return 3 if value == 1 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_school(value, persona):
     if persona == 'Individu Lajang':
         return 3 if value == 1 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 3 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_market(value, persona):
     if persona == 'Individu Lajang':
         return 3 if value == 1 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 3 if value == 1 else 1
     
 def score_mall(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 3 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 3 if value == 1 else 1
     
 def score_transport(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 3 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 3 if value == 1 else 1
     
 # --- Fasilitas Hunian (Bobot: 30%) ---
@@ -114,89 +121,89 @@ def score_transport(value, persona):
 def score_ac(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_carport(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 0 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_garasi(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 0 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_garden(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 0 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 0 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_stove(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_oven(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 0 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_refrigerator(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_microwave(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 0 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 0 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_pam(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_water_heater(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 0 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 0 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 1 else 1
     
 def score_gordyn(value, persona):
     if persona == 'Individu Lajang':
         return 5 if value == 0 else 1
-    elif persona == 'Berkeluarga tanpa Anak':
+    elif persona == 'Pasangan Bekerja tanpa Anak':
         return 5 if value == 1 else 1
-    elif persona == 'Berkeluarga dengan Anak':
+    elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 0 else 1
 
 # --- Ideal Scores ---
@@ -224,7 +231,7 @@ ideal_scores = {
         'water_heater': 2,
         'gordyn': 2
     },
-    'Berkeluarga tanpa Anak': {
+    'Pasangan Bekerja tanpa Anak': {
         'building_area': 5,
         'bedrooms': 5,
         'bathrooms': 3,
@@ -247,7 +254,7 @@ ideal_scores = {
         'water_heater': 2,
         'gordyn': 2
     },
-    'Berkeluarga dengan Anak': {
+    'Pasangan Bekerja dengan Anak': {
         'building_area': 5,
         'bedrooms': 5,
         'bathrooms': 3,
@@ -297,7 +304,7 @@ criteria_structure = {
         'water_heater': ('Fasilitas Hunian', 'SF'),
         'gordyn': ('Fasilitas Hunian', 'SF')
     },
-    'Berkeluarga tanpa Anak': {
+    'Pasangan Bekerja tanpa Anak': {
         'building_area': ('Karakteristik Hunian', 'CF'),
         'bedrooms': ('Karakteristik Hunian', 'CF'),
         'bathrooms': ('Karakteristik Hunian', 'SF'),
@@ -320,7 +327,7 @@ criteria_structure = {
         'water_heater': ('Fasilitas Hunian', 'SF'),
         'gordyn': ('Fasilitas Hunian', 'SF')
     },
-    'Berkeluarga dengan Anak': {
+    'Pasangan Bekerja dengan Anak': {
         'building_area': ('Karakteristik Hunian', 'CF'),
         'bedrooms': ('Karakteristik Hunian', 'CF'),
         'bathrooms': ('Karakteristik Hunian', 'CF'),

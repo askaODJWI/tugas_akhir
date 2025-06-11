@@ -1,36 +1,25 @@
-import pandas as pd
-from pathlib import Path
-
-# GAP to Weighted Score
+# --- GAP to Weighted Score ---
 def gap_to_weighted_score(gap):
-    return max(1, 5 - abs(gap))
-
-# CF/SF Weights and Category Weights
-cf_weight = 0.6
-sf_weight = 0.4
-category_weights = {
-    'Karakteristik Hunian': 0.4,
-    'Fasilitas Hunian': 0.3,
-    'Fasilitas Lokasi': 0.3
-}
-
-# Mapping raw persona label to scoring system
-persona_map = {
-    "Individu Lajang": "Individu Lajang",
-    "Pasangan Bekerja tanpa Anak": "Pasangan Bekerja tanpa Anak",
-    "Pasangan Bekerja dengan Anak": "Pasangan Bekerja dengan Anak"
-}
+    gap = abs(gap)
+    return max(1, 5 - gap)  # gap: 0→5, 1→4, 2→3, 3→2, 4+→1
 
 # --- Scoring Functions ---
 
 # --- Karakteristik Hunian (Bobot: 40%) ---
 def score_building_area(value, persona):
     if persona == 'Individu Lajang':
-        return 5 if value <= 72 else 4 if value <= 99 else 3 if value <= 149 else 2 if value <= 200 else 1
-    elif persona == 'Pasangan Bekerja tanpa Anak':
-        return 1 if value <= 72 else 2 if value <= 99 else 3 if value <= 149 else 4 if value <= 200 else 5
-    elif persona == 'Pasangan Bekerja dengan Anak':
-        return 1 if value <= 72 else 2 if value <= 99 else 3 if value <= 149 else 4 if value <= 200 else 5
+        if value <= 72: return 5
+        if value <= 99: return 4
+        if value <= 149: return 3
+        if value <= 200: return 2
+        return 1
+    elif persona in ['Pasangan Bekerja tanpa Anak', 'Pasangan Bekerja dengan Anak']:
+        if value <= 72: return 1
+        if value <= 99: return 2
+        if value <= 149: return 3
+        if value <= 200: return 4
+        return 5
+    return 1
 
 def score_bedrooms(value, persona):
     if persona == 'Individu Lajang':
@@ -192,6 +181,8 @@ def score_gordyn(value, persona):
         return 5 if value == 1 else 1
     elif persona == 'Pasangan Bekerja dengan Anak':
         return 5 if value == 0 else 1
+    
+# --- Data Transformation ---
 
 # --- Ideal Scores ---
 ideal_scores = {
@@ -339,100 +330,66 @@ criteria_structure = {
     }
 }
 
-fasilitas_hunian = [
-    'AC', 'Carport', 'Garasi', 'Garden', 'Stove', 'Oven', 'Refrigerator',
-    'Microwave', 'PAM', 'Water Heater', 'Gordyn'
-]
-fasilitas_lokasi = ['SCHOOL', 'HOSPITAL', 'MARKET', 'TRANSPORT']
+def determine_persona(user_input: dict) -> str:
+    # --- CF/SF Weights ---
+    cf_weight = 0.6
+    sf_weight = 0.4
 
-def process_facilities(row):
-    fac = str(row.get('facilities_clean', '')).upper().split()
-    ent = str(row.get('entity_clean', '')).upper().split()
-
-    facilities = {
-        'facility_' + f.lower().replace(" ", "_"): int(f in fac)
-        for f in fasilitas_hunian
-    }
-    entities = {e.lower(): int(e in ent) for e in fasilitas_lokasi}
-
-    return pd.Series({**facilities, **entities})
-
-
-def build_user_input(row):
-    return {
-        'building_area': row.get('building_area', 0),
-        'bedrooms': row.get('bedrooms', 0),
-        'bathrooms': row.get('bathrooms', 0),
-        'floors': row.get('floors', 0),
-        'type': row.get('type', 'rumah'),
-        'hospital': row.get('hospital', 0),
-        'school': row.get('school', 0),
-        'market': row.get('market', 0),
-        'transport': row.get('transport', 0),
-        'facility_ac': row.get('facility_ac', 0),
-        'facility_carport': row.get('facility_carport', 0),
-        'facility_garasi': row.get('facility_garasi', 0),
-        'facility_garden': row.get('facility_garden', 0),
-        'facility_stove': row.get('facility_stove', 0),
-        'facility_oven': row.get('facility_oven', 0),
-        'facility_refrigerator': row.get('facility_refrigerator', 0),
-        'facility_microwave': row.get('facility_microwave', 0),
-        'facility_pam': row.get('facility_pam', 0),
-        'facility_water_heater': row.get('facility_water_heater', 0),
-        'facility_gordyn': row.get('facility_gordyn', 0),
+    category_weights = {
+        'Karakteristik Hunian': 0.4,
+        'Fasilitas Hunian': 0.3,
+        'Fasilitas Lokasi': 0.3
     }
 
-def calculate_final_score(user_input, persona):
-    scores, category_cf, category_sf = {}, {}, {}
+    personas = list(ideal_scores.keys())
+    results = {}
 
-    for key in ideal_scores[persona]:
-        input_key = f'facility_{key}' if key in ['ac', 'carport', 'garasi', 'garden', 'stove', 'oven',
-                                                 'refrigerator', 'microwave', 'pam', 'water_heater', 'gordyn'] else key
-        value = user_input.get(input_key, 0)
-        score_func = globals().get(f"score_{key}", lambda v, p: 1)
-        actual = score_func(value, persona)
-        ideal = ideal_scores[persona][key]
-        wg = gap_to_weighted_score(actual - ideal)
+    for persona in personas:
+        scores = {}
+        gaps = {}
+        weighted = {}
+        category_cf = {}
+        category_sf = {}
 
-        category, factor = criteria_structure[persona][key]
-        (category_cf if factor == 'CF' else category_sf).setdefault(category, []).append(wg)
+        # --- Compute Raw and Weighted Scores ---
+        for key in ideal_scores[persona].keys():
+            input_key = key
+            if key.startswith('facility_'):
+                input_key = key
+            elif key in ['ac', 'carport', 'garasi', 'garden', 'stove', 'oven', 'refrigerator',
+                         'microwave', 'pam', 'water_heater', 'gordyn']:
+                input_key = f'facility_{key}'
 
-    final_weighted = {}
-    for cat in set(category_cf) | set(category_sf):
-        ncf = sum(category_cf.get(cat, [])) / len(category_cf.get(cat, [])) if category_cf.get(cat) else 0
-        nsf = sum(category_sf.get(cat, [])) / len(category_sf.get(cat, [])) if category_sf.get(cat) else 0
-        final_score = cf_weight * ncf + sf_weight * nsf
-        final_weighted[cat] = final_score * category_weights.get(cat, 0)
+            value = user_input.get(input_key, 0)
+            score_func = globals().get(f"score_{key}", lambda v, p: 1)
+            score = score_func(value, persona)
+            scores[key] = score
 
-    return sum(final_weighted.values())
+            gap = score - ideal_scores[persona][key]
+            wg = gap_to_weighted_score(gap)
+            gaps[key] = gap
+            weighted[key] = wg
 
-# === Load Data ===
-df = pd.read_csv("hasil_cbrs.csv")
-original_columns = df.columns.tolist()
-df['persona'] = df['best_persona_match'].map(persona_map)
-df = pd.concat([df, df.apply(process_facilities, axis=1)], axis=1)
+            category, factor = criteria_structure[persona][key]
+            if factor == 'CF':
+                category_cf.setdefault(category, []).append(wg)
+            else:
+                category_sf.setdefault(category, []).append(wg)
 
-# === Score Each Property ===
-df['final_score'] = df.apply(
-    lambda row: calculate_final_score(build_user_input(row), row['persona']), axis=1
-)
+        # --- Compute NCF/NSF & Weighted Category Scores ---
+        weighted_category_scores = {}
+        for category in set(category_cf.keys()).union(category_sf.keys()):
+            ncf_list = category_cf.get(category, [])
+            nsf_list = category_sf.get(category, [])
+            ncf = sum(ncf_list) / len(ncf_list) if ncf_list else 0
+            nsf = sum(nsf_list) / len(nsf_list) if nsf_list else 0
+            final_cat_score = cf_weight * ncf + sf_weight * nsf
+            if category in category_weights:
+                weighted_category_scores[category] = final_cat_score * category_weights[category]
 
-# === Finalize, Sort, and Output Cleaned Results ===
+        final_score = sum(weighted_category_scores.values())
+        results[persona] = final_score
 
-# 1. Create the list of columns for the final output file.
-#    This includes all original columns plus the new 'final_score'.
-final_output_columns = original_columns + ['final_score']
+    best_persona = max(results, key=results.get)
+    return best_persona
 
-# 2. Create the final DataFrame with only the desired columns, dropping the intermediates.
-df_final_output = df[final_output_columns]
-
-# 3. Sort this clean DataFrame by the final_score in descending order.
-df_sorted = df_final_output.sort_values(by='final_score', ascending=False)
-
-# 4. Define the output file path and save the final, cleaned result.
-output_filepath = Path('hasil_cbrs_with_scores.csv')
-output_filepath.parent.mkdir(parents=True, exist_ok=True)
-df_sorted.to_csv(output_filepath, index=False)
-
-print(f"\n✅ All properties with scores have been saved to '{output_filepath}'")
-print("The output file contains only the original columns plus the 'final_score'.")
