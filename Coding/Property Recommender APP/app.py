@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from combined_algorithm_v13 import run_algorithm
+from combined_algorithm_v14 import run_algorithm
 import ast
 
 app = Flask(__name__)
@@ -63,7 +63,7 @@ def home():
             "facilities": request.form.getlist("facilities"),
             "city": request.form["city"]
         }
-        full_results, cbrs_results, persona_scores = run_algorithm(user_input)
+        full_results, cbrs_results, best_persona, persona_score = run_algorithm(user_input)
 
         # Preprocess both result sets
         processed_full = preprocess_results(full_results)
@@ -74,8 +74,8 @@ def home():
         results_cache["cbrs"] = processed_cbrs
         results_cache["type"] = user_input["type"]
         results_cache["city"] = user_input["city"]
-        results_cache["persona_scores"] = persona_scores
-
+        results_cache["persona_name"] = best_persona
+        results_cache["persona_score"] = persona_score
 
         return redirect(url_for("results"))
 
@@ -89,7 +89,8 @@ def results():
         cbrs_results=results_cache.get("cbrs", []),
         prop_type=results_cache.get("type", "Property"),
         city=results_cache.get("city", "Your City"),
-        persona_scores=results_cache.get("persona_scores", {})
+        persona_name=results_cache.get("persona_name", "Unknown"),
+        persona_score=results_cache.get("persona_score", 0)
     )
 
 @app.route("/listing-map")

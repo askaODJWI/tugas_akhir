@@ -48,12 +48,12 @@
 
         <div class="col-md-4 d-flex flex-column justify-content-center align-items-start">
             <div class="score mb-2">
-                <strong>Gap Score:</strong>
-                {{ property.gap_score | round(2) | default('N/A') }}
+                <strong>Match Score:</strong>
+                {{ '%0.2f/5' % property.final_score }}
             </div>
             <div class="score mb-2">
                 <strong>Cosine Similarity Score:</strong>
-                {{ property.similarity_score | round(2) | default('N/A') }}
+                {{ '%0.2f/1' % property.similarity_score }}
             </div>
             <div class="score">
                 {% if property.price %}
@@ -90,20 +90,23 @@
                         <li><strong>Certificate:</strong> {{ property.certificate | default('N/A') }}</li>
                         <li>
                             <strong>Facilities:</strong>
-                            {% if property.facilities %}
-                            {% if property.facilities is iterable and property.facilities is not string %}
-                            {{ property.facilities | join(', ') }}
-                            {% else %}
-                            {{ property.facilities }}
-                            {% endif %}
+                            {% if property.facilities_clean %}
+                            {{ property.facilities_clean.replace(' ', ', ') }}
                             {% else %}
                             N/A
                             {% endif %}
                         </li>
+
                         <li>
                             <strong>Amenities:</strong>
                             {% if property.amenities %}
-                            <p>{{ property.amenities | join(', ') }}</p>
+                            {% if property.amenities is iterable and property.amenities is not string %}
+                            {{ property.amenities | map('lower') | map('title') | join(', ') }}
+                            {% else %}
+                            {{ property.amenities | lower | title }}
+                            {% endif %}
+                            {% else %}
+                            N/A
                             {% endif %}
                         </li>
                     </ul>

@@ -17,9 +17,8 @@
             <a href="/" class="btn btn-sm btn-outline-secondary">&larr; Back to Search</a>
         </div>
         <div class="d-flex flex-wrap gap-3 mb-3">
-            {% set top_persona = persona_scores | dictsort(false, 'value') | last %}
             <div class="persona-match bg-light border p-2 mb-3">
-                <strong>Best Persona Match:</strong> {{ top_persona[0] }} ({{ "%.2f"|format(top_persona[1]|float) }})
+                <strong>Best Persona Match:</strong> {{ persona_name }} ({{ "%.2f/5"|format(persona_score|float) }})
             </div>
         </div>
         <h1>Here's the recommendation for {{ prop_type }} in {{ city }}</h1>
