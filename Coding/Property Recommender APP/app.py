@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from combined_algorithm_v14 import run_algorithm
+from combined_algorithm import run_algorithm
 import ast
 
 app = Flask(__name__)

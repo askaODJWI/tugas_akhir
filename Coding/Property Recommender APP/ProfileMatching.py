@@ -16,11 +16,17 @@ def score_building_area(value, persona):
         if value <= 149: return 3
         if value <= 200: return 2
         return 1
-    elif persona in ['Pasangan Bekerja tanpa Anak', 'Pasangan Bekerja dengan Anak']:
-        if value <= 72: return 1
-        if value <= 99: return 2
+    elif persona == 'Pasangan Bekerja tanpa Anak':
+        if value <= 50: return 1
+        if value <= 72: return 2
+        if value <= 120: return 3
+        if value >= 150: return 4
+        return 5
+    elif persona == 'Pasangan Bekerja dengan Anak':
+        if value <= 70: return 1
+        if value <= 100: return 2
         if value <= 149: return 3
-        if value <= 200: return 4
+        if value <= 150: return 4
         return 5
     return 1
 
@@ -350,6 +356,7 @@ def build_user_input(raw_input: dict) -> dict:
 
     return {
         "type": raw_input.get("type", "rumah"),
+        "land_area": raw_input.get("land_area", 0),
         "building_area": raw_input.get("building_area", 0),
         "bedrooms": raw_input.get("bedrooms", 0),
         "bathrooms": raw_input.get("bathrooms", 0),
@@ -373,6 +380,20 @@ def build_user_input(raw_input: dict) -> dict:
     }
 
 def determine_persona(user_input: dict) -> tuple[str, float]:
+    # The initial user_input is the raw input, which gets processed here.
+    processed_user_input = build_user_input(user_input)
+
+    # --- MODIFICATION START ---
+    # 1. Convert the processed user input dictionary into a single-row DataFrame.
+    user_input_df = pd.DataFrame([processed_user_input])
+
+    # 2. Save the DataFrame to a CSV for inspection.
+    save_dataframe_with_counter(
+        user_input_df,
+        base_name="ProfileMatching_UserInput",
+        folder="results/profile_matching"
+    )
+
     user_input = build_user_input(user_input)
     # --- CF/SF Weights ---
     cf_weight = 0.6

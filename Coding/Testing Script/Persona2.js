@@ -23,13 +23,13 @@
 
     const landArea = document.getElementById('land_area');
     if (landArea) {
-        landArea.value = 70;
+        landArea.value = 120;
         dispatchChangeEvent(landArea);
     }
 
     const buildingArea = document.getElementById('building_area');
     if (buildingArea) {
-        buildingArea.value = 70;
+        buildingArea.value = 130;
         dispatchChangeEvent(buildingArea);
     }
 

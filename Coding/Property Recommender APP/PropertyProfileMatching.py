@@ -25,11 +25,17 @@ def score_building_area(value, persona):
         if value <= 149: return 3
         if value <= 200: return 2
         return 1
-    elif persona in ['Pasangan Bekerja tanpa Anak', 'Pasangan Bekerja dengan Anak']:
-        if value <= 72: return 1
-        if value <= 99: return 2
+    elif persona == 'Pasangan Bekerja tanpa Anak':
+        if value <= 50: return 1
+        if value <= 72: return 2
+        if value <= 120: return 3
+        if value >= 150: return 4
+        return 5
+    elif persona == 'Pasangan Bekerja dengan Anak':
+        if value <= 70: return 1
+        if value <= 100: return 2
         if value <= 149: return 3
-        if value <= 200: return 4
+        if value <= 150: return 4
         return 5
     return 1
 
@@ -344,7 +350,7 @@ fasilitas_hunian = [
     'AC', 'Carport', 'Garasi', 'Garden', 'Stove', 'Oven', 'Refrigerator',
     'Microwave', 'PAM', 'Water Heater', 'Gordyn'
 ]
-fasilitas_lokasi = ['SCHOOL', 'HOSPITAL', 'MARKET', 'TRANSPORT']
+fasilitas_lokasi = ['SCHOOL', 'HOSPITAL', 'MARKET', 'TRANSPORT', "MALL"]
 
 def process_facilities(row):
     fac = str(row.get('facilities_clean', '')).upper().split()
@@ -376,6 +382,7 @@ def apply_profile_matching(df: pd.DataFrame) -> pd.DataFrame:
     """
     def build_user_input(row):
         return {
+            'land_area': row.get('land_area', 0),
             'building_area': row.get('building_area', 0),
             'bedrooms': row.get('bedrooms', 0),
             'bathrooms': row.get('bathrooms', 0),
@@ -398,6 +405,19 @@ def apply_profile_matching(df: pd.DataFrame) -> pd.DataFrame:
             'facility_water_heater': int('WATER HEATER' in str(row.get('facilities_clean', '')).upper()),
             'facility_gordyn': int('GORDYN' in str(row.get('facilities_clean', '')).upper())
         }
+    
+    # 1. Apply build_user_input to each row to generate a list of dictionaries.
+    user_inputs_list = df.apply(build_user_input, axis=1).tolist()
+
+    # 2. Convert the list of dictionaries into a DataFrame for inspection.
+    user_input_df = pd.DataFrame(user_inputs_list)
+
+    # 3. Save the DataFrame containing the output of build_user_input to a CSV.
+    save_dataframe_with_counter(
+        user_input_df,
+        base_name="PropertyProfileMatching_UserInput",
+        folder="results/property_profile_matching"
+    )
 
     def calculate_final_score(user_input, persona):
         category_cf, category_sf = {}, {}
