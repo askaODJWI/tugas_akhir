@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Recommender Results</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+      th {
+          background-color: #f2f2f2;
+      }
+    </style>
+</head>
+<body>
+    <h1>Here's the recommendation for {{ prop_type }} in {{ city }}</h1>
+    <p>Based on your preferences, we recommend the following properties:</p>
+        <table>
+            <thead>
+                <tr>
+                    {% for col in properties[0].keys() %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in properties %}
+                    <tr>
+                        {% for value in row.values() %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
