@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
-from combined_algorithm import run_algorithm
+from .combined_algorithm import run_algorithm  # Use relative import
 import ast
 
-app = Flask(__name__)
-results_cache = {}  # Temporary cache for user session result
+app = Flask(__name__, template_folder='../templates')
 
 def preprocess_results(results):
     amenity_columns = [
@@ -68,30 +67,20 @@ def home():
         # Preprocess both result sets
         processed_full = preprocess_results(full_results)
         processed_cbrs = preprocess_results(cbrs_results)
-
-        # Cache results
-        results_cache["full"] = processed_full
-        results_cache["cbrs"] = processed_cbrs
-        results_cache["type"] = user_input["type"]
-        results_cache["city"] = user_input["city"]
-        results_cache["persona_name"] = best_persona
-        results_cache["persona_score"] = persona_score
-
-        return redirect(url_for("results"))
-
+        
+        # Instead of redirecting, render the results template directly
+        return render_template(
+            "results_v2.html",
+            full_results=processed_full,
+            cbrs_results=processed_cbrs,
+            prop_type=user_input["type"],
+            city=user_input["city"],
+            persona_name=best_persona,
+            persona_score=persona_score
+        )
+    
+    # For GET requests, just show the form
     return render_template("form_v2.html")
-
-@app.route("/results")
-def results():
-    return render_template(
-        "results_v2.html",
-        full_results=results_cache.get("full", []),
-        cbrs_results=results_cache.get("cbrs", []),
-        prop_type=results_cache.get("type", "Property"),
-        city=results_cache.get("city", "Your City"),
-        persona_name=results_cache.get("persona_name", "Unknown"),
-        persona_score=results_cache.get("persona_score", 0)
-    )
 
 @app.route("/listing-map")
 def listing_map():
