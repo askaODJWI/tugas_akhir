@@ -453,6 +453,6 @@ def apply_profile_matching(df: pd.DataFrame) -> pd.DataFrame:
     df_sorted = df.sort_values(by='final_score', ascending=False)
 
     # Save result
-    save_dataframe_with_counter(df_sorted, base_name="PropertyProfileMatching_results", folder="results/property_profile_matching")
+    # save_dataframe_with_counter(df_sorted, base_name="PropertyProfileMatching_results", folder="results/property_profile_matching")
 
     return df_sorted

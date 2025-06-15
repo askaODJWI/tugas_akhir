@@ -436,7 +436,7 @@ def determine_persona(user_input: dict) -> tuple[str, float]:
 
     # Save to CSV
     results_df = pd.DataFrame(list(results.items()), columns=["persona", "score"])
-    save_dataframe_with_counter(results_df, base_name="ProfileMatching_results", folder="results/profile_matching")
+    # save_dataframe_with_counter(results_df, base_name="ProfileMatching_results", folder="results/profile_matching")
 
     best_persona = max(results, key=results.get)
     best_score = results[best_persona]

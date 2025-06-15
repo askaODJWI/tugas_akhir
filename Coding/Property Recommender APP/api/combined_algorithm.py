@@ -12,7 +12,17 @@ from PropertyProfileMatching import apply_profile_matching
 import random
 
 # === Load dataset ===
-df = pd.read_csv(r'C:\Users\madea\OneDrive\Documents\Kuliah\Semester 8\Tugas Akhir\Coding\Main Algorithm\KBRS\kbrs_dataset_2.csv')
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_FILE = BASE_DIR / "dataset" / "kbrs_dataset_2.csv"
+
+def load_data():
+    if DATA_FILE.exists():
+        return pd.read_csv(DATA_FILE)
+    else:
+        # Handle case where file might be missing
+        return pd.DataFrame()
+    
+df = load_data()
 
 def generate_reasoning(user_input: dict, property_row: dict) -> str:
     reasons = []
@@ -191,9 +201,9 @@ def run_algorithm(user_input):
     df_sorted_by_cosine['similarity_score'] = similarity_scores[top_indices]
     df_sorted_by_cosine["Persona"] = best_user_persona
 
-    filepath_cbrs = Path('combined_algorithm/hasil_cbrs.csv')
-    filepath_cbrs.parent.mkdir(parents=True, exist_ok=True)
-    df_sorted_by_cosine.to_csv(filepath_cbrs, index=False)
+    # filepath_cbrs = Path('combined_algorithm/hasil_cbrs.csv')
+    # filepath_cbrs.parent.mkdir(parents=True, exist_ok=True)
+    # df_sorted_by_cosine.to_csv(filepath_cbrs, index=False)
 
     df_sorted_by_final_score = apply_profile_matching(df_sorted_by_cosine)
     df_sorted_by_final_score["reasoning"] = df_sorted_by_final_score.apply(
@@ -201,9 +211,9 @@ def run_algorithm(user_input):
     )
 
     # Save the final DataFrame to CSV
-    filepath = Path('combined_algorithm/hasil2.csv')
-    filepath.parent.mkdir(parents=True, exist_ok=True)
-    df_sorted_by_final_score.to_csv(filepath, index=False)
+    # filepath = Path('combined_algorithm/hasil2.csv')
+    # filepath.parent.mkdir(parents=True, exist_ok=True)
+    # df_sorted_by_final_score.to_csv(filepath, index=False)
 
     full_results = df_sorted_by_final_score[:N].to_dict(orient="records")
     cbrs_results = df_sorted_by_cosine[:N].to_dict(orient="records")
