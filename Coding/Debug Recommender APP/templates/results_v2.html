@@ -1,0 +1,58 @@
+{% import "_property_macros.html" as propmacros %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Recommender Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/resultsStyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-start mb-3">
+            <a href="/" class="btn btn-sm btn-outline-secondary">&larr; Back to Search</a>
+        </div>
+        <div class="d-flex flex-wrap gap-3 mb-3">
+            <div class="persona-match bg-light border p-2 mb-3">
+                <strong>Best Persona Match:</strong> {{ persona_name }} ({{ "%.2f/5"|format(persona_score|float) }})
+            </div>
+        </div>
+        <h1>Here's the recommendation for {{ prop_type }} in {{ city }}</h1>
+        <p class="lead">Based on your preferences, we recommend the following properties:</p>
+        {% if full_results and cbrs_results %}
+        <div class="mb-4 text-end">
+            <button class="btn btn-outline-primary" onclick="toggleResults()">Toggle Algorithm ↔ CBRS Only</button>
+        </div>
+
+        <!-- Full Algorithm Results -->
+        <div id="full-results">
+            <h2 class="mb-3">Full Algorithm Results</h2>
+            <div class="accordion" id="propertyAccordionFull">
+                {% for property in full_results %}
+                {{ propmacros.render_property(property, loop.index0) }}
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- CBRS Results (Initially Hidden) -->
+        <div id="cbrs-results" style="display: none;">
+            <h2 class="mb-3">CBRS Only Results</h2>
+            <div class="accordion" id="propertyAccordionCBRS">
+                {% for property in cbrs_results %}
+                {{ propmacros.render_property(property, loop.index0) }}
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+        <p class="lead text-center mt-5">No properties match your criteria. Please try adjusting your search.</p>
+        {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/results.js') }}"></script>
+</body>
+
+</html>

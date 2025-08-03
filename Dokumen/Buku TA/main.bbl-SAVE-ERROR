@@ -1,0 +1,797 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{Badriyah2018}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=c78d105adbf9ea2d356c25c8c2ddd581}{%
+           family={Badriyah},
+           familyi={B\bibinitperiod},
+           given={Tessy},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4b03bce83157363ed5836d2a644d2f72}{%
+           family={Azvy},
+           familyi={A\bibinitperiod},
+           given={Sefryan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f32de941cb910003240ef721d530183a}{%
+           family={Yuwono},
+           familyi={Y\bibinitperiod},
+           given={Wiratmoko},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0cd3650af66f853e8e1fbb7645c907b6}{%
+           family={Syarif},
+           familyi={S\bibinitperiod},
+           given={Iwan},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{068d07ef224a3aba1019b57f31b69951}
+      \strng{fullhash}{d4dcf181139ed39de5ccc82da1031d09}
+      \strng{fullhashraw}{d4dcf181139ed39de5ccc82da1031d09}
+      \strng{bibnamehash}{d4dcf181139ed39de5ccc82da1031d09}
+      \strng{authorbibnamehash}{d4dcf181139ed39de5ccc82da1031d09}
+      \strng{authornamehash}{068d07ef224a3aba1019b57f31b69951}
+      \strng{authorfullhash}{d4dcf181139ed39de5ccc82da1031d09}
+      \strng{authorfullhashraw}{d4dcf181139ed39de5ccc82da1031d09}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Development of technology causes many business industries to migrate from offline business systems to the e-commerce world. One of the most popular e-commerce frequented by potential buyers is the property site. Considering that the property is one of the essential requirements for living, and furthermore it is also one of the most prized assets one can have. In this research, we develop a web-based recommendation system in choosing a property using content-based filtering method. The recommendation system provides property information based on user behavior by searching advertising content previously searched by the user. Each time the user selects the contents of the ad to display, this information will be stored into the database to be processed further in order to provide a recommendation. The application system will present the same product recommendation, in accordance to the profile / criteria and preference of the prospective buyer. Therefore, the recommendation system will assist prospective buyers in determining the choice of property product they want to buy, and this process can be provided by the recommendation system in a short time.}
+      \field{isbn}{9781538609545}
+      \field{journaltitle}{2018 International Conference on Information and Communications Technology, ICOIACT 2018}
+      \field{title}{Recommendation system for property search using content based filtering method}
+      \field{volume}{2018-Janua}
+      \field{year}{2018}
+      \field{pages}{25\bibrangedash 29}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICOIACT.2018.8350801
+      \endverb
+      \keyw{content-based filtering,e-commerce,recommendation systems}
+    \endentry
+    \entry{YuYonghongandWang2018}{inbook}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=d677b410373bc790d9a8ec2e68090839}{%
+           family={Can},
+           familyi={C\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=72d5b1be4f739aba56bce6178e4ed55e}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zhang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=df7a481425a7eacda9895e9e811be29c}{%
+           family={Rong},
+           familyi={R\bibinitperiod},
+           given={Gao},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d5a30f955d877c9cf5ffd65916945670}{%
+           family={Yonghong},
+           familyi={Y\bibinitperiod},
+           given={Wang\bibnamedelimb Hua\bibnamedelima Yu},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=957b05eb2d9bfaf59947e44a46c3c7b3}{%
+           family={Wang},
+           familyi={W\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=479a238dc01c507833c3252a18d7dc6f}{%
+           family={Wojciech},
+           familyi={W\bibinitperiod}}}%
+        {{hash=5031f26b31d4493f3223fd7ae0a774bd}{%
+           family={Hua},
+           familyi={H\bibinitperiod},
+           given={Wang},
+           giveni={W\bibinitperiod}}}%
+        {{hash=61f8f3fd74cc99abe2262693cdab3d1c}{%
+           family={Hye-Young},
+           familyi={H\bibinithyphendelim Y\bibinitperiod},
+           given={Paik},
+           giveni={P\bibinitperiod}}}%
+        {{hash=5d979da47c5a0a92eb668abb56bbff3c}{%
+           family={Cellary},
+           familyi={C\bibinitperiod},
+           given={Zhou\bibnamedelimb Rui\bibnamedelimb Hacid\bibnamedelima Hakimand},
+           giveni={Z\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{4d6d3b5d937eb1253543e8bed11bf0a0}
+      \strng{fullhash}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{fullhashraw}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{bibnamehash}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{authorbibnamehash}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{authornamehash}{4d6d3b5d937eb1253543e8bed11bf0a0}
+      \strng{authorfullhash}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{authorfullhashraw}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{editorbibnamehash}{3eca9db1375a071e788e89b9c36928e9}
+      \strng{editornamehash}{6c46432766c51797aa3e519f28613716}
+      \strng{editorfullhash}{3eca9db1375a071e788e89b9c36928e9}
+      \strng{editorfullhashraw}{3eca9db1375a071e788e89b9c36928e9}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{China's real estate sector has become the major force for the rapid growth of China's economy. There is a great demand for the real estate applications to provide users with their personalized property recommendations to alleviate information overloading. Unlike the recommendation problems in traditional domains, the real estate recommendation has its unique characteristics: users' preferences are significantly affected by the locations (e.g. school district housing) and prices of those properties. In this paper, we propose two geographical proximity boosted real estate recommendation models. We capture the relations between the latent feature vectors of real estate items by utilizing the average-based and individual-based geographical regularization terms. Both terms are integrated with the weighted regularized matrix factorization framework to model users' implicit feedback behaviors. Experimental results on a real-world data set show that our proposed real estate recommendation algorithms outperform the traditional methods. Sensitivity analysis is also carried out to demonstrate the effectiveness of our models.}
+      \field{booktitle}{Web Information Systems Engineering – WISE 2018}
+      \field{isbn}{978-3-030-02925-8}
+      \field{title}{Geographical Proximity Boosted Recommendation Algorithms for Real Estate}
+      \field{year}{2018}
+      \field{pages}{51\bibrangedash 66}
+      \range{pages}{16}
+    \endentry
+    \entry{Gharahighehi2021}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5ef33b1b51d3c030e2ea57f5d8e3e792}{%
+           family={Gharahighehi},
+           familyi={G\bibinitperiod},
+           given={Alireza},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0a49920225eef05eac47ccf9f5e3a6ef}{%
+           family={Pliakos},
+           familyi={P\bibinitperiod},
+           given={Konstantinos},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=487a7cbbc222b21bb2435fa1dfca208d}{%
+           family={Vens},
+           familyi={V\bibinitperiod},
+           given={Celine},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3660f02672256e6969081044b3be87ff}
+      \strng{fullhash}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \strng{fullhashraw}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \strng{bibnamehash}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \strng{authorbibnamehash}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \strng{authornamehash}{3660f02672256e6969081044b3be87ff}
+      \strng{authorfullhash}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \strng{authorfullhashraw}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The shift to e-commerce has changed many business areas. Real estate is one of the applications that has been affected by this modern technological wave. Recommender systems are intelligent models that assist users of real estate platforms in finding the best possible properties that fulfill their needs. However, the recommendation task is substantially more challenging in the real estate domain due to the many domain-specific limitations that impair typical recommender systems. For instance, real estate recommender systems usually face the clod-start problem where there are no historical logs for new users or new items, and the recommender system should provide recommendations for these new entities. Therefore, the recommender systems in the real estate market are different and substantially less studied than in other domains. In this article, we aim at providing a comprehensive and systematic literature review on applications of recommender systems in the real estate market. We evaluate a set of research articles (13 journal and 13 conference papers) which represent the majority of research and commercial solutions proposed in the field of real estate recommender systems. These papers have been reviewed and categorized based on their methodological approaches, the main challenges that they addressed, and their evaluation procedures. Based on these categorizations, we outlined some possible directions for future research.}
+      \field{issn}{20763417}
+      \field{issue}{16}
+      \field{journaltitle}{Applied Sciences (Switzerland)}
+      \field{title}{Recommender systems in the real estate market—a survey}
+      \field{volume}{11}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.3390/app11167502
+      \endverb
+      \keyw{Real estate,Recommender systems}
+    \endentry
+    \entry{Jun2020}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=1317b2bf97856700486e9ca3f9700890}{%
+           family={Jun},
+           familyi={J\bibinitperiod},
+           given={Han\bibnamedelima Jong},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=11a21e98c677ab186090452a610612d7}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Jae\bibnamedelima Hee},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=56b3e1c4bec7202523973fa53cdecc41}{%
+           family={Rhee},
+           familyi={R\bibinitperiod},
+           given={Deuk\bibnamedelima Young},
+           giveni={D\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=328892faa8ce10cda2c39ddaac72ca78}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Sun\bibnamedelima Woo},
+           giveni={S\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{80816c2c430038fee64e604816755979}
+      \strng{fullhash}{b53c360eb24446e1b8464c97f0ed0b85}
+      \strng{fullhashraw}{b53c360eb24446e1b8464c97f0ed0b85}
+      \strng{bibnamehash}{b53c360eb24446e1b8464c97f0ed0b85}
+      \strng{authorbibnamehash}{b53c360eb24446e1b8464c97f0ed0b85}
+      \strng{authornamehash}{80816c2c430038fee64e604816755979}
+      \strng{authorfullhash}{b53c360eb24446e1b8464c97f0ed0b85}
+      \strng{authorfullhashraw}{b53c360eb24446e1b8464c97f0ed0b85}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Housing preference is the subjective and relative preference of users toward housing alternatives and studies in the field have been conducted to analyze the housing preferences of groups with sharing the same socio-demographic attributes. However, previous studies may not suggest the preference of individuals. In this regard, this study proposes "SeoulHouse2Vec," an embedding-based collaborative filtering housing recommendation system for analyzing atypical and nonlinear housing preference of individuals. The model maps users and items in each dense vector space which are called embedding layers. This model may reflect trade-offs between the alternatives and recommend unexpected housing items and thus improve rational housing decision-making. The model expanded the search scope of housing alternatives to the entire city of Seoul utilizing public big data and GIS data. The preferences derived from the results can be used by suppliers, individual investors, and policymakers. Especially for architects, the architectural planning and design process will reflect users' perspective and preferences, and provide quantitative data in the housing decision-making process for urban planning and administrative units.}
+      \field{issn}{20711050}
+      \field{issue}{17}
+      \field{journaltitle}{Sustainability (Switzerland)}
+      \field{month}{9}
+      \field{title}{"SeoulHouse2Vec": An embedding-based collaborative filtering housing recommender system for analyzing housing preference}
+      \field{volume}{12}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.3390/SU12176964
+      \endverb
+      \keyw{Collaborative filtering,Embedding,Housing decision,Housing preference,Recommender system}
+    \endentry
+    \entry{KnollJulianandGro2018}{inbook}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=ab8b95b239ab89dbdb8f1d627a1f238a}{%
+           family={Rainer},
+           familyi={R\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=66dfd003ee36da76ed94025874353630}{%
+           family={Axel},
+           familyi={A\bibinitperiod},
+           given={Schwanke},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=13c7fc70ecd081839d742ff74669e6ce}{%
+           family={Bernhard},
+           familyi={B\bibinitperiod},
+           given={Rinn},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bce37024f37f2391eff2e5e15c924e72}{%
+           family={Julian},
+           familyi={J\bibinitperiod},
+           given={Schreyer\bibnamedelimb Martin\bibnamedelima Knoll},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6578ebda5aaf572541c7d6dd3d3c9180}{%
+           family={Groß},
+           familyi={G\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=2fde527993887e4946b3d77ea32d079c}{%
+           family={Gerald},
+           familyi={G\bibinitperiod}}}%
+        {{hash=39bcbef90cfff8624dcba8cf9794287e}{%
+           family={Christian},
+           familyi={C\bibinitperiod},
+           given={Erfurth},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d257919101208885d7f8754257bfcaeb}{%
+           family={Michal},
+           familyi={M\bibinitperiod},
+           given={Fahrnberger\bibnamedelimb Günter\bibnamedelima Hodo\̌{n\}},
+           giveni={F\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=397784177de1f342299a8f3acac7adfb}{%
+           family={Eichler},
+           familyi={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{de7efa52949986b43fcbbe73d38e113f}
+      \strng{fullhash}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{fullhashraw}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{bibnamehash}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{authorbibnamehash}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{authornamehash}{de7efa52949986b43fcbbe73d38e113f}
+      \strng{authorfullhash}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{authorfullhashraw}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{editorbibnamehash}{cf2de8bfb7106a18347c960675d8e7dd}
+      \strng{editornamehash}{5e699a4be36aeaf39852789e9da04d89}
+      \strng{editorfullhash}{cf2de8bfb7106a18347c960675d8e7dd}
+      \strng{editorfullhashraw}{cf2de8bfb7106a18347c960675d8e7dd}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Like in many other branches of modern economies, the internet changed the behavior of suppliers and customers in real estate markets. Recommender systems became more and more important in providing customers with a fast and easy way to find suitable real estate items.}
+      \field{booktitle}{Innovations for Community Services}
+      \field{isbn}{978-3-319-93408-2}
+      \field{title}{Applying Recommender Approaches to the Real Estate e-Commerce Market}
+      \field{year}{2018}
+      \field{pages}{111\bibrangedash 126}
+      \range{pages}{16}
+    \endentry
+    \entry{Zhang2019}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=ab5652acf0de64074be2a35319b7c36a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Qian},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=392cd3493647f2d7e2731c6a1889e6e8}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Di},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ea2acbfa454e023189d3a6658b8b0e2a}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0c789b32177871041a88496e9fd1bea9}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Guangquan},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a8da5d024fa9a301a4d94c1cf2553af2}{%
+           family={Qu},
+           familyi={Q\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2747314874568b97b7187ffbc23597dd}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1cd093541b3ca1912f0a8dd3d85de075}
+      \strng{fullhash}{c67b4509f3eb6fa655f40225eef40c55}
+      \strng{fullhashraw}{c67b4509f3eb6fa655f40225eef40c55}
+      \strng{bibnamehash}{c67b4509f3eb6fa655f40225eef40c55}
+      \strng{authorbibnamehash}{c67b4509f3eb6fa655f40225eef40c55}
+      \strng{authornamehash}{1cd093541b3ca1912f0a8dd3d85de075}
+      \strng{authorfullhash}{c67b4509f3eb6fa655f40225eef40c55}
+      \strng{authorfullhashraw}{c67b4509f3eb6fa655f40225eef40c55}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The recommender systems provide users with what they prefer and filter unnecessary information. In the fierce marketing environment, it is crucial to recommend items to users in an early stage to keep user's interests and loyalty. With the fast product renewal, classical recommendation methods such as collaborative filtering cannot handle the cold-start item problem. In many real-world applications, content information of items or users is available and can be used to assist recommendation. Besides, user may interact with the items in different behaviors such as view, click or subscribe. How to use the complex content information and multiple user behaviors are real problems that are not well solved in applications. In this paper, we propose a content-based recommender system to deal with the practical problem. Boosting tree model also added to the system to avoid potential Spam. We applied our developed method to real estate application to recommend new property which just landed into the market to users. Experimental results with three data subsets and three recommendation scenarios demonstrate that the proposed method can outperform the baseline on recommendation accuracy. The results indicate that our method can effectively reduce potential Spam to users, so that user experience will be improved.}
+      \field{isbn}{9781728123486}
+      \field{journaltitle}{Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019}
+      \field{title}{A Recommender System for Cold-start Items: A Case Study in the Real Estate Industry}
+      \field{year}{2019}
+      \field{pages}{1185\bibrangedash 1192}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ISKE47853.2019.9170411
+      \endverb
+      \keyw{cold start,content-based recommender systems,data engineering,real estate,recommender systems}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{Badriyah2018}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=c78d105adbf9ea2d356c25c8c2ddd581}{%
+           family={Badriyah},
+           familyi={B\bibinitperiod},
+           given={Tessy},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4b03bce83157363ed5836d2a644d2f72}{%
+           family={Azvy},
+           familyi={A\bibinitperiod},
+           given={Sefryan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f32de941cb910003240ef721d530183a}{%
+           family={Yuwono},
+           familyi={Y\bibinitperiod},
+           given={Wiratmoko},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0cd3650af66f853e8e1fbb7645c907b6}{%
+           family={Syarif},
+           familyi={S\bibinitperiod},
+           given={Iwan},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{068d07ef224a3aba1019b57f31b69951}
+      \strng{fullhash}{d4dcf181139ed39de5ccc82da1031d09}
+      \strng{fullhashraw}{d4dcf181139ed39de5ccc82da1031d09}
+      \strng{bibnamehash}{d4dcf181139ed39de5ccc82da1031d09}
+      \strng{authorbibnamehash}{d4dcf181139ed39de5ccc82da1031d09}
+      \strng{authornamehash}{068d07ef224a3aba1019b57f31b69951}
+      \strng{authorfullhash}{d4dcf181139ed39de5ccc82da1031d09}
+      \strng{authorfullhashraw}{d4dcf181139ed39de5ccc82da1031d09}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Development of technology causes many business industries to migrate from offline business systems to the e-commerce world. One of the most popular e-commerce frequented by potential buyers is the property site. Considering that the property is one of the essential requirements for living, and furthermore it is also one of the most prized assets one can have. In this research, we develop a web-based recommendation system in choosing a property using content-based filtering method. The recommendation system provides property information based on user behavior by searching advertising content previously searched by the user. Each time the user selects the contents of the ad to display, this information will be stored into the database to be processed further in order to provide a recommendation. The application system will present the same product recommendation, in accordance to the profile / criteria and preference of the prospective buyer. Therefore, the recommendation system will assist prospective buyers in determining the choice of property product they want to buy, and this process can be provided by the recommendation system in a short time.}
+      \field{isbn}{9781538609545}
+      \field{journaltitle}{2018 International Conference on Information and Communications Technology, ICOIACT 2018}
+      \field{title}{Recommendation system for property search using content based filtering method}
+      \field{volume}{2018-Janua}
+      \field{year}{2018}
+      \field{pages}{25\bibrangedash 29}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICOIACT.2018.8350801
+      \endverb
+      \keyw{content-based filtering,e-commerce,recommendation systems}
+    \endentry
+    \entry{YuYonghongandWang2018}{inbook}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=d677b410373bc790d9a8ec2e68090839}{%
+           family={Can},
+           familyi={C\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=72d5b1be4f739aba56bce6178e4ed55e}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zhang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=df7a481425a7eacda9895e9e811be29c}{%
+           family={Rong},
+           familyi={R\bibinitperiod},
+           given={Gao},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d5a30f955d877c9cf5ffd65916945670}{%
+           family={Yonghong},
+           familyi={Y\bibinitperiod},
+           given={Wang\bibnamedelimb Hua\bibnamedelima Yu},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=957b05eb2d9bfaf59947e44a46c3c7b3}{%
+           family={Wang},
+           familyi={W\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=479a238dc01c507833c3252a18d7dc6f}{%
+           family={Wojciech},
+           familyi={W\bibinitperiod}}}%
+        {{hash=5031f26b31d4493f3223fd7ae0a774bd}{%
+           family={Hua},
+           familyi={H\bibinitperiod},
+           given={Wang},
+           giveni={W\bibinitperiod}}}%
+        {{hash=61f8f3fd74cc99abe2262693cdab3d1c}{%
+           family={Hye-Young},
+           familyi={H\bibinithyphendelim Y\bibinitperiod},
+           given={Paik},
+           giveni={P\bibinitperiod}}}%
+        {{hash=5d979da47c5a0a92eb668abb56bbff3c}{%
+           family={Cellary},
+           familyi={C\bibinitperiod},
+           given={Zhou\bibnamedelimb Rui\bibnamedelimb Hacid\bibnamedelima Hakimand},
+           giveni={Z\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{4d6d3b5d937eb1253543e8bed11bf0a0}
+      \strng{fullhash}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{fullhashraw}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{bibnamehash}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{authorbibnamehash}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{authornamehash}{4d6d3b5d937eb1253543e8bed11bf0a0}
+      \strng{authorfullhash}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{authorfullhashraw}{dd29ffa861c9a994d178666a8ba581b1}
+      \strng{editorbibnamehash}{3eca9db1375a071e788e89b9c36928e9}
+      \strng{editornamehash}{6c46432766c51797aa3e519f28613716}
+      \strng{editorfullhash}{3eca9db1375a071e788e89b9c36928e9}
+      \strng{editorfullhashraw}{3eca9db1375a071e788e89b9c36928e9}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{China's real estate sector has become the major force for the rapid growth of China's economy. There is a great demand for the real estate applications to provide users with their personalized property recommendations to alleviate information overloading. Unlike the recommendation problems in traditional domains, the real estate recommendation has its unique characteristics: users' preferences are significantly affected by the locations (e.g. school district housing) and prices of those properties. In this paper, we propose two geographical proximity boosted real estate recommendation models. We capture the relations between the latent feature vectors of real estate items by utilizing the average-based and individual-based geographical regularization terms. Both terms are integrated with the weighted regularized matrix factorization framework to model users' implicit feedback behaviors. Experimental results on a real-world data set show that our proposed real estate recommendation algorithms outperform the traditional methods. Sensitivity analysis is also carried out to demonstrate the effectiveness of our models.}
+      \field{booktitle}{Web Information Systems Engineering – WISE 2018}
+      \field{isbn}{978-3-030-02925-8}
+      \field{title}{Geographical Proximity Boosted Recommendation Algorithms for Real Estate}
+      \field{year}{2018}
+      \field{pages}{51\bibrangedash 66}
+      \range{pages}{16}
+    \endentry
+    \entry{Gharahighehi2021}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5ef33b1b51d3c030e2ea57f5d8e3e792}{%
+           family={Gharahighehi},
+           familyi={G\bibinitperiod},
+           given={Alireza},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0a49920225eef05eac47ccf9f5e3a6ef}{%
+           family={Pliakos},
+           familyi={P\bibinitperiod},
+           given={Konstantinos},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=487a7cbbc222b21bb2435fa1dfca208d}{%
+           family={Vens},
+           familyi={V\bibinitperiod},
+           given={Celine},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3660f02672256e6969081044b3be87ff}
+      \strng{fullhash}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \strng{fullhashraw}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \strng{bibnamehash}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \strng{authorbibnamehash}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \strng{authornamehash}{3660f02672256e6969081044b3be87ff}
+      \strng{authorfullhash}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \strng{authorfullhashraw}{59df85bdb40a0fc2e6b91819fff0ed4e}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The shift to e-commerce has changed many business areas. Real estate is one of the applications that has been affected by this modern technological wave. Recommender systems are intelligent models that assist users of real estate platforms in finding the best possible properties that fulfill their needs. However, the recommendation task is substantially more challenging in the real estate domain due to the many domain-specific limitations that impair typical recommender systems. For instance, real estate recommender systems usually face the clod-start problem where there are no historical logs for new users or new items, and the recommender system should provide recommendations for these new entities. Therefore, the recommender systems in the real estate market are different and substantially less studied than in other domains. In this article, we aim at providing a comprehensive and systematic literature review on applications of recommender systems in the real estate market. We evaluate a set of research articles (13 journal and 13 conference papers) which represent the majority of research and commercial solutions proposed in the field of real estate recommender systems. These papers have been reviewed and categorized based on their methodological approaches, the main challenges that they addressed, and their evaluation procedures. Based on these categorizations, we outlined some possible directions for future research.}
+      \field{issn}{20763417}
+      \field{issue}{16}
+      \field{journaltitle}{Applied Sciences (Switzerland)}
+      \field{title}{Recommender systems in the real estate market—a survey}
+      \field{volume}{11}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.3390/app11167502
+      \endverb
+      \keyw{Real estate,Recommender systems}
+    \endentry
+    \entry{Jun2020}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=1317b2bf97856700486e9ca3f9700890}{%
+           family={Jun},
+           familyi={J\bibinitperiod},
+           given={Han\bibnamedelima Jong},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=11a21e98c677ab186090452a610612d7}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Jae\bibnamedelima Hee},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=56b3e1c4bec7202523973fa53cdecc41}{%
+           family={Rhee},
+           familyi={R\bibinitperiod},
+           given={Deuk\bibnamedelima Young},
+           giveni={D\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=328892faa8ce10cda2c39ddaac72ca78}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Sun\bibnamedelima Woo},
+           giveni={S\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{80816c2c430038fee64e604816755979}
+      \strng{fullhash}{b53c360eb24446e1b8464c97f0ed0b85}
+      \strng{fullhashraw}{b53c360eb24446e1b8464c97f0ed0b85}
+      \strng{bibnamehash}{b53c360eb24446e1b8464c97f0ed0b85}
+      \strng{authorbibnamehash}{b53c360eb24446e1b8464c97f0ed0b85}
+      \strng{authornamehash}{80816c2c430038fee64e604816755979}
+      \strng{authorfullhash}{b53c360eb24446e1b8464c97f0ed0b85}
+      \strng{authorfullhashraw}{b53c360eb24446e1b8464c97f0ed0b85}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Housing preference is the subjective and relative preference of users toward housing alternatives and studies in the field have been conducted to analyze the housing preferences of groups with sharing the same socio-demographic attributes. However, previous studies may not suggest the preference of individuals. In this regard, this study proposes "SeoulHouse2Vec," an embedding-based collaborative filtering housing recommendation system for analyzing atypical and nonlinear housing preference of individuals. The model maps users and items in each dense vector space which are called embedding layers. This model may reflect trade-offs between the alternatives and recommend unexpected housing items and thus improve rational housing decision-making. The model expanded the search scope of housing alternatives to the entire city of Seoul utilizing public big data and GIS data. The preferences derived from the results can be used by suppliers, individual investors, and policymakers. Especially for architects, the architectural planning and design process will reflect users' perspective and preferences, and provide quantitative data in the housing decision-making process for urban planning and administrative units.}
+      \field{issn}{20711050}
+      \field{issue}{17}
+      \field{journaltitle}{Sustainability (Switzerland)}
+      \field{month}{9}
+      \field{title}{"SeoulHouse2Vec": An embedding-based collaborative filtering housing recommender system for analyzing housing preference}
+      \field{volume}{12}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.3390/SU12176964
+      \endverb
+      \keyw{Collaborative filtering,Embedding,Housing decision,Housing preference,Recommender system}
+    \endentry
+    \entry{KnollJulianandGro2018}{inbook}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=ab8b95b239ab89dbdb8f1d627a1f238a}{%
+           family={Rainer},
+           familyi={R\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=66dfd003ee36da76ed94025874353630}{%
+           family={Axel},
+           familyi={A\bibinitperiod},
+           given={Schwanke},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=13c7fc70ecd081839d742ff74669e6ce}{%
+           family={Bernhard},
+           familyi={B\bibinitperiod},
+           given={Rinn},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bce37024f37f2391eff2e5e15c924e72}{%
+           family={Julian},
+           familyi={J\bibinitperiod},
+           given={Schreyer\bibnamedelimb Martin\bibnamedelima Knoll},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6578ebda5aaf572541c7d6dd3d3c9180}{%
+           family={Groß},
+           familyi={G\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=2fde527993887e4946b3d77ea32d079c}{%
+           family={Gerald},
+           familyi={G\bibinitperiod}}}%
+        {{hash=39bcbef90cfff8624dcba8cf9794287e}{%
+           family={Christian},
+           familyi={C\bibinitperiod},
+           given={Erfurth},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d257919101208885d7f8754257bfcaeb}{%
+           family={Michal},
+           familyi={M\bibinitperiod},
+           given={Fahrnberger\bibnamedelimb Günter\bibnamedelima Hodo\̌{n\}},
+           giveni={F\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=397784177de1f342299a8f3acac7adfb}{%
+           family={Eichler},
+           familyi={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{de7efa52949986b43fcbbe73d38e113f}
+      \strng{fullhash}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{fullhashraw}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{bibnamehash}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{authorbibnamehash}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{authornamehash}{de7efa52949986b43fcbbe73d38e113f}
+      \strng{authorfullhash}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{authorfullhashraw}{00fe9e093d74e90cde0d9c4c33999f95}
+      \strng{editorbibnamehash}{cf2de8bfb7106a18347c960675d8e7dd}
+      \strng{editornamehash}{5e699a4be36aeaf39852789e9da04d89}
+      \strng{editorfullhash}{cf2de8bfb7106a18347c960675d8e7dd}
+      \strng{editorfullhashraw}{cf2de8bfb7106a18347c960675d8e7dd}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Like in many other branches of modern economies, the internet changed the behavior of suppliers and customers in real estate markets. Recommender systems became more and more important in providing customers with a fast and easy way to find suitable real estate items.}
+      \field{booktitle}{Innovations for Community Services}
+      \field{isbn}{978-3-319-93408-2}
+      \field{title}{Applying Recommender Approaches to the Real Estate e-Commerce Market}
+      \field{year}{2018}
+      \field{pages}{111\bibrangedash 126}
+      \range{pages}{16}
+    \endentry
+    \entry{Zhang2019}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=ab5652acf0de64074be2a35319b7c36a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Qian},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=392cd3493647f2d7e2731c6a1889e6e8}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Di},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ea2acbfa454e023189d3a6658b8b0e2a}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0c789b32177871041a88496e9fd1bea9}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Guangquan},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a8da5d024fa9a301a4d94c1cf2553af2}{%
+           family={Qu},
+           familyi={Q\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2747314874568b97b7187ffbc23597dd}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1cd093541b3ca1912f0a8dd3d85de075}
+      \strng{fullhash}{c67b4509f3eb6fa655f40225eef40c55}
+      \strng{fullhashraw}{c67b4509f3eb6fa655f40225eef40c55}
+      \strng{bibnamehash}{c67b4509f3eb6fa655f40225eef40c55}
+      \strng{authorbibnamehash}{c67b4509f3eb6fa655f40225eef40c55}
+      \strng{authornamehash}{1cd093541b3ca1912f0a8dd3d85de075}
+      \strng{authorfullhash}{c67b4509f3eb6fa655f40225eef40c55}
+      \strng{authorfullhashraw}{c67b4509f3eb6fa655f40225eef40c55}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The recommender systems provide users with what they prefer and filter unnecessary information. In the fierce marketing environment, it is crucial to recommend items to users in an early stage to keep user's interests and loyalty. With the fast product renewal, classical recommendation methods such as collaborative filtering cannot handle the cold-start item problem. In many real-world applications, content information of items or users is available and can be used to assist recommendation. Besides, user may interact with the items in different behaviors such as view, click or subscribe. How to use the complex content information and multiple user behaviors are real problems that are not well solved in applications. In this paper, we propose a content-based recommender system to deal with the practical problem. Boosting tree model also added to the system to avoid potential Spam. We applied our developed method to real estate application to recommend new property which just landed into the market to users. Experimental results with three data subsets and three recommendation scenarios demonstrate that the proposed method can outperform the baseline on recommendation accuracy. The results indicate that our method can effectively reduce potential Spam to users, so that user experience will be improved.}
+      \field{isbn}{9781728123486}
+      \field{journaltitle}{Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019}
+      \field{title}{A Recommender System for Cold-start Items: A Case Study in the Real Estate Industry}
+      \field{year}{2019}
+      \field{pages}{1185\bibrangedash 1192}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ISKE47853.2019.9170411
+      \endverb
+      \keyw{cold start,content-based recommender systems,data engineering,real estate,recommender systems}
+    \endentry
+  \enddatalist
+  \missing{newton1687}
+  \missing{roketluarangkasa}
+\endrefsection
+\endinput
+

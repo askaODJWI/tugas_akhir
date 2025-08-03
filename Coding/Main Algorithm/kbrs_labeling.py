@@ -81,6 +81,10 @@ def match_score(property_row, persona_criteria):
                 if isinstance(property_row[key], str) and property_row[key].lower() == val.lower():
                     matches += 1
             total += 1
+        elif key in ['SCHOOL', 'HOSPITAL', 'TRANSPORT', 'MARKET', 'MALL']:
+            if property_row.get(key, 0) >= val:
+                matches += 1
+            total += 1
 
     return matches / total if total > 0 else 0
 
@@ -102,7 +106,7 @@ for _, row in df.iterrows():
 
 # === Save results ===
 persona_score_df = pd.DataFrame(persona_scores)
-filepath = Path('KBRS/kbrs_dataset_2.csv')
+filepath = Path('KBRS/kbrs_dataset_3.csv')
 filepath.parent.mkdir(parents=True, exist_ok=True)
 persona_score_df.to_csv(filepath, index=False)
 

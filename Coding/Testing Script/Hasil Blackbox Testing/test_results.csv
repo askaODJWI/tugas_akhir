@@ -1,0 +1,301 @@
+persona,test_case_type,type,building_area,bedrooms,bathrooms,floors,HOSPITAL,SCHOOL,MARKET,MALL,TRANSPORT,facilities,found_persona,found_score
+Individu Lajang,Perfect (Expected ~100%),apartemen,70,1,1,1,1,1,1,1,1,"AC,Individu Lajang,3.84
+Individu Lajang,Mismatched (Expected ~0%),rumah,250,4,3,3,0,0,0,0,0,"CARPORT,Pasangan Bekerja dengan Anak,3.26
+Individu Lajang,Random_1,apartemen,166,3,2,2,0,0,0,0,1,"OVEN,Pasangan Bekerja dengan Anak,3.34
+Individu Lajang,Random_2,rumah,238,1,2,2,1,1,0,0,1,"PAM,Pasangan Bekerja dengan Anak,3.86
+Individu Lajang,Random_3,apartemen,69,4,2,1,1,0,1,0,1,"GARASI,Pasangan Bekerja tanpa Anak,2.96
+Individu Lajang,Random_4,rumah,40,4,2,1,1,0,1,1,1,"GORDYN,Pasangan Bekerja dengan Anak,3.52
+Individu Lajang,Random_5,apartemen,109,1,1,1,1,0,0,0,0,"WATER HEATER,Individu Lajang,3.21
+Individu Lajang,Random_6,apartemen,234,4,3,3,0,1,1,1,0,"GORDYN,Pasangan Bekerja dengan Anak,3.12
+Individu Lajang,Random_7,apartemen,98,1,1,2,1,0,1,1,1,"MICROWAVE,Individu Lajang,3.81
+Individu Lajang,Random_8,rumah,143,2,1,2,0,1,0,0,1,"GARDEN,Pasangan Bekerja dengan Anak,3.52
+Individu Lajang,Random_9,apartemen,117,1,2,2,0,1,0,1,1,"AC,Individu Lajang,3.79
+Individu Lajang,Random_10,rumah,205,2,1,2,0,1,0,0,0,"GARDEN,Pasangan Bekerja dengan Anak,3.60
+Individu Lajang,Random_11,rumah,46,3,2,3,0,1,0,1,1,"GORDYN,Pasangan Bekerja dengan Anak,3.44
+Individu Lajang,Random_12,apartemen,128,1,2,1,1,0,1,0,0,"STOVE,Pasangan Bekerja tanpa Anak,3.60
+Individu Lajang,Random_13,rumah,175,1,3,3,1,1,0,0,1,"STOVE,Pasangan Bekerja tanpa Anak,3.40
+Individu Lajang,Random_14,apartemen,79,4,3,3,1,0,0,1,0,PAM,Pasangan Bekerja dengan Anak,2.80
+Individu Lajang,Random_15,apartemen,113,1,1,1,0,1,0,0,1,"PAM,Individu Lajang,3.39
+Individu Lajang,Random_16,apartemen,60,2,3,3,0,0,0,1,1,STOVE,Individu Lajang,3.12
+Individu Lajang,Random_17,rumah,237,2,1,1,1,1,0,0,1,"WATER HEATER,Pasangan Bekerja dengan Anak,3.54
+Individu Lajang,Random_18,apartemen,137,4,3,2,1,0,0,0,1,"PAM,Pasangan Bekerja dengan Anak,3.20
+Individu Lajang,Random_19,rumah,142,4,1,2,0,0,1,0,0,"GORDYN,Pasangan Bekerja dengan Anak,3.50
+Individu Lajang,Random_20,rumah,144,4,3,3,1,1,1,1,1,"GARASI,Pasangan Bekerja dengan Anak,3.70
+Individu Lajang,Random_21,apartemen,184,3,1,1,1,1,0,1,1,"STOVE,Pasangan Bekerja dengan Anak,3.30
+Individu Lajang,Random_22,apartemen,186,2,2,2,0,1,1,1,1,"GARDEN,Pasangan Bekerja tanpa Anak,3.70
+Individu Lajang,Random_23,apartemen,175,2,1,1,1,1,1,1,1,"REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.56
+Individu Lajang,Random_24,rumah,62,4,2,2,1,0,0,0,1,"WATER HEATER,Pasangan Bekerja dengan Anak,3.68
+Individu Lajang,Random_25,apartemen,221,2,2,1,0,0,0,1,0,"STOVE,Pasangan Bekerja tanpa Anak,3.20
+Individu Lajang,Random_26,apartemen,74,4,2,1,0,0,1,0,1,"GARDEN,Pasangan Bekerja tanpa Anak,2.90
+Individu Lajang,Random_27,apartemen,37,3,1,1,0,0,1,0,0,"PAM,Pasangan Bekerja tanpa Anak,2.54
+Individu Lajang,Random_28,rumah,247,4,3,2,0,1,0,1,1,"CARPORT,Pasangan Bekerja dengan Anak,3.92
+Individu Lajang,Random_29,rumah,150,1,3,1,0,1,0,0,0,"GARASI,Pasangan Bekerja tanpa Anak,3.14
+Individu Lajang,Random_30,rumah,150,1,1,1,1,1,1,0,0,STOVE,Pasangan Bekerja tanpa Anak,3.50
+Individu Lajang,Random_31,apartemen,96,1,1,2,1,1,1,0,0,"GARASI,Individu Lajang,3.53
+Individu Lajang,Random_32,apartemen,99,1,2,2,0,0,0,1,0,"STOVE,Individu Lajang,3.58
+Individu Lajang,Random_33,rumah,236,2,3,3,1,0,0,1,1,"OVEN,Pasangan Bekerja dengan Anak,3.44
+Individu Lajang,Random_34,apartemen,39,1,3,1,1,1,1,0,0,"GARASI,Individu Lajang,3.48
+Individu Lajang,Random_35,apartemen,246,1,1,2,0,1,0,1,0,"AC,Individu Lajang,3.39
+Individu Lajang,Random_36,apartemen,43,1,3,1,1,0,0,1,0,"OVEN,Individu Lajang,3.50
+Individu Lajang,Random_37,apartemen,66,3,3,2,1,1,0,1,0,"PAM,Pasangan Bekerja dengan Anak,3.22
+Individu Lajang,Random_38,apartemen,214,1,2,3,1,1,1,0,1,"GORDYN,Pasangan Bekerja tanpa Anak,3.64
+Individu Lajang,Random_39,rumah,54,1,2,2,0,0,0,1,1,"CARPORT,Individu Lajang,3.67
+Individu Lajang,Random_40,rumah,164,4,1,3,0,0,1,1,1,"GARDEN,Pasangan Bekerja dengan Anak,3.50
+Individu Lajang,Random_41,rumah,131,1,3,1,1,0,1,1,0,"MICROWAVE,Pasangan Bekerja tanpa Anak,3.62
+Individu Lajang,Random_42,rumah,37,3,1,2,0,0,1,1,1,"CARPORT,Pasangan Bekerja dengan Anak,3.50
+Individu Lajang,Random_43,apartemen,149,2,1,2,1,0,0,0,1,"PAM,Pasangan Bekerja tanpa Anak,3.50
+Individu Lajang,Random_44,rumah,124,4,2,3,1,0,0,0,0,"WATER HEATER,Pasangan Bekerja dengan Anak,3.44
+Individu Lajang,Random_45,apartemen,207,1,1,3,0,1,1,1,1,"OVEN,Individu Lajang,3.55
+Individu Lajang,Random_46,rumah,210,2,2,3,0,0,1,1,1,"REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.56
+Individu Lajang,Random_47,rumah,176,4,1,2,0,1,1,0,0,"PAM,Pasangan Bekerja dengan Anak,3.84
+Individu Lajang,Random_48,rumah,101,2,1,2,0,0,0,1,1,MICROWAVE,Pasangan Bekerja dengan Anak,3.42
+Individu Lajang,Random_49,rumah,60,2,3,1,1,1,0,0,0,"REFRIGERATOR,Pasangan Bekerja dengan Anak,3.14
+Individu Lajang,Random_50,rumah,183,3,2,1,0,0,0,0,1,GARASI,Pasangan Bekerja dengan Anak,3.50
+Individu Lajang,Random_51,apartemen,43,2,1,1,0,1,1,0,1,"REFRIGERATOR,Individu Lajang,3.10
+Individu Lajang,Random_52,rumah,244,2,2,3,0,1,0,0,1,CARPORT,Pasangan Bekerja dengan Anak,3.52
+Individu Lajang,Random_53,apartemen,59,2,3,3,1,1,1,1,0,"GORDYN,Pasangan Bekerja tanpa Anak,3.24
+Individu Lajang,Random_54,rumah,249,1,1,1,0,0,0,1,1,"AC,Individu Lajang,3.24
+Individu Lajang,Random_55,rumah,80,4,1,1,1,1,0,0,0,"WATER HEATER,Pasangan Bekerja dengan Anak,3.38
+Individu Lajang,Random_56,rumah,227,4,2,2,0,1,0,0,1,MICROWAVE,Pasangan Bekerja dengan Anak,4.00
+Individu Lajang,Random_57,apartemen,111,4,2,3,1,0,1,0,1,"GARASI,Pasangan Bekerja dengan Anak,3.12
+Individu Lajang,Random_58,rumah,153,1,2,1,1,1,0,0,1,"GARASI,Pasangan Bekerja tanpa Anak,3.56
+Individu Lajang,Random_59,rumah,189,4,2,3,0,1,1,1,0,"OVEN,Pasangan Bekerja dengan Anak,3.76
+Individu Lajang,Random_60,apartemen,43,3,2,2,0,0,1,0,0,"GARDEN,Pasangan Bekerja dengan Anak,3.02
+Individu Lajang,Random_61,rumah,109,3,2,1,1,0,1,1,1,"OVEN,Pasangan Bekerja dengan Anak,3.68
+Individu Lajang,Random_62,apartemen,184,4,2,3,0,1,0,0,1,"PAM,Pasangan Bekerja dengan Anak,3.20
+Individu Lajang,Random_63,rumah,104,3,3,3,0,0,1,1,0,"PAM,Pasangan Bekerja dengan Anak,3.26
+Individu Lajang,Random_64,apartemen,95,3,2,3,1,1,0,0,0,"OVEN,Pasangan Bekerja dengan Anak,3.06
+Individu Lajang,Random_65,apartemen,210,3,2,1,0,1,0,1,1,"CARPORT,Pasangan Bekerja dengan Anak,3.28
+Individu Lajang,Random_66,rumah,187,4,3,1,0,0,0,1,1,"AC,Pasangan Bekerja dengan Anak,3.42
+Individu Lajang,Random_67,apartemen,120,1,3,1,0,0,1,1,0,"GARASI,Individu Lajang,3.39
+Individu Lajang,Random_68,rumah,143,1,2,2,1,1,1,1,1,OVEN,Pasangan Bekerja tanpa Anak,4.10
+Individu Lajang,Random_69,rumah,127,2,2,1,0,1,1,0,1,"MICROWAVE,Pasangan Bekerja tanpa Anak,3.68
+Individu Lajang,Random_70,apartemen,136,4,2,1,0,0,0,1,0,"PAM,Pasangan Bekerja tanpa Anak,2.96
+Individu Lajang,Random_71,apartemen,223,2,1,3,1,1,1,1,1,"STOVE,Pasangan Bekerja tanpa Anak,3.56
+Individu Lajang,Random_72,apartemen,88,4,1,3,1,1,0,1,0,OVEN,Pasangan Bekerja dengan Anak,2.98
+Individu Lajang,Random_73,rumah,34,2,1,1,0,0,1,1,1,"GORDYN,Individu Lajang,3.05
+Individu Lajang,Random_74,rumah,240,3,3,2,1,0,1,0,1,"PAM,Pasangan Bekerja dengan Anak,3.92
+Individu Lajang,Random_75,rumah,30,4,1,1,0,1,0,1,0,"AC,Pasangan Bekerja dengan Anak,3.20
+Individu Lajang,Random_76,rumah,38,3,3,3,0,1,0,0,0,"GARASI,Pasangan Bekerja dengan Anak,3.12
+Individu Lajang,Random_77,apartemen,126,2,2,2,1,0,1,0,0,"GARDEN,Pasangan Bekerja tanpa Anak,3.76
+Individu Lajang,Random_78,rumah,142,3,2,1,0,1,0,0,1,MICROWAVE,Pasangan Bekerja dengan Anak,3.52
+Individu Lajang,Random_79,rumah,98,4,1,3,0,0,0,0,0,OVEN,Pasangan Bekerja dengan Anak,3.02
+Individu Lajang,Random_80,rumah,212,3,2,2,1,0,1,1,0,"MICROWAVE,Pasangan Bekerja dengan Anak,4.08
+Individu Lajang,Random_81,apartemen,194,2,2,2,0,1,1,1,1,PAM,Pasangan Bekerja tanpa Anak,3.70
+Individu Lajang,Random_82,rumah,127,1,1,1,0,1,1,0,1,"CARPORT,Pasangan Bekerja tanpa Anak,3.52
+Individu Lajang,Random_83,apartemen,224,1,3,2,0,0,1,1,0,"CARPORT,Individu Lajang,3.39
+Individu Lajang,Random_84,apartemen,93,2,3,3,1,0,1,0,0,"GARDEN,Pasangan Bekerja tanpa Anak,3.20
+Individu Lajang,Random_85,apartemen,130,3,1,1,1,1,0,0,1,"WATER HEATER,Pasangan Bekerja tanpa Anak,3.18
+Individu Lajang,Random_86,rumah,226,1,2,2,1,0,1,0,1,REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.82
+Individu Lajang,Random_87,rumah,240,2,2,2,1,0,1,1,1,"AC,Pasangan Bekerja dengan Anak,4.00
+Individu Lajang,Random_88,apartemen,69,3,1,1,1,1,1,1,1,"GORDYN,Pasangan Bekerja tanpa Anak,3.08
+Individu Lajang,Random_89,apartemen,128,3,3,3,0,1,1,1,1,"CARPORT,Pasangan Bekerja tanpa Anak,3.26
+Individu Lajang,Random_90,apartemen,88,2,3,2,0,1,0,0,1,"GORDYN,Pasangan Bekerja tanpa Anak,3.16
+Individu Lajang,Random_91,rumah,238,3,3,3,1,0,1,0,1,"GORDYN,Pasangan Bekerja dengan Anak,3.60
+Individu Lajang,Random_92,rumah,137,3,1,1,0,1,1,0,0,"PAM,Pasangan Bekerja dengan Anak,3.36
+Individu Lajang,Random_93,rumah,76,2,2,2,0,0,0,0,0,GORDYN,Pasangan Bekerja dengan Anak,3.34
+Individu Lajang,Random_94,apartemen,188,2,1,1,0,1,0,0,0,"GARASI,Pasangan Bekerja tanpa Anak,3.04
+Individu Lajang,Random_95,apartemen,114,2,1,2,0,1,0,0,0,"REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.08
+Individu Lajang,Random_96,rumah,66,4,1,1,0,1,1,1,1,CARPORT,Pasangan Bekerja dengan Anak,3.36
+Individu Lajang,Random_97,rumah,242,4,2,2,1,0,0,0,1,"PAM,Pasangan Bekerja dengan Anak,4.00
+Individu Lajang,Random_98,apartemen,80,3,1,1,0,1,1,0,0,"GARDEN,Pasangan Bekerja tanpa Anak,2.86
+Pasangan Bekerja tanpa Anak,Perfect (Expected ~100%),rumah,150,2,1,1,1,1,1,1,1,"AC,Pasangan Bekerja tanpa Anak,3.66
+Pasangan Bekerja tanpa Anak,Mismatched (Expected ~0%),apartemen,40,4,3,3,0,0,0,0,0,"GARDEN,Pasangan Bekerja dengan Anak,2.46
+Pasangan Bekerja tanpa Anak,Random_1,apartemen,194,1,1,2,0,0,1,0,1,"REFRIGERATOR,Individu Lajang,3.45
+Pasangan Bekerja tanpa Anak,Random_2,apartemen,189,2,2,2,0,0,1,1,0,"REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.54
+Pasangan Bekerja tanpa Anak,Random_3,rumah,269,3,3,3,1,1,1,1,1,"PAM,Pasangan Bekerja dengan Anak,3.86
+Pasangan Bekerja tanpa Anak,Random_4,rumah,95,1,3,3,0,0,0,0,0,"WATER HEATER,Individu Lajang,3.04
+Pasangan Bekerja tanpa Anak,Random_5,rumah,204,2,2,1,1,0,1,0,0,"GORDYN,Pasangan Bekerja tanpa Anak,3.58
+Pasangan Bekerja tanpa Anak,Random_6,rumah,63,2,3,3,0,1,0,0,1,"GORDYN,Pasangan Bekerja dengan Anak,3.04
+Pasangan Bekerja tanpa Anak,Random_7,apartemen,188,2,3,1,0,0,0,1,1,"MICROWAVE,Pasangan Bekerja tanpa Anak,3.12
+Pasangan Bekerja tanpa Anak,Random_8,apartemen,296,4,1,3,0,0,1,1,0,"STOVE,Pasangan Bekerja dengan Anak,2.94
+Pasangan Bekerja tanpa Anak,Random_9,rumah,187,4,3,2,0,0,1,1,0,"STOVE,Pasangan Bekerja dengan Anak,3.74
+Pasangan Bekerja tanpa Anak,Random_10,rumah,201,3,2,3,1,1,1,1,1,"GORDYN,Pasangan Bekerja dengan Anak,4.02
+Pasangan Bekerja tanpa Anak,Random_11,apartemen,107,3,3,1,0,1,1,1,1,"STOVE,Pasangan Bekerja dengan Anak,3.04
+Pasangan Bekerja tanpa Anak,Random_12,apartemen,69,1,1,2,1,1,1,0,1,"MICROWAVE,Individu Lajang,3.77
+Pasangan Bekerja tanpa Anak,Random_13,apartemen,105,3,2,3,1,1,0,1,1,"GARDEN,Pasangan Bekerja dengan Anak,3.30
+Pasangan Bekerja tanpa Anak,Random_14,rumah,140,1,3,1,1,1,0,1,0,"STOVE,Pasangan Bekerja tanpa Anak,3.52
+Pasangan Bekerja tanpa Anak,Random_15,apartemen,220,4,3,1,0,1,1,0,0,"AC,Pasangan Bekerja dengan Anak,3.04
+Pasangan Bekerja tanpa Anak,Random_16,rumah,223,4,3,2,1,1,0,0,1,"MICROWAVE,Pasangan Bekerja dengan Anak,4.02
+Pasangan Bekerja tanpa Anak,Random_17,rumah,93,1,1,3,0,0,1,0,0,"STOVE,Individu Lajang,3.12
+Pasangan Bekerja tanpa Anak,Random_18,apartemen,126,3,3,1,0,1,0,1,1,"STOVE,Pasangan Bekerja tanpa Anak,3.08
+Pasangan Bekerja tanpa Anak,Random_19,apartemen,229,3,2,3,0,0,0,1,0,"CARPORT,Pasangan Bekerja dengan Anak,3.02
+Pasangan Bekerja tanpa Anak,Random_20,rumah,75,2,1,2,0,0,1,0,0,"REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.28
+Pasangan Bekerja tanpa Anak,Random_21,apartemen,102,1,2,3,1,0,0,0,1,"GORDYN,Individu Lajang,3.50
+Pasangan Bekerja tanpa Anak,Random_22,rumah,97,2,2,1,1,1,0,0,0,"GARASI,Pasangan Bekerja dengan Anak,3.38
+Pasangan Bekerja tanpa Anak,Random_23,rumah,81,3,3,1,0,0,1,0,1,"AC,Pasangan Bekerja dengan Anak,3.18
+Pasangan Bekerja tanpa Anak,Random_24,rumah,197,2,3,3,0,0,0,0,1,"OVEN,Pasangan Bekerja dengan Anak,3.18
+Pasangan Bekerja tanpa Anak,Random_25,rumah,146,4,2,3,0,1,0,1,1,"WATER HEATER,Pasangan Bekerja dengan Anak,3.60
+Pasangan Bekerja tanpa Anak,Random_26,apartemen,89,2,2,3,0,0,1,1,0,"REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.26
+Pasangan Bekerja tanpa Anak,Random_27,rumah,177,2,2,3,1,1,0,0,1,"REFRIGERATOR,Pasangan Bekerja dengan Anak,3.70
+Pasangan Bekerja tanpa Anak,Random_28,apartemen,269,4,1,3,0,0,0,1,0,"WATER HEATER,Pasangan Bekerja dengan Anak,2.86
+Pasangan Bekerja tanpa Anak,Random_29,apartemen,236,3,3,3,1,1,1,0,0,"PAM,Pasangan Bekerja dengan Anak,3.22
+Pasangan Bekerja tanpa Anak,Random_30,rumah,178,3,2,2,0,0,1,0,0,"AC,Pasangan Bekerja dengan Anak,3.82
+Pasangan Bekerja tanpa Anak,Random_31,rumah,183,3,1,3,1,0,0,1,1,"STOVE,Pasangan Bekerja dengan Anak,3.60
+Pasangan Bekerja tanpa Anak,Random_32,rumah,172,3,2,3,1,0,1,1,1,"GORDYN,Pasangan Bekerja dengan Anak,3.84
+Pasangan Bekerja tanpa Anak,Random_33,rumah,199,3,1,1,0,0,1,1,0,"GARDEN,Pasangan Bekerja dengan Anak,3.42
+Pasangan Bekerja tanpa Anak,Random_34,rumah,106,1,2,2,0,0,0,0,1,"STOVE,Individu Lajang,3.38
+Pasangan Bekerja tanpa Anak,Random_35,apartemen,194,2,1,2,0,0,1,0,1,"MICROWAVE,Pasangan Bekerja tanpa Anak,3.38
+Pasangan Bekerja tanpa Anak,Random_36,rumah,220,3,3,3,0,1,1,0,1,"OVEN,Pasangan Bekerja dengan Anak,3.60
+Pasangan Bekerja tanpa Anak,Random_37,rumah,174,1,3,2,0,0,0,1,1,"GARDEN,Pasangan Bekerja dengan Anak,3.42
+Pasangan Bekerja tanpa Anak,Random_38,rumah,62,1,2,3,0,0,0,0,1,"GARASI,Individu Lajang,3.38
+Pasangan Bekerja tanpa Anak,Random_39,apartemen,102,4,1,3,1,0,1,0,0,"AC,Pasangan Bekerja dengan Anak,2.88
+Pasangan Bekerja tanpa Anak,Random_40,apartemen,94,4,2,1,0,1,0,0,0,"GORDYN,Pasangan Bekerja dengan Anak,2.88
+Pasangan Bekerja tanpa Anak,Random_41,apartemen,288,4,1,1,1,0,0,0,1,"GARDEN,Pasangan Bekerja dengan Anak,3.04
+Pasangan Bekerja tanpa Anak,Random_42,rumah,286,2,3,1,1,0,1,1,0,"MICROWAVE,Pasangan Bekerja tanpa Anak,3.50
+Pasangan Bekerja tanpa Anak,Random_43,rumah,234,4,1,1,1,0,0,1,1,"CARPORT,Pasangan Bekerja dengan Anak,3.60
+Pasangan Bekerja tanpa Anak,Random_44,rumah,213,2,2,3,0,0,1,0,0,"GARDEN,Pasangan Bekerja tanpa Anak,3.40
+Pasangan Bekerja tanpa Anak,Random_45,rumah,146,2,2,1,1,1,0,0,0,"WATER HEATER,Pasangan Bekerja tanpa Anak,3.60
+Pasangan Bekerja tanpa Anak,Random_46,apartemen,226,1,1,3,1,1,0,1,1,"CARPORT,Individu Lajang,3.55
+Pasangan Bekerja tanpa Anak,Random_47,apartemen,297,1,2,3,1,0,0,0,1,"OVEN,Individu Lajang,3.39
+Pasangan Bekerja tanpa Anak,Random_48,apartemen,59,3,3,3,0,1,1,0,1,"GARASI,Pasangan Bekerja tanpa Anak,2.82
+Pasangan Bekerja tanpa Anak,Random_49,rumah,276,1,2,1,1,1,1,1,0,"GARDEN,Pasangan Bekerja tanpa Anak,3.74
+Pasangan Bekerja tanpa Anak,Random_50,apartemen,50,1,1,3,1,1,0,0,0,"GARASI,Individu Lajang,3.40
+Pasangan Bekerja tanpa Anak,Random_51,rumah,253,4,1,3,1,1,0,1,0,"OVEN,Pasangan Bekerja dengan Anak,3.70
+Pasangan Bekerja tanpa Anak,Random_52,rumah,177,2,1,3,0,0,1,0,0,"GORDYN,Pasangan Bekerja tanpa Anak,3.24
+Pasangan Bekerja tanpa Anak,Random_53,apartemen,232,4,2,1,0,1,1,0,1,"OVEN,Pasangan Bekerja dengan Anak,3.28
+Pasangan Bekerja tanpa Anak,Random_54,rumah,275,1,2,2,0,1,0,0,1,"GORDYN,Pasangan Bekerja dengan Anak,3.68
+Pasangan Bekerja tanpa Anak,Random_55,apartemen,127,2,1,1,1,1,0,0,1,"PAM,Pasangan Bekerja tanpa Anak,3.42
+Pasangan Bekerja tanpa Anak,Random_56,apartemen,219,2,2,2,1,0,1,1,1,"MICROWAVE,Pasangan Bekerja tanpa Anak,3.80
+Pasangan Bekerja tanpa Anak,Random_57,rumah,261,2,1,1,0,1,1,0,0,"STOVE,Pasangan Bekerja dengan Anak,3.36
+Pasangan Bekerja tanpa Anak,Random_58,rumah,189,3,2,1,0,1,0,0,1,"MICROWAVE,Pasangan Bekerja dengan Anak,3.68
+Pasangan Bekerja tanpa Anak,Random_59,apartemen,217,4,2,2,1,0,1,0,0,"CARPORT,Pasangan Bekerja dengan Anak,3.52
+Pasangan Bekerja tanpa Anak,Random_60,rumah,53,2,2,3,1,0,0,1,1,"WATER HEATER,Pasangan Bekerja tanpa Anak,3.32
+Pasangan Bekerja tanpa Anak,Random_61,rumah,119,3,2,3,0,1,1,0,1,"OVEN,Pasangan Bekerja dengan Anak,3.60
+Pasangan Bekerja tanpa Anak,Random_62,rumah,258,2,3,1,1,0,0,0,0,"REFRIGERATOR,Pasangan Bekerja dengan Anak,3.28
+Pasangan Bekerja tanpa Anak,Random_63,rumah,194,3,2,3,0,0,1,0,0,"AC,Pasangan Bekerja dengan Anak,3.50
+Pasangan Bekerja tanpa Anak,Random_64,apartemen,94,1,3,3,0,1,1,1,0,"GORDYN,Individu Lajang,3.53
+Pasangan Bekerja tanpa Anak,Random_65,apartemen,117,3,1,2,0,1,0,1,0,"MICROWAVE,Pasangan Bekerja dengan Anak,3.20
+Pasangan Bekerja tanpa Anak,Random_66,apartemen,241,3,2,1,1,0,0,0,0,"OVEN,Pasangan Bekerja dengan Anak,3.12
+Pasangan Bekerja tanpa Anak,Random_67,rumah,116,3,3,3,0,0,1,0,0,"WATER HEATER,Pasangan Bekerja dengan Anak,3.18
+Pasangan Bekerja tanpa Anak,Random_68,apartemen,231,4,1,1,1,0,0,0,0,"STOVE,Pasangan Bekerja dengan Anak,2.96
+Pasangan Bekerja tanpa Anak,Random_69,apartemen,191,2,3,3,0,0,0,0,1,"REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.04
+Pasangan Bekerja tanpa Anak,Random_70,rumah,62,4,3,2,1,0,1,1,1,"AC,Pasangan Bekerja dengan Anak,3.68
+Pasangan Bekerja tanpa Anak,Random_71,rumah,252,2,1,3,0,0,0,0,1,"WATER HEATER,Pasangan Bekerja dengan Anak,3.18
+Pasangan Bekerja tanpa Anak,Random_72,rumah,293,3,3,2,1,0,0,0,1,"AC,Pasangan Bekerja dengan Anak,3.84
+Pasangan Bekerja tanpa Anak,Random_73,apartemen,65,3,3,2,1,1,0,0,0,"STOVE,Pasangan Bekerja dengan Anak,3.14
+Pasangan Bekerja tanpa Anak,Random_74,rumah,176,1,3,1,1,1,1,1,1,"STOVE,Pasangan Bekerja tanpa Anak,3.66
+Pasangan Bekerja tanpa Anak,Random_75,apartemen,288,1,1,3,1,0,1,0,0,"GARDEN,Pasangan Bekerja tanpa Anak,3.32
+Pasangan Bekerja tanpa Anak,Random_76,apartemen,289,1,2,3,1,1,1,0,1,"CARPORT,Pasangan Bekerja tanpa Anak,3.64
+Pasangan Bekerja tanpa Anak,Random_77,apartemen,155,1,1,2,0,0,0,1,1,"GARASI,Individu Lajang,3.55
+Pasangan Bekerja tanpa Anak,Random_78,apartemen,183,3,1,3,1,0,0,1,0,"OVEN,Pasangan Bekerja dengan Anak,3.04
+Pasangan Bekerja tanpa Anak,Random_79,rumah,155,3,2,2,0,0,0,1,0,"AC,Pasangan Bekerja dengan Anak,3.82
+Pasangan Bekerja tanpa Anak,Random_80,rumah,50,3,3,2,1,1,1,0,0,"GARASI,Pasangan Bekerja dengan Anak,3.70
+Pasangan Bekerja tanpa Anak,Random_81,rumah,229,3,1,3,1,0,0,1,0,"CARPORT,Pasangan Bekerja dengan Anak,3.52
+Pasangan Bekerja tanpa Anak,Random_82,apartemen,271,1,1,3,0,0,1,1,0,"GARDEN,Individu Lajang,3.29
+Pasangan Bekerja tanpa Anak,Random_83,rumah,160,1,3,2,1,0,1,0,0,"GORDYN,Pasangan Bekerja tanpa Anak,3.58
+Pasangan Bekerja tanpa Anak,Random_84,apartemen,81,1,3,2,0,1,0,0,1,"OVEN,Individu Lajang,3.55
+Pasangan Bekerja tanpa Anak,Random_85,rumah,194,2,1,2,0,1,1,0,0,"STOVE,Pasangan Bekerja dengan Anak,3.68
+Pasangan Bekerja tanpa Anak,Random_86,rumah,121,3,2,3,1,0,1,1,1,"GORDYN,Pasangan Bekerja dengan Anak,3.68
+Pasangan Bekerja tanpa Anak,Random_87,rumah,101,2,1,3,1,1,0,0,0,"GARDEN,Pasangan Bekerja dengan Anak,3.30
+Pasangan Bekerja tanpa Anak,Random_88,rumah,81,3,3,2,0,1,1,0,0,"MICROWAVE,Pasangan Bekerja dengan Anak,3.60
+Pasangan Bekerja tanpa Anak,Random_89,apartemen,215,4,2,1,1,0,1,0,0,"REFRIGERATOR,Pasangan Bekerja dengan Anak,3.20
+Pasangan Bekerja tanpa Anak,Random_90,apartemen,210,3,1,1,1,0,0,1,1,"REFRIGERATOR,Pasangan Bekerja dengan Anak,3.12
+Pasangan Bekerja tanpa Anak,Random_91,apartemen,172,1,3,2,0,1,0,0,1,"GARDEN,Individu Lajang,3.45
+Pasangan Bekerja tanpa Anak,Random_92,rumah,164,1,1,3,1,0,1,1,0,"OVEN,Pasangan Bekerja tanpa Anak,3.50
+Pasangan Bekerja tanpa Anak,Random_93,apartemen,123,3,1,1,1,1,0,0,1,"CARPORT,Pasangan Bekerja tanpa Anak,3.18
+Pasangan Bekerja tanpa Anak,Random_94,apartemen,191,3,2,1,1,0,0,1,0,"WATER HEATER,Pasangan Bekerja dengan Anak,3.20
+Pasangan Bekerja tanpa Anak,Random_95,apartemen,147,1,3,1,1,0,0,1,1,"GARDEN,Individu Lajang,3.57
+Pasangan Bekerja tanpa Anak,Random_96,rumah,81,1,1,1,0,1,1,1,1,"GARDEN,Individu Lajang,3.56
+Pasangan Bekerja tanpa Anak,Random_97,apartemen,119,3,2,2,1,1,0,1,0,"MICROWAVE,Pasangan Bekerja dengan Anak,3.54
+Pasangan Bekerja tanpa Anak,Random_98,apartemen,293,2,2,1,0,0,0,0,1,"CARPORT,Pasangan Bekerja tanpa Anak,3.20
+Pasangan Bekerja dengan Anak,Perfect (Expected ~100%),rumah,150,3,3,3,1,1,1,1,1,"AC,Pasangan Bekerja dengan Anak,3.78
+Pasangan Bekerja dengan Anak,Mismatched (Expected ~0%),apartemen,60,1,1,1,0,0,0,0,0,,Individu Lajang,3.24
+Pasangan Bekerja dengan Anak,Random_1,rumah,310,3,2,3,0,0,1,0,1,"GORDYN,Pasangan Bekerja dengan Anak,3.58
+Pasangan Bekerja dengan Anak,Random_2,rumah,378,3,3,1,1,0,0,1,0,"STOVE,Pasangan Bekerja dengan Anak,3.52
+Pasangan Bekerja dengan Anak,Random_3,rumah,153,5,3,2,0,0,0,0,0,"GARASI,Pasangan Bekerja dengan Anak,3.58
+Pasangan Bekerja dengan Anak,Random_4,apartemen,241,4,1,1,0,1,0,1,0,"MICROWAVE,Pasangan Bekerja dengan Anak,3.04
+Pasangan Bekerja dengan Anak,Random_5,apartemen,286,4,1,2,0,1,1,1,0,"GARDEN,Pasangan Bekerja dengan Anak,3.44
+Pasangan Bekerja dengan Anak,Random_6,apartemen,173,3,4,3,0,0,1,1,0,"STOVE,Pasangan Bekerja tanpa Anak,2.98
+Pasangan Bekerja dengan Anak,Random_7,rumah,345,2,2,3,0,1,0,0,1,"AC,Pasangan Bekerja dengan Anak,3.52
+Pasangan Bekerja dengan Anak,Random_8,apartemen,170,4,4,3,0,0,1,1,1,"PAM,Pasangan Bekerja dengan Anak,3.02
+Pasangan Bekerja dengan Anak,Random_9,apartemen,292,5,3,1,1,0,0,0,0,"GORDYN,Pasangan Bekerja dengan Anak,2.96
+Pasangan Bekerja dengan Anak,Random_10,rumah,182,4,2,3,0,0,0,0,1,"CARPORT,Pasangan Bekerja dengan Anak,3.50
+Pasangan Bekerja dengan Anak,Random_11,apartemen,369,1,4,1,1,1,1,1,1,"CARPORT,Individu Lajang,3.63
+Pasangan Bekerja dengan Anak,Random_12,apartemen,209,2,2,1,1,1,0,0,0,"GORDYN,Pasangan Bekerja tanpa Anak,3.38
+Pasangan Bekerja dengan Anak,Random_13,rumah,105,5,1,3,1,0,0,0,1,"OVEN,Pasangan Bekerja dengan Anak,3.36
+Pasangan Bekerja dengan Anak,Random_14,apartemen,107,3,1,2,1,1,0,1,0,"PAM,Pasangan Bekerja dengan Anak,3.38
+Pasangan Bekerja dengan Anak,Random_15,rumah,373,3,2,2,0,0,1,0,1,"OVEN,Pasangan Bekerja dengan Anak,3.90
+Pasangan Bekerja dengan Anak,Random_16,rumah,337,4,2,2,1,0,1,1,0,"GARASI,Pasangan Bekerja dengan Anak,4.08
+Pasangan Bekerja dengan Anak,Random_17,apartemen,266,2,2,2,0,0,0,1,0,"MICROWAVE,Pasangan Bekerja tanpa Anak,3.36
+Pasangan Bekerja dengan Anak,Random_18,apartemen,382,1,4,1,0,1,0,1,0,"CARPORT,Individu Lajang,3.29
+Pasangan Bekerja dengan Anak,Random_19,rumah,342,4,1,1,0,1,1,1,0,"STOVE,Pasangan Bekerja dengan Anak,3.60
+Pasangan Bekerja dengan Anak,Random_20,rumah,87,2,4,1,0,0,1,1,1,"REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.28
+Pasangan Bekerja dengan Anak,Random_21,rumah,206,3,4,1,1,1,1,1,1,"OVEN,Pasangan Bekerja dengan Anak,3.86
+Pasangan Bekerja dengan Anak,Random_22,rumah,380,5,2,1,1,1,0,0,0,"GARASI,Pasangan Bekerja dengan Anak,3.78
+Pasangan Bekerja dengan Anak,Random_23,apartemen,391,4,4,3,0,1,0,0,0,"OVEN,Pasangan Bekerja dengan Anak,2.96
+Pasangan Bekerja dengan Anak,Random_24,apartemen,350,1,3,2,1,0,1,1,1,"GARDEN,Individu Lajang,3.65
+Pasangan Bekerja dengan Anak,Random_25,rumah,180,1,4,3,0,1,0,0,1,"CARPORT,Pasangan Bekerja tanpa Anak,3.22
+Pasangan Bekerja dengan Anak,Random_26,rumah,233,3,1,2,0,0,0,0,1,"PAM,Pasangan Bekerja dengan Anak,3.66
+Pasangan Bekerja dengan Anak,Random_27,rumah,193,1,3,2,1,1,1,1,1,"PAM,Pasangan Bekerja dengan Anak,3.86
+Pasangan Bekerja dengan Anak,Random_28,apartemen,82,3,2,1,0,0,0,1,0,"STOVE,Pasangan Bekerja tanpa Anak,2.84
+Pasangan Bekerja dengan Anak,Random_29,apartemen,388,1,3,2,1,0,1,0,1,"WATER HEATER,Pasangan Bekerja tanpa Anak,3.56
+Pasangan Bekerja dengan Anak,Random_30,apartemen,84,3,4,3,1,1,1,0,0,"PAM,Pasangan Bekerja tanpa Anak,3.04
+Pasangan Bekerja dengan Anak,Random_31,apartemen,261,4,4,3,0,0,0,0,1,"GARDEN,Pasangan Bekerja dengan Anak,2.86
+Pasangan Bekerja dengan Anak,Random_32,rumah,197,4,1,3,1,1,0,1,1,"STOVE,Pasangan Bekerja dengan Anak,3.78
+Pasangan Bekerja dengan Anak,Random_33,apartemen,351,5,2,3,1,0,1,1,1,"GARASI,Pasangan Bekerja dengan Anak,3.36
+Pasangan Bekerja dengan Anak,Random_34,apartemen,391,5,1,2,0,1,1,1,1,"OVEN,Pasangan Bekerja dengan Anak,3.52
+Pasangan Bekerja dengan Anak,Random_35,apartemen,177,1,1,1,0,1,1,1,0,"GARDEN,Individu Lajang,3.42
+Pasangan Bekerja dengan Anak,Random_36,rumah,340,5,4,3,0,1,0,0,0,"OVEN,Pasangan Bekerja dengan Anak,3.44
+Pasangan Bekerja dengan Anak,Random_37,rumah,154,1,3,3,1,1,1,0,0,"STOVE,Pasangan Bekerja tanpa Anak,3.50
+Pasangan Bekerja dengan Anak,Random_38,rumah,247,1,4,1,1,1,0,1,0,"MICROWAVE,Pasangan Bekerja tanpa Anak,3.40
+Pasangan Bekerja dengan Anak,Random_39,rumah,310,5,2,2,1,1,0,1,0,"AC,Pasangan Bekerja dengan Anak,4.18
+Pasangan Bekerja dengan Anak,Random_40,apartemen,274,3,1,3,1,0,0,1,1,"GARDEN,Pasangan Bekerja dengan Anak,3.12
+Pasangan Bekerja dengan Anak,Random_41,rumah,393,4,1,2,0,1,0,1,0,"CARPORT,Pasangan Bekerja dengan Anak,3.84
+Pasangan Bekerja dengan Anak,Random_42,rumah,118,3,3,1,1,1,1,0,0,"REFRIGERATOR,Pasangan Bekerja dengan Anak,3.54
+Pasangan Bekerja dengan Anak,Random_43,apartemen,372,4,1,2,1,1,0,1,1,"REFRIGERATOR,Pasangan Bekerja dengan Anak,3.62
+Pasangan Bekerja dengan Anak,Random_44,rumah,254,1,3,3,1,1,1,1,0,"STOVE,Pasangan Bekerja tanpa Anak,3.58
+Pasangan Bekerja dengan Anak,Random_45,apartemen,257,4,2,2,1,0,1,0,0,"CARPORT,Pasangan Bekerja dengan Anak,3.52
+Pasangan Bekerja dengan Anak,Random_46,apartemen,220,5,1,2,1,1,0,0,0,"GORDYN,Pasangan Bekerja dengan Anak,3.46
+Pasangan Bekerja dengan Anak,Random_47,rumah,159,5,2,3,0,1,0,1,0,"WATER HEATER,Pasangan Bekerja dengan Anak,3.68
+Pasangan Bekerja dengan Anak,Random_48,rumah,166,5,4,3,0,0,0,0,0,"OVEN,Pasangan Bekerja dengan Anak,3.26
+Pasangan Bekerja dengan Anak,Random_49,apartemen,77,2,1,2,0,1,0,0,1,"GARASI,Pasangan Bekerja tanpa Anak,3.16
+Pasangan Bekerja dengan Anak,Random_50,rumah,279,4,2,3,0,0,1,0,1,"AC,Pasangan Bekerja dengan Anak,3.58
+Pasangan Bekerja dengan Anak,Random_51,apartemen,327,1,4,1,1,0,0,1,0,"AC,Individu Lajang,3.29
+Pasangan Bekerja dengan Anak,Random_52,apartemen,259,1,3,3,0,1,0,0,1,"CARPORT,Individu Lajang,3.29
+Pasangan Bekerja dengan Anak,Random_53,apartemen,243,4,4,3,1,0,0,1,1,"GORDYN,Pasangan Bekerja dengan Anak,3.12
+Pasangan Bekerja dengan Anak,Random_54,apartemen,348,2,1,2,1,1,1,1,0,"OVEN,Pasangan Bekerja tanpa Anak,3.64
+Pasangan Bekerja dengan Anak,Random_55,rumah,384,2,4,3,1,0,0,1,0,"MICROWAVE,Pasangan Bekerja dengan Anak,3.36
+Pasangan Bekerja dengan Anak,Random_56,rumah,323,1,2,3,1,1,1,0,0,"MICROWAVE,Pasangan Bekerja tanpa Anak,3.66
+Pasangan Bekerja dengan Anak,Random_57,apartemen,276,5,1,3,1,0,0,1,0,"GARDEN,Pasangan Bekerja dengan Anak,3.04
+Pasangan Bekerja dengan Anak,Random_58,apartemen,169,1,3,3,0,1,0,1,1,"GARASI,Individu Lajang,3.52
+Pasangan Bekerja dengan Anak,Random_59,rumah,377,4,4,1,1,1,1,1,0,"MICROWAVE,Pasangan Bekerja dengan Anak,3.78
+Pasangan Bekerja dengan Anak,Random_60,rumah,274,4,2,2,1,1,1,1,0,"REFRIGERATOR,Pasangan Bekerja dengan Anak,4.26
+Pasangan Bekerja dengan Anak,Random_61,apartemen,285,1,3,2,1,0,1,1,0,"GORDYN,Pasangan Bekerja tanpa Anak,3.56
+Pasangan Bekerja dengan Anak,Random_62,apartemen,168,3,4,1,1,1,1,0,1,"WATER HEATER,Pasangan Bekerja dengan Anak,3.30
+Pasangan Bekerja dengan Anak,Random_63,rumah,210,5,2,1,0,0,0,0,1,"REFRIGERATOR,Pasangan Bekerja dengan Anak,3.50
+Pasangan Bekerja dengan Anak,Random_64,rumah,86,4,3,3,0,0,0,0,0,"GORDYN,Pasangan Bekerja dengan Anak,3.02
+Pasangan Bekerja dengan Anak,Random_65,apartemen,121,1,2,3,0,0,0,1,1,"CARPORT,Individu Lajang,3.60
+Pasangan Bekerja dengan Anak,Random_66,rumah,254,1,4,1,0,0,0,0,0,"AC,Pasangan Bekerja tanpa Anak,3.06
+Pasangan Bekerja dengan Anak,Random_67,apartemen,272,3,2,2,1,0,1,0,1,"CARPORT,Pasangan Bekerja dengan Anak,3.60
+Pasangan Bekerja dengan Anak,Random_68,rumah,379,4,3,1,1,1,1,0,0,"CARPORT,Pasangan Bekerja dengan Anak,3.70
+Pasangan Bekerja dengan Anak,Random_69,apartemen,133,3,1,2,0,0,0,1,1,"MICROWAVE,Pasangan Bekerja tanpa Anak,3.16
+Pasangan Bekerja dengan Anak,Random_70,apartemen,216,1,3,2,0,1,0,1,0,"REFRIGERATOR,Individu Lajang,3.39
+Pasangan Bekerja dengan Anak,Random_71,apartemen,147,2,4,2,1,1,0,0,1,"OVEN,Pasangan Bekerja tanpa Anak,3.58
+Pasangan Bekerja dengan Anak,Random_72,apartemen,185,1,1,3,1,0,0,0,0,"WATER HEATER,Individu Lajang,3.16
+Pasangan Bekerja dengan Anak,Random_73,rumah,368,5,1,1,0,0,0,1,1,"MICROWAVE,Pasangan Bekerja dengan Anak,3.42
+Pasangan Bekerja dengan Anak,Random_74,rumah,256,1,4,2,1,1,1,0,1,"GORDYN,Pasangan Bekerja dengan Anak,3.78
+Pasangan Bekerja dengan Anak,Random_75,apartemen,155,1,3,1,0,0,1,1,1,"MICROWAVE,Individu Lajang,3.52
+Pasangan Bekerja dengan Anak,Random_76,rumah,374,1,3,1,0,1,0,1,1,"STOVE,Individu Lajang,3.32
+Pasangan Bekerja dengan Anak,Random_77,apartemen,258,3,2,2,1,0,1,1,1,"AC,Pasangan Bekerja dengan Anak,3.68
+Pasangan Bekerja dengan Anak,Random_78,rumah,300,1,1,2,0,1,1,0,0,"CARPORT,Pasangan Bekerja dengan Anak,3.52
+Pasangan Bekerja dengan Anak,Random_79,rumah,237,1,3,1,0,0,1,1,0,"WATER HEATER,Pasangan Bekerja tanpa Anak,3.32
+Pasangan Bekerja dengan Anak,Random_80,rumah,291,2,1,1,0,0,0,1,1,"STOVE,Pasangan Bekerja dengan Anak,3.26
+Pasangan Bekerja dengan Anak,Random_81,apartemen,381,4,4,2,1,0,0,1,1,"AC,Pasangan Bekerja dengan Anak,3.44
+Pasangan Bekerja dengan Anak,Random_82,apartemen,271,2,3,2,0,0,1,0,0,"STOVE,Pasangan Bekerja tanpa Anak,3.30
+Pasangan Bekerja dengan Anak,Random_83,rumah,225,1,2,1,1,0,1,1,0,"GARASI,Pasangan Bekerja tanpa Anak,3.66
+Pasangan Bekerja dengan Anak,Random_84,rumah,79,4,1,3,1,0,1,0,0,"OVEN,Pasangan Bekerja dengan Anak,3.28
+Pasangan Bekerja dengan Anak,Random_85,apartemen,321,4,3,3,0,0,0,0,0,"MICROWAVE,Pasangan Bekerja dengan Anak,2.78
+Pasangan Bekerja dengan Anak,Random_86,rumah,114,5,2,1,0,0,1,1,0,"PAM,Pasangan Bekerja dengan Anak,3.42
+Pasangan Bekerja dengan Anak,Random_87,rumah,264,5,1,3,0,1,1,1,1,"WATER HEATER,Pasangan Bekerja dengan Anak,3.68
+Pasangan Bekerja dengan Anak,Random_88,rumah,324,1,1,1,1,1,0,1,1,"PAM,Pasangan Bekerja tanpa Anak,3.48
+Pasangan Bekerja dengan Anak,Random_89,rumah,313,1,1,2,0,0,1,0,1,"REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.48
+Pasangan Bekerja dengan Anak,Random_90,rumah,295,4,2,3,1,1,0,0,0,"GORDYN,Pasangan Bekerja dengan Anak,3.78
+Pasangan Bekerja dengan Anak,Random_91,apartemen,326,3,3,1,0,0,1,1,0,"AC,Pasangan Bekerja tanpa Anak,2.98
+Pasangan Bekerja dengan Anak,Random_92,apartemen,166,3,3,2,0,1,1,1,0,"REFRIGERATOR,Pasangan Bekerja dengan Anak,3.44
+Pasangan Bekerja dengan Anak,Random_93,rumah,364,5,4,2,1,1,1,1,0,"MICROWAVE,Pasangan Bekerja dengan Anak,4.10
+Pasangan Bekerja dengan Anak,Random_94,apartemen,275,3,1,3,0,0,0,1,1,"GARASI,Pasangan Bekerja dengan Anak,2.94
+Pasangan Bekerja dengan Anak,Random_95,apartemen,372,5,2,1,1,1,0,0,0,"REFRIGERATOR,Pasangan Bekerja dengan Anak,3.30
+Pasangan Bekerja dengan Anak,Random_96,rumah,124,2,1,1,1,0,1,0,1,"REFRIGERATOR,Pasangan Bekerja tanpa Anak,3.62
+Pasangan Bekerja dengan Anak,Random_97,apartemen,372,4,3,3,0,0,1,0,1,"WATER HEATER,Pasangan Bekerja dengan Anak,2.94
+Pasangan Bekerja dengan Anak,Random_98,apartemen,205,2,2,3,1,1,1,1,1,"OVEN,Pasangan Bekerja tanpa Anak,3.72

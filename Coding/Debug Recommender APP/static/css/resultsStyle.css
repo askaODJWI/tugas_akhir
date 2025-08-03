@@ -1,0 +1,224 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #212529;
+            /* Darker heading color */
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .lead {
+            font-size: 1.1rem;
+            color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .persona-match {
+            font-size: 1.25rem;
+            font-weight: 600;
+            /* Bolder persona match */
+            color: #007bff;
+            margin-bottom: 25px;
+            padding: 10px;
+            background-color: #e7f1ff;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+        }
+
+        .accordion-item {
+            margin-bottom: 15px;
+            /* Space between accordion items */
+            border-radius: 8px;
+            /* Rounded accordion items */
+            border: 1px solid #dee2e6;
+        }
+
+        .accordion-header {
+            border-radius: 8px 8px 0 0;
+            /* Match item rounding */
+        }
+
+        .accordion-button {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            border-radius: 8px 8px 0 0 !important;
+            /* Ensure rounding on top */
+        }
+
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+            /* Bootstrap focus style */
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #0a58ca;
+            /* Darker blue when open */
+            background-color: #e0eFFF;
+            /* Lighter blue background when open */
+        }
+
+        .property-title-in-header {
+            font-size: 1.2rem;
+            /* Slightly smaller for balance */
+            font-weight: 600;
+            margin-bottom: 12px;
+            width: 100%;
+            color: #343a40;
+        }
+
+        .accordion-button:not(.collapsed) .property-title-in-header {
+            color: #0a58ca;
+        }
+
+        .carousel {
+            width: 100%;
+            max-width: 350px;
+            /* Slightly smaller carousel */
+            margin-bottom: 10px;
+            border-radius: 6px;
+            /* Softer rounding for carousel */
+            overflow: hidden;
+            border: 1px solid #ddd;
+            /* Subtle border for carousel */
+        }
+
+        .carousel-item img {
+            height: 180px;
+            /* Adjusted height */
+            object-fit: cover;
+            border-radius: 6px;
+            /* Match carousel rounding */
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.3);
+            /* Darker icon background */
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .accordion-body {
+            padding: 1.25rem;
+            /* More padding in body */
+        }
+
+        .accordion-body ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            /* Remove default ul margin */
+        }
+
+        .accordion-body ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+            /* Lighter border */
+            font-size: 0.95rem;
+            color: #495057;
+        }
+
+        .accordion-body ul li strong {
+            color: #212529;
+            /* Darker label */
+        }
+
+        .accordion-body ul li:last-child {
+            border-bottom: none;
+        }
+
+        .score-container {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .score {
+            font-weight: bold;
+            margin-top: 8px;
+            display: block;
+            font-size: 1rem;
+            color: #198754;
+            /* Green for scores */
+        }
+
+        .score strong {
+            color: #343a40;
+        }
+
+        .details-columns {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .details-columns>div {
+            flex: 1 1 50%;
+            /* Allow shrinking but prefer 50% */
+            min-width: 200px;
+            /* Prevent too much squishing */
+            padding-right: 15px;
+            box-sizing: border-box;
+        }
+
+        .details-columns>div:last-child {
+            padding-right: 0;
+        }
+
+        .accordion-button::after {
+            margin-left: auto;
+            align-self: center;
+        }
+
+        .accordion-button-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 30px);
+            /* Accommodate accordion icon */
+        }
+
+        /* Fallback for images */
+        .img-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 180px;
+            /* Must match .carousel-item img height */
+            background-color: #e9ecef;
+            color: #6c757d;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        /* Styling for facilities if it's a list */
+        .facilities-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .facilities-list li {
+            font-size: 0.9rem;
+            padding: 2px 0;
+            border-bottom: none;
+            /* Remove border for facility list items */
+        }
+
+        .property-description p {
+            font-size: 0.95rem;
+            color: #495057;
+            text-align: justify;
+        }

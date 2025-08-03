@@ -30,72 +30,93 @@ Terdapat penelitian lain tentang SR properti yang menggunakan \emph{Content-Base
 Kemudian algoritma Apriori digunakan untuk memeberikan rekomendasi properti yang mirip dengan yang pengguna lihat \parencite{Badriyah2018}. 
 Meskipun pendekatan ini menunjukkan hasil yang menjanjikan, masih terdapat beberapa tantangan yang perlu diatasi dalam pengembangan SR yang optimal, terutama dalam menangani berbagai keterbatasan data pengguna.
 
-\section{Permasalahan}
+Salah satu permasalahan utama yang dihadapi oleh SR dalam domain properti adalah fenomena \emph{cold-start problem}, di mana sistem kesulitan memberikan rekomendasi yang akurat bagi pengguna baru atau bagi pengguna yang memiliki sedikit riwayat interaksi dengan platform. 
+Sebagian besar pendekatan saat ini, seperti \emph{Content-Based Filtering}, hanya berfokus pada karakteristik item atau aktivitas historis pengguna, seperti klik atau preferensi visual. 
+Namun, model ini memiliki keterbatasan, karena perilaku pengguna yang terekam tidak selalu merepresentasikan preferensi nyata mereka. Pengguna mungkin melakukan klik secara acak atau terpengaruh oleh faktor eksternal, sehingga hasil rekomendasi yang diberikan bisa saja tidak sesuai dengan profil atau kebutuhan sebenarnya \parencite{KnollJulianandGro2018}. 
+Oleh karena itu, diperlukan pendekatan yang lebih personal dan komprehensif dalam menangkap preferensi pengguna.
+
+Untuk mengatasi tantangan tersebut, tugas akhir ini akan mengembangkan sistem rekomendasi berbasis \emph{Hybrid Filtering} yang menggabungkan \emph{Content-Based Filtering} dan \emph{Knowledge-Based Recommender Systems} dengan menggunakan metode \emph{Profile Matching} yang berfokus pada karakteristik demografi dan kondisi sosial pengguna. 
+Pendekatan ini tidak hanya akan meningkatkan kualitas rekomendasi, tetapi juga dapat mengurangi risiko \emph{cold-start problem} yang sering terjadi pada SR konvensional. 
+Tugas akhir ini diharapkan dapat memberikan kontribusi signifikan dalam pengembangan sistem rekomendasi properti yang lebih efektif dan efisien di era digitalisasi ini.
+
+\section{Rumusan Masalah}
 \label{sec:permasalahan}
 
-Dari permasalahan tersebut maka \lipsum[1][1-6]
+Berdasarkan latar belakang permasalahan di atas, maka rumusan permasalahan dalam tugas akhir ini adalah sebagai berikut:
 
-\section{Tujuan}
-\label{sec:Tujuan}
+\begin{enumerate}
 
-Tujuan dari \lipsum[1][1-3] adalah:
+  \item Apa saja data demografi dan kondisi sosial yang relevan untuk membentuk profil pembeli?
 
-\begin{enumerate}[nolistsep]
+  \item Bagaimana algoritma \emph{Profile Matching} dapat digunakan untuk mencocokkan properti dengan profil pembeli?
 
-  \item Membuat \lipsum[2][1-3]
-
-  \item \lipsum[3][1-3]
-
+  \item Bagimana teknik \emph{Hybrid Filtering} dapat diterapkan untuk menentukan properti yang mirip berdasarkan karakteristik item?
+  
 \end{enumerate}
 
 \section{Batasan Masalah}
 \label{sec:batasanmasalah}
 
-Batasan-batasan dari \lipsum[1][1-3] adalah:
+Berdasarkan rumusan masalah yang telah dibuat, maka dapat didefinisikan batasan-batasan dalam tugas akhir ini sebagai berikut:
 
-\begin{enumerate}[nolistsep]
+\begin{enumerate}
 
-  \item Mempermudah \lipsum[2][1-3]
+  \item Tugas akhir ini akan fokus pada pengembangan sistem rekomendasi properti berbasis \emph{Hybrid Filtering} yang mengintegrasikan \emph{Content Based Filtering} dan \emph{Knowledge Based Recommender Systems} dengan metode \emph{Profile Matching}.
 
-  \item \lipsum[3][1-5]
+  \item Data yang digunakan dalam tugas akhir ini terbatas pada properti yang berada di daerah JABODETABEK dan Surabaya Kota yang diperoleh dari platform digital penjualan properti dengan metode \emph{scraping}.
 
-  \item \lipsum[4][1-5]
+  \item Demografi dan kondisi sosial pengguna yang digunakan untuk membangun profile pengguna diperoleh dari studi literatur penelitian terdahulu.
+  
+  \item Tugas akhir ini tidak akan mencakup analisis mendalam terhadap faktor eksternal yang mempengaruhi preferensi pengguna, seperti tren pasar properti atau perubahan ekonomi.
+
+\end{enumerate}
+
+\section{Tujuan}
+\label{sec:Tujuan}
+
+Berdasarkan rumusan masalah yang telah diuraikan sebelumnya, tujuan yang ingin dicapai pada tugas akhir ini adalah:
+
+\begin{enumerate}
+
+  \item Mengidentifikasi dan menentukan data demografi serta kondisi sosial yang relevan untuk membentuk profil pembeli properti.
+
+  \item Mengembangkan dan menerapkan algoritma Profile Matching untuk mencocokkan properti dengan profil pembeli berdasarkan karakteristik pengguna.
+  
+  \item Menerapkan teknik \emph{Hybrid Filtering} untuk menentukan properti yang mirip berdasarkan karakteristik item, seperti lokasi, harga, ukuran, dan fasilitas.
+  
+\end{enumerate}
+
+\section{Manfaat}
+\label{sec:Manfaat}
+
+Manfaat yang diharapkan dari tugas akhir ini adalah:
+
+\begin{enumerate}
+
+  \item Bagi Industri Properti, membantu dalam memahami preferensi konsumen dengan lebih baik, sehingga dapat menyesuaikan penawaran properti sesuai dengan kebutuhan pasar.
+
+  \item Bagi pengguna platform pencarian properti, tugas akhir ini akan membantu mereka menemukan properti yang lebih relevan dan sesuai dengan profil dan kebutuhan spesifik mereka, sehingga proses pencarian menjadi lebih mudah dan efisien.
+
+  \item Bagi pengembang sistem rekomendasi, tugas akhir ini dapat menjadi acuan dalam mengembangkan sistem rekomendasi yang lebih personal dan dapat mengatasi masalah \emph{cold-start}, terutama pada aplikasi pencarian properti.
+
+  \item Bagi penulis, tugas akhir ini membantu menambah wawasan dalam hal sistem rekomendasi dan profile matching, serta penerapannya dalam dunia nyata.
 
 \end{enumerate}
 
-\section{Sistematika Penulisan}
-\label{sec:sistematikapenulisan}
+\section{Relevansi}
+\label{sec:Relevansi}
 
-Laporan penelitian tugas akhir ini terbagi menjadi \lipsum[1][1-3] yaitu:
+Tugas akhir ini memiliki relevansi terhadap salah satu mata kuliah laboratorium Rekayasa Data dan Intelegensi Bisnis (RDIB), yaitu Pemodelan Sistem Kognitif. 
+Pada mata kuliah tersebut, diajarkan teori-teori tentang sistem rekomendasi yang membantu dalam pembuatan tugas akhir ini. 
+Salah satu \emph{roadmap} penelitian laboratorium RDIB, yaitu \emph{Recommender Systems}, memiliki kesesuaian dengan tugas akhir ini.
 
-\begin{enumerate}[nolistsep]
+\begin{figure}[H]
+  \centering
 
-  \item \textbf{BAB I Pendahuluan}
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=0.1]{gambar/roadmap.png}
 
-        Bab ini berisi \lipsum[2][1-5]
-
-        \vspace{2ex}
-
-  \item \textbf{BAB II Tinjauan Pustaka}
-
-        Bab ini berisi \lipsum[3][1-5]
-
-        \vspace{2ex}
-
-  \item \textbf{BAB III Desain dan Implementasi Sistem}
-
-        Bab ini berisi \lipsum[4][1-5]
-
-        \vspace{2ex}
-
-  \item \textbf{BAB IV Pengujian dan Analisa}
-
-        Bab ini berisi \lipsum[5][1-5]
-
-        \vspace{2ex}
-
-  \item \textbf{BAB V Penutup}
-
-        Bab ini berisi \lipsum[6][1-5]
-
-\end{enumerate}
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{\emph{Roadmap} Laboratorium RDIB.}
+  \label{fig:roadmap}
+\end{figure}

@@ -18,7 +18,7 @@
                     {% for image_src in property.image_url %}
                     <div class="carousel-item {% if loop.first %}active{% endif %}">
                         <img src="{{ image_src }}" class="d-block w-100" alt="Property Image {{ index }}"
-                            onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-fallback\'>Image not available</div>';">
+                            onerror="this.onerror=null;this.src='/static/image/House-Suburban.png';">
                     </div>
                     {% endfor %}
                 </div>
@@ -60,6 +60,10 @@
                 <p><strong>Price:</strong> Rp {{ "{:,.0f}".format(property.price)|replace(",", ".") }}</p>
                 {% endif %}
             </div>
+            <div class="score">
+                <strong>Location:</strong>
+                {{ property.address_subdistrict | default('N/A') }}
+            </div>
         </div>
     </div>
 
@@ -80,8 +84,20 @@
                         <li><strong>Land Area:</strong> {{ property.land_area | default('N/A') }} m²</li>
                         <li><strong>Building Area:</strong> {{ property.building_area | default('N/A') }} m²
                         </li>
-                        <li><strong>Bedrooms:</strong> {{ property.bedrooms | default('N/A') }}</li>
-                        <li><strong>Bathrooms:</strong> {{ property.bathrooms | default('N/A') }}</li>
+                        <li><strong>Bedrooms:</strong>
+                            {% if property.bedrooms is not none %}
+                            {{ property.bedrooms|int }}
+                            {% else %}
+                            N/A
+                            {% endif %}
+                        </li>
+                        <li><strong>Bathrooms:</strong>
+                            {% if property.bathrooms is not none %}
+                            {{ property.bathrooms|int }}
+                            {% else %}
+                            N/A
+                            {% endif %}
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -89,7 +105,7 @@
                         <li><strong>Floors:</strong> {{ property.floors | default('N/A') }}</li>
                         <li><strong>Certificate:</strong> {{ property.certificate | default('N/A') }}</li>
                         <li>
-                            <strong>Facilities:</strong>
+                            <strong>Housing Facilities:</strong>
                             {% if property.facilities_clean %}
                             {{ property.facilities_clean.replace(' ', ', ') }}
                             {% else %}
@@ -98,7 +114,7 @@
                         </li>
 
                         <li>
-                            <strong>Amenities:</strong>
+                            <strong>Nearby Facilities:</strong>
                             {% if property.amenities %}
                             {% if property.amenities is iterable and property.amenities is not string %}
                             {{ property.amenities | map('lower') | map('title') | join(', ') }}

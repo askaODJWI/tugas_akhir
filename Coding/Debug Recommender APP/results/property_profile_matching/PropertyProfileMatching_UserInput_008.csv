@@ -1,0 +1,11 @@
+land_area,building_area,bedrooms,bathrooms,floors,type,hospital,school,market,mall,transport,facility_ac,facility_carport,facility_garasi,facility_garden,facility_stove,facility_oven,facility_refrigerator,facility_microwave,facility_pam,facility_water_heater,facility_gordyn
+72.0,70.0,2.0,1.0,1.0,Rumah,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+52.0,60.0,3.0,2.0,2.0,Rumah,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+50.0,60.0,3.0,2.0,2.0,Rumah,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+125.0,120.0,2.0,1.0,1.0,Rumah,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+77.0,120.0,2.0,2.0,2.0,Rumah,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+77.0,120.0,2.0,2.0,2.0,Rumah,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+70.0,40.0,2.0,1.0,1.0,Rumah,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0
+77.0,50.0,2.0,2.0,1.0,Rumah,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+67.0,60.0,2.0,1.0,1.0,Rumah,0,1,1,1,1,0,1,0,1,0,0,0,0,0,0,0
+67.0,60.0,3.0,2.0,2.0,Rumah,0,1,1,1,1,0,1,0,1,0,0,0,0,0,0,0

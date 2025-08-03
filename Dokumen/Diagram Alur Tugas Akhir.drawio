@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0" version="27.1.6">
+  <diagram name="Page-1" id="aI1g7R3YivyZwfziTQzG">
+    <mxGraphModel dx="776" dy="778" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="31ar8-vXZOD1th4ZFnk7-1" target="31ar8-vXZOD1th4ZFnk7-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-1" value="&lt;font face=&quot;Times New Roman&quot;&gt;Identifikasi Masalah&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="31ar8-vXZOD1th4ZFnk7-2" target="31ar8-vXZOD1th4ZFnk7-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-2" value="&lt;font face=&quot;Times New Roman&quot;&gt;Studi Literatur&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="31ar8-vXZOD1th4ZFnk7-3" target="31ar8-vXZOD1th4ZFnk7-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-3" value="&lt;font face=&quot;Times New Roman&quot;&gt;Pengumpulan Data&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="31ar8-vXZOD1th4ZFnk7-4" target="31ar8-vXZOD1th4ZFnk7-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-4" value="&lt;font face=&quot;Times New Roman&quot;&gt;Pra-proses Data&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="31ar8-vXZOD1th4ZFnk7-5" target="31ar8-vXZOD1th4ZFnk7-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-5" value="&lt;font face=&quot;Times New Roman&quot;&gt;Pra-proses Data&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="31ar8-vXZOD1th4ZFnk7-6" target="31ar8-vXZOD1th4ZFnk7-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-6" value="&lt;font face=&quot;Times New Roman&quot;&gt;Implementasi Algoritma&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="204" y="490" width="432" height="120" as="geometry">
+            <mxRectangle x="209" y="440" width="160" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-9" value="&lt;font face=&quot;Times New Roman&quot;&gt;Profile Matching&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="31ar8-vXZOD1th4ZFnk7-6">
+          <mxGeometry x="301" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="31ar8-vXZOD1th4ZFnk7-6" source="31ar8-vXZOD1th4ZFnk7-8" target="31ar8-vXZOD1th4ZFnk7-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-8" value="&lt;font face=&quot;Times New Roman&quot;&gt;Content Based Recommender Systems&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="31ar8-vXZOD1th4ZFnk7-6">
+          <mxGeometry x="156" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="31ar8-vXZOD1th4ZFnk7-6" source="31ar8-vXZOD1th4ZFnk7-7" target="31ar8-vXZOD1th4ZFnk7-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-7" value="&lt;font face=&quot;Times New Roman&quot;&gt;Knowledge-Based Recommender Systems&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="31ar8-vXZOD1th4ZFnk7-6">
+          <mxGeometry x="11" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="31ar8-vXZOD1th4ZFnk7-12" target="31ar8-vXZOD1th4ZFnk7-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-12" value="&lt;font face=&quot;Times New Roman&quot;&gt;Uji Coba &amp;amp; Evaluasi Algoritma&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="650" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-13" value="&lt;font face=&quot;Times New Roman&quot;&gt;Black Box Testing&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="31ar8-vXZOD1th4ZFnk7-12">
+          <mxGeometry x="35" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="31ar8-vXZOD1th4ZFnk7-20" value="&lt;font face=&quot;Times New Roman&quot;&gt;Penyusunan Buku Tugas Akhir&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360.5" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

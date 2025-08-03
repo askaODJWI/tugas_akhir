@@ -1,0 +1,13 @@
+profile,level,type,land_area,building_area,bedrooms,bathrooms,floors,HOSPITAL,SCHOOL,MARKET,MALL,TRANSPORT,facilities
+Individu Lajang,100%,apartemen,0,50,1,1,1,1,1,1,1,1,"AC,STOVE,REFRIGERATOR,PAM"
+Individu Lajang,75%,apartemen,0,80,2,2,2,1,1,1,1,1,"AC,STOVE,REFRIGERATOR,PAM,GARDEN"
+Individu Lajang,50%,apartemen,0,130,3,3,3,0,1,0,1,1,"AC,STOVE,REFRIGERATOR,OVEN,CARPORT"
+Individu Lajang,25%,apartemen,0,200,4,3,3,0,0,0,0,0,"GARASI,GARDEN,OVEN,MICROWAVE,WATER HEATER,GORDYN"
+Pasangan Bekerja tanpa Anak,100%,rumah,160,160,2,2,2,1,1,1,1,1,"AC,CARPORT,GARASI,OVEN,STOVE,REFRIGERATOR,PAM"
+Pasangan Bekerja tanpa Anak,75%,apartemen,140,140,3,2,2,1,1,1,1,1,"AC,CARPORT,GARASI,STOVE,REFRIGERATOR,PAM"
+Pasangan Bekerja tanpa Anak,50%,apartemen,100,100,2,1,1,0,1,0,1,0,"AC,STOVE,REFRIGERATOR"
+Pasangan Bekerja tanpa Anak,25%,apartemen,50,50,1,1,1,0,0,0,0,0,
+Pasangan Bekerja dengan Anak,100%,rumah,160,160,4,3,3,1,1,1,1,1,"AC,CARPORT,GARASI,GARDEN,STOVE,OVEN,REFRIGERATOR,MICROWAVE,PAM,WATER HEATER"
+Pasangan Bekerja dengan Anak,75%,rumah,140,140,3,3,2,1,1,1,1,1,"AC,CARPORT,GARASI,GARDEN,STOVE,OVEN,REFRIGERATOR,PAM"
+Pasangan Bekerja dengan Anak,50%,rumah,100,100,2,2,2,1,1,0,1,0,"AC,STOVE,REFRIGERATOR"
+Pasangan Bekerja dengan Anak,25%,rumah,50,50,1,1,1,0,0,0,0,0,

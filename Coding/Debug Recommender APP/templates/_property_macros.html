@@ -1,0 +1,123 @@
+{% macro render_property(property, index) %}
+<div class="accordion-item">
+    <h2 class="accordion-header" id="heading-{{ index }}">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapse-{{ index }}" aria-expanded="false" aria-controls="collapse-{{ index }}">
+            <div class="accordion-button-content-wrapper">
+                <div class="property-title-in-header">{{ property.title | default('N/A') }}</div>
+            </div>
+        </button>
+    </h2>
+    <!-- Carousel moved outside the button for layout integrity -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            {% if property.image_url and property.image_url is iterable and property.image_url is not string
+            %}
+            <div id="carousel-{{ index }}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+                <div class="carousel-inner">
+                    {% for image_src in property.image_url %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                        <img src="{{ image_src }}" class="d-block w-100" alt="Property Image {{ index }}"
+                            onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-fallback\'>Image not available</div>';">
+                    </div>
+                    {% endfor %}
+                </div>
+                {% if property.image_url|length > 1 %}
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ index }}"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ index }}"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                {% endif %}
+            </div>
+            {% else %}
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="img-fallback">No images available</div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="col-md-4 d-flex flex-column justify-content-center align-items-start">
+            <div class="score mb-2">
+                <strong>Match Score:</strong>
+                {{ '%0.2f/5' % property.final_score }}
+            </div>
+            <div class="score mb-2">
+                <strong>Cosine Similarity Score:</strong>
+                {{ '%0.2f/1' % property.similarity_score }}
+            </div>
+            <div class="score">
+                {% if property.price %}
+                <p><strong>Price:</strong> Rp {{ "{:,.0f}".format(property.price)|replace(",", ".") }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div id="collapse-{{ index }}" class="accordion-collapse collapse" aria-labelledby="heading-{{ index }}"
+        data-bs-parent="#propertyAccordion">
+        <div class="accordion-body">
+            <!-- Description Section -->
+            <div class="property-description mb-3">
+                <h5>Description</h5>
+                <p>
+                    {{ property.description | default("No description available.") }}
+                </p>
+            </div>
+            <!-- Existing Details Section -->
+            <div class="details-columns">
+                <div>
+                    <ul>
+                        <li><strong>Land Area:</strong> {{ property.land_area | default('N/A') }} m²</li>
+                        <li><strong>Building Area:</strong> {{ property.building_area | default('N/A') }} m²
+                        </li>
+                        <li><strong>Bedrooms:</strong> {{ property.bedrooms | default('N/A') }}</li>
+                        <li><strong>Bathrooms:</strong> {{ property.bathrooms | default('N/A') }}</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><strong>Floors:</strong> {{ property.floors | default('N/A') }}</li>
+                        <li><strong>Certificate:</strong> {{ property.certificate | default('N/A') }}</li>
+                        <li>
+                            <strong>Facilities:</strong>
+                            {% if property.facilities_clean %}
+                            {{ property.facilities_clean.replace(' ', ', ') }}
+                            {% else %}
+                            N/A
+                            {% endif %}
+                        </li>
+
+                        <li>
+                            <strong>Amenities:</strong>
+                            {% if property.amenities %}
+                            {% if property.amenities is iterable and property.amenities is not string %}
+                            {{ property.amenities | map('lower') | map('title') | join(', ') }}
+                            {% else %}
+                            {{ property.amenities | lower | title }}
+                            {% endif %}
+                            {% else %}
+                            N/A
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+                <!-- Description Section (newly added) -->
+                <div class="property-description mb-3">
+                    <h5>Reasoning</h5>
+                    <p>{{ property.reasoning | default("No reasoning available.") }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,301 @@
+persona,test_case_type,type,land_area,building_area,bedrooms,bathrooms,floors,HOSPITAL,SCHOOL,MARKET,MALL,TRANSPORT,facilities,found_persona,found_score
+Individu Lajang,Target 100%,apartemen,70,70,1,1,1,1,1,1,1,1,"AC,Individu Lajang,3.84
+REFRIGERATOR,PAM",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Target 25%,rumah,216,180,2,2,2,1,1,1,0,1,"CARPORT,Pasangan Bekerja dengan Anak,4.10
+GARDEN,OVEN,MICROWAVE,WATER HEATER,GORDYN",,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_1,apartemen,70,70,2,1,2,0,0,1,0,1,"CARPORT,Pasangan Bekerja tanpa Anak,3.14
+GARDEN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_4,rumah,300,250,1,3,2,0,1,1,1,1,"AC,Pasangan Bekerja dengan Anak,3.68
+OVE",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+RASI,GARDEN,OVEN,MICROWAVE,WATER HEATER,GORDYN",,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_8,rumah,216,180,2,2,1,0,1,1,1,1,"AC,Pasangan Bekerja dengan Anak,3.68
+GARASI,GARDEN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+MICROWAVE,WATER HEATER,GORDYN",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+RDYN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_13,apartemen,70,70,2,3,3,1,1,1,0,1,"AC,Pasangan Bekerja tanpa Anak,3.24
+SI,GARDEN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_16,rumah,84,70,1,2,1,1,0,1,1,1,"AC,Individu Lajang,3.72
+",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+PORT,GARDEN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_20,apartemen,180,180,2,1,1,0,1,1,1,1,"AC,Pasangan Bekerja tanpa Anak,3.38
+EN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+TOR,PAM",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_24,rumah,108,90,2,1,1,0,1,1,0,1,"CARPORT,Pasangan Bekerja tanpa Anak,3.28
+GARDEN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_27,rumah,216,180,1,2,1,1,1,0,0,0,"CARPORT,Pasangan Bekerja tanpa Anak,3.48
+DEN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_31,apartemen,250,250,3,2,3,0,0,1,1,0,"AC,Pasangan Bekerja tanpa Anak,3.14
+GARDEN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_35,rumah,168,140,3,2,3,1,0,0,1,0,"AC,Pasangan Bekerja dengan Anak,3.68
+GARASI,GARDEN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_38,rumah,300,250,1,1,1,0,0,0,1,1,"AC,Individu Lajang,3.24
+GARDEN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+N,OVEN,MICROWAVE,WATER HEATER,GORDYN",,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_42,rumah,108,90,2,3,1,0,0,0,1,0,"CARPORT,Pasangan Bekerja tanpa Anak,3.02
+,GARDEN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_45,rumah,168,140,1,2,3,0,1,1,1,0,"CARPORT,Pasangan Bekerja tanpa Anak,3.56
+GARDEN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+EN,OVEN,MICROWAVE,WATER HEATER,GORDYN",,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_50,apartemen,70,70,3,1,2,1,1,0,1,0,"AC,Pasangan Bekerja dengan Anak,3.22
+FRIGERATOR,PAM",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_53,rumah,84,70,3,1,3,1,0,1,0,1,"CARPORT,Pasangan Bekerja dengan Anak,3.36
+ASI,GARDEN,OVEN,MICROWAVE,WATER HEATER,GORDYN",,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_56,rumah,108,90,1,1,1,1,0,1,0,1,"AC,Individu Lajang,3.38
+OVE,REFRIGERATOR,PAM",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_59,apartemen,90,90,2,2,2,0,1,1,0,0,"CARPORT,Pasangan Bekerja tanpa Anak,3.42
+ARDEN,OVEN,MICROWAVE,WATER HEATER,GORDYN",,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_62,apartemen,140,140,1,2,2,1,1,1,1,0,"CARPORT,Pasangan Bekerja tanpa Anak,3.92
+GARDEN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_65,rumah,300,250,2,2,2,1,1,1,1,1,"CARPORT,Pasangan Bekerja dengan Anak,4.18
+GARDEN,OVEN,MICROWAVE,WATER HEATER,GORDYN",,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_68,apartemen,90,90,1,2,3,0,1,0,1,0,"AC,Individu Lajang,3.55
+EFRIGERATOR,PAM",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_71,rumah,300,250,3,2,2,0,1,1,1,1,"AC,Pasangan Bekerja dengan Anak,4.16
+,GARDEN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_74,rumah,108,90,2,1,2,0,1,0,0,1,"AC,Pasangan Bekerja dengan Anak,3.52
+VE,REFRIGERATOR,PAM",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_77,rumah,108,90,1,1,2,1,1,1,0,1,"AC,Pasangan Bekerja dengan Anak,3.62
+,GARASI,GARDEN,OVEN,MICROWAVE,WATER HEATER,GORDYN",,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_80,rumah,108,90,1,2,1,0,0,0,0,1,"AC,Individu Lajang,3.33
+VE",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+GARASI,GARDEN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_84,apartemen,180,180,2,1,1,0,1,0,0,0,"CARPORT,Pasangan Bekerja tanpa Anak,3.04
+DEN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+EN,MICROWAVE,WATER HEATER,GORDYN",,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_89,apartemen,70,70,2,1,1,1,1,1,1,0,"AC,Pasangan Bekerja tanpa Anak,3.24
+RDEN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Individu Lajang,Random_93,rumah,216,180,2,2,1,1,0,0,1,0,"AC,Pasangan Bekerja dengan Anak,3.52
+ASI,GARDEN,OVEN,MICROWAVE,WATER HEATER,GORDYN",,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+EN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Target 50%,rumah,86,72,2,2,1,1,1,1,0,0,"AC,Pasangan Bekerja tanpa Anak,3.54
+ORT,GARDEN,MICROWAVE",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+GORDYN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_1,apartemen,150,150,2,1,3,1,1,0,1,1,"GARDEN,Pasangan Bekerja tanpa Anak,3.38
+HEATER,GORDYN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_4,apartemen,50,50,4,2,2,1,1,1,0,1,"AC,Pasangan Bekerja dengan Anak,3.46
+E,WATER HEATER,GORDYN",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+RT,GARASI,OVEN",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_8,apartemen,150,150,2,3,2,0,0,1,1,1,"GARDEN,Pasangan Bekerja tanpa Anak,3.46
+MICROWAVE",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+TOR",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_12,apartemen,120,120,4,1,2,0,1,1,0,0,"AC,Pasangan Bekerja dengan Anak,3.20
+OWAVE",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+REFRIGERATOR",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+T,GARASI,OVEN",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_18,rumah,86,72,3,3,2,1,0,1,1,1,"AC,Pasangan Bekerja dengan Anak,3.76
+RPORT,GARDEN,MICROWAVE",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+ORT,GARASI,OVEN",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_24,apartemen,120,120,2,2,2,1,1,1,0,1,"AC,Pasangan Bekerja tanpa Anak,3.68
+WATER HEATER,GORDYN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_27,apartemen,50,50,4,3,1,0,1,0,0,1,"GARDEN,Pasangan Bekerja dengan Anak,2.72
+E,WATER HEATER,GORDYN",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+OVEN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_31,apartemen,120,120,2,2,3,0,0,1,0,0,"AC,Pasangan Bekerja tanpa Anak,3.18
+REFRIGERATOR,PAM,CARPORT,GARASI,OVEN",,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_34,rumah,86,72,4,2,1,0,0,1,1,0,"AC,Pasangan Bekerja dengan Anak,3.34
+CROWAVE,WATER HEATER,GORDYN",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+YN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_38,rumah,144,120,4,2,1,1,0,1,0,0,"AC,Pasangan Bekerja dengan Anak,3.52
+REFRIGERATOR,PAM,CARPORT,GARASI,OVEN",,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_42,rumah,36,30,2,1,2,1,0,1,1,1,"AC,Pasangan Bekerja dengan Anak,3.52
+T,GARDEN,MICROWAVE",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+AM,CARPORT,GARASI,OVEN",,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_46,apartemen,30,30,4,2,3,1,0,1,1,0,"AC,Pasangan Bekerja dengan Anak,2.96
+OWAVE,WATER HEATER,GORDYN",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,OVEN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_51,rumah,144,120,4,1,3,1,0,0,1,1,"GARDEN,Pasangan Bekerja dengan Anak,3.44
+AVE,WATER HEATER,GORDYN",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_54,rumah,86,72,4,1,1,0,0,1,1,0,"GARDEN,Pasangan Bekerja dengan Anak,3.18
+STOVE,REFRIGERATOR",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_58,rumah,144,120,4,2,3,1,1,1,0,0,"GARDEN,Pasangan Bekerja dengan Anak,3.70
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_60,apartemen,72,72,2,1,2,1,1,1,0,1,"GARDEN,Pasangan Bekerja tanpa Anak,3.40
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,MICROWAVE",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+OR",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_66,rumah,144,120,3,2,2,1,0,1,0,1,"GARDEN,Pasangan Bekerja dengan Anak,3.92
+E,REFRIGERATOR",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_69,rumah,36,30,2,3,3,1,1,1,0,1,"AC,Pasangan Bekerja dengan Anak,3.30
+OVE,REFRIGERATOR,PAM,CARPORT,GARASI,OVEN",,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_72,rumah,60,50,4,2,1,1,1,0,1,0,"AC,Pasangan Bekerja dengan Anak,3.54
+EFRIGERATOR,PAM,CARPORT,GARASI,OVEN",,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_75,rumah,60,50,4,3,3,1,0,1,1,1,"AC,Pasangan Bekerja dengan Anak,3.36
+RPORT,STOVE,REFRIGERATOR",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_78,rumah,144,120,3,2,2,1,1,0,0,1,"GARDEN,Pasangan Bekerja dengan Anak,4.02
+ATER HEATER,GORDYN",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+YN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_82,rumah,60,50,2,1,1,1,1,0,0,0,"AC,Pasangan Bekerja dengan Anak,3.14
+E,REFRIGERATOR,PAM,CARPORT,GARASI,OVEN",,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_85,rumah,180,150,3,3,3,1,0,1,0,1,"GARDEN,Pasangan Bekerja dengan Anak,3.60
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+ERATOR,PAM,CARPORT,GARASI,OVEN",,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_90,rumah,144,120,4,2,2,1,0,1,1,0,"AC,Pasangan Bekerja dengan Anak,3.92
+T,STOVE,REFRIGERATOR",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+ORDYN",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja tanpa Anak,Random_94,rumah,36,30,2,2,1,0,0,1,1,1,"GARDEN,Pasangan Bekerja tanpa Anak,3.20
+FRIGERATOR,PAM,CARPORT,GARASI,OVEN,GARDEN,MICROWAVE,WATER HEATER",,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Target 50%,rumah,120,100,4,2,2,1,1,1,0,1,"AC,Pasangan Bekerja dengan Anak,4.10
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Target 10%,apartemen,50,50,1,1,1,0,0,0,0,0,AC,Individu Lajang,3.24
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_1,apartemen,150,150,1,2,3,1,0,1,0,1,"AC,Pasangan Bekerja tanpa Anak,3.56
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_3,apartemen,149,149,2,2,3,0,1,0,0,1,"AC,Pasangan Bekerja tanpa Anak,3.40
+RASI,GARDEN,STOVE",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+VE",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_7,apartemen,100,100,3,2,2,1,1,0,0,0,"AC,Pasangan Bekerja dengan Anak,3.38
+GARASI,GARDEN,STOVE",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_10,apartemen,100,100,2,1,2,0,0,0,0,1,AC,Pasangan Bekerja tanpa Anak,3.08
+OVE,REFRIGERATOR,PAM,CARPORT,GARASI,OVEN,GARDEN,MICROWAVE,WATER HEATER",,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_13,apartemen,100,100,2,1,1,1,0,0,0,0,"AC,Pasangan Bekerja tanpa Anak,3.02
+ARASI,GARDEN,STOVE",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_17,rumah,180,150,3,3,3,1,0,0,1,0,"AC,Pasangan Bekerja dengan Anak,3.52
+STOVE",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+VE",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+OR,PAM,CARPORT,GARASI,OVEN,GARDEN,MICROWAVE,WATER HEATER",,,,,,,FETCH_ERROR: Server response: 500,ERROR
+",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_23,rumah,60,50,1,2,2,1,1,1,0,0,AC,Pasangan Bekerja tanpa Anak,3.58
+,"AC,STOVE,REFRIGERATOR,PAM,CARPORT,GARASI,OVEN,GARDEN,MICROWAVE,WATER HEATER",,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_26,rumah,84,70,4,2,2,0,1,0,1,1,AC,Pasangan Bekerja dengan Anak,3.84
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_29,apartemen,149,149,2,1,2,1,1,0,0,1,"AC,Pasangan Bekerja tanpa Anak,3.58
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_31,apartemen,150,150,1,1,1,0,1,1,0,1,"AC,Individu Lajang,3.42
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_33,apartemen,100,100,4,3,1,1,1,0,0,0,"AC,Pasangan Bekerja dengan Anak,2.90
+RATOR,PAM,CARPORT,GARASI,OVEN,GARDEN,MICROWAVE,WATER HEATER",,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_36,rumah,60,50,3,2,2,0,1,1,1,1,"AC,Pasangan Bekerja dengan Anak,3.84
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_38,apartemen,100,100,4,1,3,1,0,0,0,1,"AC,Pasangan Bekerja dengan Anak,2.80
+,GARASI,GARDEN,STOVE",,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_41,apartemen,100,100,2,2,1,1,0,0,0,1,,Pasangan Bekerja tanpa Anak,3.26
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_43,rumah,60,50,4,1,1,1,0,0,1,1,"AC,Pasangan Bekerja dengan Anak,3.28
+ORT,GARASI,GARDEN,STOVE",,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_46,apartemen,100,100,3,1,3,1,1,0,1,0,AC,Pasangan Bekerja dengan Anak,2.98
+,GARDEN,STOVE",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_49,apartemen,149,149,4,1,3,0,1,0,1,1,,Pasangan Bekerja tanpa Anak,2.96
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_51,apartemen,70,70,2,2,2,1,0,0,1,1,"AC,Individu Lajang,3.41
+,STOVE",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+GARDEN,STOVE",,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_55,apartemen,70,70,3,3,1,1,1,1,0,0,"AC,Pasangan Bekerja tanpa Anak,2.92
+FRIGERATOR,PAM,CARPORT,GARASI,OVEN,GARDEN,MICROWAVE,WATER HEATER",,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_58,rumah,84,70,3,3,1,1,0,0,1,1,AC,Pasangan Bekerja dengan Anak,3.36
+,GARDEN,STOVE",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_61,apartemen,70,70,4,2,1,1,0,0,1,0,AC,Pasangan Bekerja dengan Anak,2.88
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_63,rumah,178,149,1,2,1,0,1,0,1,0,,Pasangan Bekerja tanpa Anak,3.38
+AC,GARDEN,STOVE",,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+IGERATOR,PAM,CARPORT,GARASI,OVEN,GARDEN,MICROWAVE,WATER HEATER",,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_67,rumah,180,150,1,1,2,0,1,0,0,1,AC,Pasangan Bekerja dengan Anak,3.52
+,"AC,CARPORT,GARASI,GARDEN,STOVE",,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_70,rumah,178,149,4,2,1,1,0,1,0,1,"AC,Pasangan Bekerja dengan Anak,3.76
+PORT,GARASI,GARDEN,STOVE",,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_74,rumah,60,50,1,1,1,1,1,0,0,0,"AC,Individu Lajang,3.25
+ORT,GARASI,GARDEN,STOVE",,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+GARASI,OVEN,GARDEN,MICROWAVE,WATER HEATER",,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_78,rumah,60,50,3,2,1,1,0,1,1,0,,Pasangan Bekerja dengan Anak,3.44
+,"AC,GARDEN,STOVE",,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+VE",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_82,apartemen,70,70,1,2,1,0,0,1,0,1,"AC,Individu Lajang,3.61
+VE",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_85,apartemen,149,149,1,2,2,1,1,0,0,1,"AC,Pasangan Bekerja tanpa Anak,3.74
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_87,rumah,180,150,1,3,2,1,1,0,0,1,AC,Pasangan Bekerja dengan Anak,3.70
+STOVE,REFRIGERATOR,PAM,CARPORT,GARASI,OVEN,GARDEN,MICROWAVE,WATER HEATER",,,,,,FETCH_ERROR: Server response: 500,ERROR
+",,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
+Pasangan Bekerja dengan Anak,Random_91,rumah,180,150,4,1,2,0,1,1,1,0,,Pasangan Bekerja dengan Anak,3.92
+C,,,,,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,"AC,GARDEN,STOVE",,,,,,,,,,,FETCH_ERROR: Server response: 500,ERROR
+,,,,,,,,,,,,,,FETCH_ERROR: Cannot read properties of undefined (reading 'charAt'),ERROR
