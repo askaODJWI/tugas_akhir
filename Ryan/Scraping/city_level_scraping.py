@@ -14,7 +14,7 @@ EXCEL_FILE = "city_url_list.xlsx"
 URL_COL_NAME = "city_url"
 OUTPUT_DIR = Path("hasil_scraping")
 JSON_DIR = OUTPUT_DIR / "per_city_json"
-HTML_DUMPS = OUTPUT_DIR / "html_dumps"
+HTML_DUMPS = OUTPUT_DIR / "city_html_dumps"
 OUTPUT_DIR.mkdir(exist_ok=True)
 JSON_DIR.mkdir(exist_ok=True)
 HTML_DUMPS.mkdir(exist_ok=True)
@@ -22,7 +22,7 @@ HTML_DUMPS.mkdir(exist_ok=True)
 BASE_URL = "https://www.olx.co.id/api/relevance/v4/search"
 CATEGORY = "5158"  # kategori rumah/apartemen
 PAGE_SIZE = 20
-SAFE_PAGE_LIMIT = 25  # batas kalau server memotong pagination
+SAFE_PAGE_LIMIT = 40  # batas kalau server memotong pagination
 SLEEP_BETWEEN_REQS = 0.4
 
 
