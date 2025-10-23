@@ -4,8 +4,8 @@ import pandas as pd
 import re
 
 INPUT_DIR = Path("../../Scraping/hasil_scraping/per_district_json")
-OUTPUT_CSV = Path("olx_merged.csv")
-OUTPUT_PARQUET = Path("olx_merged.parquet")
+OUTPUT_CSV = Path("raw_dataset.csv")
+OUTPUT_PARQUET = Path("raw_dataset.parquet")
 DEBUG_SAMPLE_OUT = Path("debug_samples_extracted.json")
 
 
