@@ -5,7 +5,7 @@ import csv
 import os
 from playwright.sync_api import sync_playwright
 
-# Lokasi
+# ID Lokasi Target
 LOCATION_MAP = {
     "Jakarta Selatan": "4000030",
     "Jakarta Timur": "4000031",
@@ -24,8 +24,29 @@ LOCATION_MAP = {
 }
 
 
+def main():
+    master_filename = "dataset_properti_raw.csv"
+
+    if os.path.exists(master_filename):
+        print(f"Menghapus {master_filename} lama untuk sesi baru...")
+        os.remove(master_filename)
+
+    for location_name, location_id in LOCATION_MAP.items():
+        print(f"\n>>> Target Lokasi: {location_name} (ID: {location_id})")
+
+        scrape_olx_playwright(
+            location_name=location_name,
+            location_id=location_id,
+            max_pages=50,
+            filename=master_filename,
+        )
+
+    print("\n=== Scraping Finished ===")
+    print(f"Cek file: {master_filename}")
+
+
 def extract_physical_data(parameters_list):
-    """Ekstraksi atribut fisik"""
+    """Ekstraksi atribut fisik dari JSON OLX"""
     data = {
         "Luas_bangunan": "",
         "Luas_tanah": "",
@@ -36,12 +57,17 @@ def extract_physical_data(parameters_list):
         "Fasilitas": "",
         "Lantai": "",
     }
+
     if not isinstance(parameters_list, list):
         return data
 
     for p in parameters_list:
+        if not isinstance(p, dict):
+            continue
+
         key = p.get("key")
         value = p.get("value")
+
         if key == "p_sqr_building":
             data["Luas_bangunan"] = value
         elif key == "p_sqr_land":
@@ -58,6 +84,7 @@ def extract_physical_data(parameters_list):
             data["Fasilitas"] = p.get("absoluteValue", "")
         elif key == "p_floor":
             data["Lantai"] = value
+
     return data
 
 
@@ -100,7 +127,7 @@ def scrape_olx_playwright(location_name, location_id, max_pages, filename):
             )
             page = context.new_page()
 
-            print("Membuka halaman utama OLX untuk bypass keamanan awal...")
+            print("  Membuka halaman utama OLX untuk bypass keamanan awal...")
             try:
                 page.goto(
                     "https://www.olx.co.id/dijual-rumah-apartemen_c5158",
@@ -108,13 +135,13 @@ def scrape_olx_playwright(location_name, location_id, max_pages, filename):
                     timeout=60000,
                 )
             except Exception as e:
-                print(f"[Peringatan] Gagal memuat halaman utama sempurna: {e}")
+                print(f"  [Peringatan] Gagal memuat halaman utama sempurna: {e}")
 
             time.sleep(8)
 
             for page_num in range(1, max_pages + 1):
                 print(
-                    f"Mengekstrak {location_name} - Halaman {page_num}/{max_pages}..."
+                    f"  -> Mengekstrak {location_name} - Halaman {page_num}/{max_pages}..."
                 )
 
                 api_url = (
@@ -132,16 +159,21 @@ def scrape_olx_playwright(location_name, location_id, max_pages, filename):
                     try:
                         res_json = json.loads(raw_json_text)
                     except json.JSONDecodeError:
-                        print(f"  [ERROR] Gagal membaca JSON.")
+                        print(f"  Gagal membaca JSON. Berhenti di halaman ini.")
                         break
 
                     ads = res_json.get("data", [])
                     if not ads:
-                        print(f"Tidak ada data lagi di halaman {page_num}.")
+                        print(
+                            f"  Tidak ada data lagi di halaman {page_num}. Beralih ke kota berikutnya."
+                        )
                         break
 
                     page_data = []
                     for ad in ads:
+                        if not isinstance(ad, dict):
+                            continue
+
                         raw_desc = ad.get("description", "")
                         clean_desc = (
                             raw_desc.replace("\n", " ").replace("\r", " ").strip()
@@ -150,24 +182,27 @@ def scrape_olx_playwright(location_name, location_id, max_pages, filename):
                         )
 
                         # Ekstraksi Koordinat
-                        locations_list = ad.get("locations", [])
+                        locations_list = ad.get("locations") or []
                         latitude = longitude = ""
-                        if locations_list:
+                        if locations_list and isinstance(locations_list[0], dict):
                             latitude = locations_list[0].get("lat", "")
                             longitude = locations_list[0].get("lon", "")
 
-                        # Ekstraksi Lokasi
-                        loc_res = ad.get("locations_resolved", {})
+                        # Ekstraksi Lokasi Geografis
+                        loc_res = ad.get("locations_resolved") or {}
                         provinsi = loc_res.get("ADMIN_LEVEL_1_name", "")
                         kota_kab = loc_res.get("ADMIN_LEVEL_3_name", "")
                         kecamatan = loc_res.get("SUBLOCALITY_LEVEL_1_name", "")
 
+                        # Ekstraksi Harga
+                        price_dict = ad.get("price") or {}
+                        value_dict = price_dict.get("value") or {}
+                        raw_price = value_dict.get("raw", "")
+
                         item = {
                             "ad_id": ad.get("id", ""),
                             "title": ad.get("title", ""),
-                            "price": ad.get("price", {})
-                            .get("value", {})
-                            .get("raw", ""),
+                            "price": raw_price,
                             "lat": latitude,
                             "lon": longitude,
                             "Provinsi": provinsi,
@@ -176,17 +211,18 @@ def scrape_olx_playwright(location_name, location_id, max_pages, filename):
                             "description": clean_desc,
                         }
 
-                        physical_info = extract_physical_data(ad.get("parameters", []))
+                        # Ekstraksi Parameter Fisik
+                        params_list = ad.get("parameters") or []
+                        physical_info = extract_physical_data(params_list)
+
                         item.update(physical_info)
                         page_data.append(item)
 
                     writer.writerows(page_data)
-                    print(
-                        f"  -> Berhasil menyimpan {len(page_data)} iklan ke {file_path}."
-                    )
+                    print(f"     Sukses menyimpan {len(page_data)} iklan.")
 
                 except Exception as e:
-                    print(f"  [ERROR] Terjadi kegagalan pada halaman {page_num}: {e}")
+                    print(f"  Terjadi kegagalan pada halaman {page_num}: {e}")
 
                 time.sleep(random.uniform(2.0, 4.0))
 
@@ -194,13 +230,4 @@ def scrape_olx_playwright(location_name, location_id, max_pages, filename):
 
 
 if __name__ == "__main__":
-    target_lokasi = "Surabaya Kota"
-    id_lokasi = LOCATION_MAP[target_lokasi]
-
-    scrape_olx_playwright(
-        location_name=target_lokasi,
-        location_id=id_lokasi,
-        max_pages=3,
-        filename="pilot_testing.csv",
-    )
-    print("Pilot testing selesai")
+    main()
