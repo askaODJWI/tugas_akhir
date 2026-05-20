@@ -127,7 +127,6 @@ def scrape_olx_playwright(location_name, location_id, max_pages, filename):
             )
             page = context.new_page()
 
-            print("  Membuka halaman utama OLX untuk bypass keamanan awal...")
             try:
                 page.goto(
                     "https://www.olx.co.id/dijual-rumah-apartemen_c5158",

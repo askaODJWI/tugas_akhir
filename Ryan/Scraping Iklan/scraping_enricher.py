@@ -181,7 +181,7 @@ def enrich_lamudi_data(input_filename, output_filename):
                     row["Lantai"] = raw_lantai if raw_lantai else "1.0"
 
                 cert_matches = re.findall(
-                    r"(?i)\b(SHM|HGB|SHGB|SHMSRS|PPJB|Petok\s*D|Strata\s*Title|Hak\s*Milik|IMB|AJB|PBG|BPHTB|BBN|PPh)\b",
+                    r"(?i)\b(SHM|HGB|SHGB|SHMSRS|PPJB|Petok\s*D|Strata\s*Title|Hak\s*Milik|IMB|AJB|PBG|BPHTB|BBN|PPh|PBB)\b",
                     desc,
                 )
                 if cert_matches:
@@ -218,7 +218,7 @@ def enrich_lamudi_data(input_filename, output_filename):
                     )
                 else:
                     safe_desc = re.sub(
-                        r"(?i)\b(surabaya|jakarta|sidoarjo|bogor|depok|tangerang|bekasi|jawa|dki|banten|jl\.?|jalan|raya|desa|kelurahan|klampis\s*semolo|kecamatan|semolowaru|kota|kabupaten|provinsi)\s+(utara|selatan|timur|barat|pusat)\b",
+                        r"(?i)\b(asia|surabaya|sby|jakarta|jkt|sidoarjo|sdj|bogor|bgr|depok|dpk|tangerang|tng|bekasi|bks|jawa|dki|banten|jl\.?|jalan|kemang|puyuh|mega\s*kuningan|sentul|setu|raya|desa|kelurahan|klampis\s*semolo|sutorejo|kuningan|kalibata|pejaten|cipinang\s*besar|cempaka\s*putih|kelapa\s*gading|pademangan|meruya|karawaci|cikarang|tambun|kertajaya\s*indah|kecamatan|semolowaru|tebet|pondok\s*gede|balaraja|tambun|darmo\s*permai|kota|kabupaten|provinsi)\s+(utara|selatan|timur|barat|pusat)\b",
                         "",
                         desc,
                     )
