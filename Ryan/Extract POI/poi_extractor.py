@@ -4,6 +4,7 @@ import time
 import random
 import os
 import csv
+import math
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE = os.path.join(BASE_DIR, "..", "Scraping Iklan", "dataset_properti.csv")
@@ -22,8 +23,24 @@ CATEGORIES_COUNT = [
     "POI_Makanan_Minuman",
     "POI_Fasilitas_Keuangan",
 ]
-
 CATEGORIES_DETAIL = [f"Detail_{cat}" for cat in CATEGORIES_COUNT]
+
+
+def haversine_distance(lat1, lon1, lat2, lon2):
+    """Menghitung jarak dalam meter antara dua titik koordinat"""
+    R = 6371000  # Jari-jari bumi dalam meter
+    phi1 = math.radians(lat1)
+    phi2 = math.radians(lat2)
+    delta_phi = math.radians(lat2 - lat1)
+    delta_lambda = math.radians(lon2 - lon1)
+
+    a = (
+        math.sin(delta_phi / 2.0) ** 2
+        + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lambda / 2.0) ** 2
+    )
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    return R * c
 
 
 def kuesioner_kategori_poi(tags):
@@ -69,7 +86,7 @@ def kuesioner_kategori_poi(tags):
 def fetch_poi_data(lat, lon, max_retries=3):
     overpass_url = "https://overpass-api.de/api/interpreter"
     headers = {
-        "User-Agent": "Riset_TA_Sistem_Rekomendasi_ITS_5026221087/2.0 (ryanrajata@gmail.com)",
+        "User-Agent": "TA_Sistem_Rekomendasi_ITS_5026221087/3.0 (ryanrajata@gmail.com)",
         "Referer": "http://localhost/",
         "Accept": "application/json",
     }
@@ -132,9 +149,7 @@ def main():
             for row in reader:
                 processed_coords.add(f"{row['Latitude']},{row['Longitude']}")
 
-    print(
-        f"Mengekstrak fitur Semantik & Densitas POI untuk {len(df_coords)} koordinat unik..."
-    )
+    print(f"Mengekstrak Densitas, Teks, & Jarak untuk {len(df_coords)} koordinat...")
 
     with open(CHECKPOINT_FILE, mode="a", newline="", encoding="utf-8") as f:
         header = ["Latitude", "Longitude"] + CATEGORIES_COUNT + CATEGORIES_DETAIL
@@ -150,38 +165,68 @@ def main():
             if coord_key in processed_coords:
                 continue
 
-            print(f"[{idx+1}/{len(df_coords)}] Mengekstrak koordinat ({lat}, {lon})...")
+            print(f"[{idx+1}/{len(df_coords)}] Memproses koordinat ({lat}, {lon})...")
             elements, success = fetch_poi_data(lat, lon)
 
             if success:
                 counts = {cat: 0 for cat in CATEGORIES_COUNT}
-                names = {cat: set() for cat in CATEGORIES_COUNT}
+                names_with_distance = {cat: {} for cat in CATEGORIES_COUNT}
 
                 for element in elements:
                     tags = element.get("tags", {})
                     category = kuesioner_kategori_poi(tags)
+
                     if category:
                         counts[category] += 1
                         poi_name = tags.get("name", "").strip()
+
                         if poi_name:
-                            names[category].add(poi_name)
+                            poi_lat = element.get("lat") or element.get(
+                                "center", {}
+                            ).get("lat")
+                            poi_lon = element.get("lon") or element.get(
+                                "center", {}
+                            ).get("lon")
+
+                            if poi_lat and poi_lon:
+                                distance = haversine_distance(
+                                    lat, lon, poi_lat, poi_lon
+                                )
+
+                                if (
+                                    poi_name not in names_with_distance[category]
+                                    or distance
+                                    < names_with_distance[category][poi_name]
+                                ):
+                                    names_with_distance[category][poi_name] = distance
 
                 result_row = {"Latitude": lat, "Longitude": lon}
                 result_row.update(counts)
 
                 for cat in CATEGORIES_COUNT:
                     detail_key = f"Detail_{cat}"
-                    result_row[detail_key] = ", ".join(sorted(names[cat]))
+                    formatted_names = []
+
+                    sorted_pois = sorted(
+                        names_with_distance[cat].items(), key=lambda item: item[1]
+                    )
+
+                    for name, dist in sorted_pois:
+                        if dist < 1000:
+                            dist_str = f"{int(dist)}m"
+                        else:
+                            dist_str = f"{round(dist/1000, 1)}km"
+
+                        formatted_names.append(f"{name} ({dist_str})")
+
+                    result_row[detail_key] = ", ".join(formatted_names)
 
                 writer.writerow(result_row)
                 f.flush()
-
                 processed_coords.add(coord_key)
-                print(
-                    f"      -> Ditemukan {sum(counts.values())} POI. Semantic Text berhasil ditarik."
-                )
+                print(f"      -> Ditemukan {sum(counts.values())} POI.")
             else:
-                print(f"      -> Melewati koordinat ini setelah beberapa kali gagal.")
+                print(f"      -> Melewati koordinat ini setelah gagal API.")
 
             time.sleep(random.uniform(2.0, 4.0))
 
@@ -194,7 +239,7 @@ def main():
     df_final[CATEGORIES_DETAIL] = df_final[CATEGORIES_DETAIL].fillna("")
 
     df_final.to_csv(OUTPUT_FILE, index=False)
-    print(f"\nProses Selesai. Cek file di: {OUTPUT_FILE}")
+    print(f"\nProses selesai. Cek file di: {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
