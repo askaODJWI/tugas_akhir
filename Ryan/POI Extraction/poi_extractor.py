@@ -239,7 +239,7 @@ def main():
     df_final[CATEGORIES_DETAIL] = df_final[CATEGORIES_DETAIL].fillna("")
 
     df_final.to_csv(OUTPUT_FILE, index=False)
-    print(f"\nProses selesai. Cek file di: {OUTPUT_FILE}")
+    print(f"\nProses selesai. Cek file {os.path.basename(OUTPUT_FILE)}")
 
 
 if __name__ == "__main__":
