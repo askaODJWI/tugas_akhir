@@ -22,6 +22,7 @@ CATEGORIES_COUNT = [
     "POI_Tempat_Ibadah",
     "POI_Makanan_Minuman",
     "POI_Fasilitas_Keuangan",
+    "POI_Lainnya",
 ]
 CATEGORIES_DETAIL = [f"Detail_{cat}" for cat in CATEGORIES_COUNT]
 
@@ -51,18 +52,27 @@ def kuesioner_kategori_poi(tags):
     railway = tags.get("railway", "")
     aeroway = tags.get("aeroway", "")
 
-    if amenity in ["school", "university", "kindergarten", "college", "library"]:
+    if amenity in [
+        "school",
+        "university",
+        "kindergarten",
+        "college",
+        "library",
+        "language_school",
+        "training",
+        "music_school",
+    ]:
         return "POI_Pendidikan"
     elif amenity in ["hospital", "clinic", "pharmacy", "doctors", "dentist"]:
         return "POI_Kesehatan_Kebugaran"
     elif (
-        amenity == "bus_station"
+        amenity in ["bus_station", "taxi"]
         or highway == "bus_stop"
         or railway in ["station", "halt", "subway_entrance"]
         or aeroway == "aerodrome"
     ):
         return "POI_Transportasi"
-    elif shop != "" or amenity == "market":
+    elif shop != "" or amenity in ["marketplace"]:
         return "POI_Perbelanjaan"
     elif leisure in [
         "park",
@@ -77,8 +87,22 @@ def kuesioner_kategori_poi(tags):
         return "POI_Tempat_Ibadah"
     elif amenity in ["restaurant", "cafe", "fast_food", "food_court", "bar"]:
         return "POI_Makanan_Minuman"
-    elif amenity in ["bank", "atm"]:
+    elif amenity in ["bank", "atm", "bureau_de_change", "payment_centre"]:
         return "POI_Fasilitas_Keuangan"
+    elif amenity in [
+        "grave_yard",
+        "animal_boarding",
+        "animal_training",
+        "dive_centre",
+        "internet_cafe",
+        "public_bath",
+        "vending_machine",
+        "cinema",
+        "theatre",
+        "police",
+        "post_office",
+    ]:
+        return "POI_Lainnya"
 
     return None
 

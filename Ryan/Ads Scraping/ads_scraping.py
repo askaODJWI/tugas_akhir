@@ -32,7 +32,7 @@ def main():
         os.remove(master_filename)
 
     for location_name, location_id in LOCATION_MAP.items():
-        print(f"\n>>> Target Lokasi: {location_name} (ID: {location_id})")
+        print(f"\nTarget Lokasi: {location_name} (ID: {location_id})")
 
         scrape_olx_playwright(
             location_name=location_name,
@@ -41,7 +41,6 @@ def main():
             filename=master_filename,
         )
 
-    print("\n=== Scraping Finished ===")
     print(f"Cek file: {master_filename}")
 
 
@@ -134,7 +133,7 @@ def scrape_olx_playwright(location_name, location_id, max_pages, filename):
                     timeout=60000,
                 )
             except Exception as e:
-                print(f"  [Peringatan] Gagal memuat halaman utama sempurna: {e}")
+                print(f"  Gagal memuat halaman utama sempurna: {e}")
 
             time.sleep(8)
 
