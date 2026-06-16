@@ -47,7 +47,7 @@ def determine_persona(kamar_tidur, kamar_mandi, lantai, prioritas):
     # Kamar Tidur
     if kamar_tidur == 1:
         score_single += 2
-    elif kamar_tidur >= 3:
+    elif kamar_tidur > 1:
         score_family += 2
 
     # Kamar Mandi
@@ -139,9 +139,7 @@ def scale_luas_to_15(luas, target_type):
     return 3
 
 
-# FUNGSI EXPLAINABILITY (N-GRAM)
 def get_matched_keywords(user_query, corpus_text):
-    """Mengekstrak kata kunci dan frasa (n-grams) dari kueri pengguna yang relevan dengan iklan."""
     stopwords = {
         "yang",
         "di",
@@ -173,29 +171,22 @@ def get_matched_keywords(user_query, corpus_text):
         "besar",
         "bagus",
         "tempat",
+        "mobil",
+        "pusat",
     }
-
     words = re.findall(r"\b[a-zA-Z0-9]{3,}\b", str(user_query).lower())
 
-    # N-Grams (Trigrams, Bigrams, Unigrams)
     ngrams = []
-
-    # 3-grams (Frasa 3 kata)
     for i in range(len(words) - 2):
         ngrams.append(f"{words[i]} {words[i+1]} {words[i+2]}")
-
-    # 2-grams (Frasa 2 kata)
     for i in range(len(words) - 1):
         ngrams.append(f"{words[i]} {words[i+1]}")
-
-    # 1-grams (Kata tunggal)
     for w in words:
         ngrams.append(w)
 
     matched = []
     corpus_lower = str(corpus_text).lower()
 
-    # Algoritma "Longest Match First"
     for phrase in ngrams:
         phrase_words = phrase.split()
         if all(w in stopwords for w in phrase_words):
@@ -207,7 +198,6 @@ def get_matched_keywords(user_query, corpus_text):
                 if phrase in m:
                     is_subpart = True
                     break
-
             if not is_subpart:
                 matched.append(phrase)
 
@@ -272,9 +262,7 @@ tipe_properti = st.sidebar.selectbox(
 st.sidebar.header("Kriteria Preferensi")
 kamar_tidur = st.sidebar.slider("Minimal Kamar Tidur:", 1, 11, 3)
 kamar_mandi = st.sidebar.slider("Minimal Kamar Mandi:", 1, 11, 3)
-lantai = st.sidebar.number_input(
-    "Jumlah Lantai yang Diinginkan:", min_value=1, value=2, step=1
-)
+lantai = st.sidebar.number_input("Minimal Jumlah Lantai:", min_value=1, value=2, step=1)
 
 prioritas = st.sidebar.selectbox(
     "Fasilitas Lingkungan Paling Penting:",
@@ -293,7 +281,7 @@ st.sidebar.success(f"**Persona Terdeteksi:**\n{persona}")
 # Panel Memori Eksklusi
 st.sidebar.header("Memori Eksklusi")
 if len(st.session_state.exclusion_list) > 0:
-    st.sidebar.warning("Atribut berikut sedang dihindari:")
+    st.sidebar.warning("Atribut & Kata Kunci berikut sedang dihindari:")
     for excl in st.session_state.exclusion_list:
         st.sidebar.markdown(f"- 🚫 {excl}")
     if st.sidebar.button("Bersihkan Memori Eksklusi"):
@@ -303,25 +291,46 @@ else:
     st.sidebar.info("Belum ada atribut yang dieksklusi.")
 
 # MAIN RECOMMENDATION ENGINE
-st.subheader("Apa kriteria hunian idaman Anda?")
-user_query = st.text_input(
-    "Gambarkan nuansa, fasilitas, dan akses ke objek spesifik idaman Anda:",
-    placeholder="Contoh: Rumah asri dan tenang, memiliki parkiran mobil dan halaman terbuka, serta dekat dengan pusat bisnis.",
-)
+st.subheader("🔍 Temukan Hunian Idaman Anda")
+
+col_pos, col_neg = st.columns(2)
+
+with col_pos:
+    user_query = st.text_area(
+        "Apa yang ANDA CARI?",
+        placeholder="Contoh: rumah asri dan tenang, memiliki parkiran mobil dan halaman terbuka, serta dekat dengan pusat bisnis.",
+        height=100,
+    )
+
+with col_neg:
+    negative_query = st.text_area(
+        "Apa yang ANDA HINDARI?",
+        placeholder="Contoh: sutet, banjir, tusuk sate, gang sempit (Masukkan keyword(s), pisahkan dengan koma.)",
+        height=100,
+    )
 
 if st.button("Cari Rekomendasi") or user_query:
     if user_query.strip() == "":
-        st.warning("Mohon masukkan deskripsi hunian idaman Anda.")
+        st.warning(
+            "Mohon masukkan deskripsi hunian idaman Anda pada kolom pencarian sebelah kiri."
+        )
     else:
         with st.spinner("Mempersiapkan rekomendasi terbaik untuk Anda..."):
+
+            # Menangkap input Negative Feedback ke Memori Eksklusi
+            if negative_query.strip() != "":
+                neg_terms = [
+                    term.strip() for term in negative_query.split(",") if term.strip()
+                ]
+                for term in neg_terms:
+                    if term not in st.session_state.exclusion_list:
+                        st.session_state.exclusion_list.append(term)
 
             # INITIAL FILTERING
             df_filtered = df_properti.copy()
             if kota_pilihan != "Semua Kota":
                 df_filtered = df_filtered[
-                    df_filtered["Kota_Kabupaten"].str.contains(
-                        kota_pilihan, case=False, na=False
-                    )
+                    df_filtered["Kota_Kabupaten"].str.lower() == kota_pilihan.lower()
                 ]
             if tipe_properti != "Semua Tipe":
                 df_filtered = df_filtered[
@@ -566,7 +575,7 @@ if st.button("Cari Rekomendasi") or user_query:
                     by="Total_Score", ascending=False
                 ).head(10)
 
-                # UI HASIL REKOMENDASI & EXCLUSION MECHANISM
+                # UI HASIL REKOMENDASI
                 st.write(f"### Menampilkan Top {len(df_ranked)} Rekomendasi Teratas")
 
                 for rank, (idx, row) in enumerate(df_ranked.iterrows(), start=1):
@@ -623,7 +632,6 @@ if st.button("Cari Rekomendasi") or user_query:
                         with st.expander(
                             "💡 Mengapa properti ini direkomendasikan untuk Anda?"
                         ):
-                            # Alasan Semantik dengan Keyword Traceback
                             match_pct = round(row["SBERT_Raw"] * 100, 1)
                             matched_kws = get_matched_keywords(
                                 user_query, row["Korpus_Properti"]
@@ -632,19 +640,17 @@ if st.button("Cari Rekomendasi") or user_query:
                             if matched_kws:
                                 kw_str = ", ".join([f"**{k}**" for k in matched_kws])
                                 st.markdown(
-                                    f"**Kesesuaian Narasi ({match_pct}%):** Narasi iklan ini selaras dengan pencarian Anda. Kata kunci relevan yang ditemukan: {kw_str}."
+                                    f"**Kesesuaian Narasi ({match_pct}%):** Narasi iklan ini selaras dengan pencarian Anda. Kata kunci relevan: {kw_str}."
                                 )
                             else:
                                 st.markdown(
-                                    f"**Kesesuaian Narasi ({match_pct}%):** Narasi iklan ini memiliki konteks yang sesuai dengan deskripsi idaman Anda."
+                                    f"**Kesesuaian Narasi ({match_pct}%):** Narasi iklan ini memiliki kedekatan konteks dengan deskripsi idaman Anda."
                                 )
 
-                            # Alasan Fisik
                             st.markdown(
                                 f"**Karakteristik Fisik:** Properti memenuhi standar minimum ({lantai_str} Lantai, {row['Kamar_Tidur']} Kamar Tidur, {row['Kamar_Mandi']} Kamar Mandi), cocok dengan gaya hidup **{persona}**."
                             )
 
-                            # Alasan Geospasial
                             prioritas_map = {
                                 "Akses Transportasi Umum": "Detail_POI_Transportasi",
                                 "Akses Pendidikan": "Detail_POI_Pendidikan",
@@ -654,18 +660,15 @@ if st.button("Cari Rekomendasi") or user_query:
                             detail_col = prioritas_map.get(prioritas)
 
                             if detail_col and pd.notna(row.get(detail_col)):
-                                # Menyaring POI dalam radius <= 600m
                                 pois_within_walkable = filter_poi_by_radius(
                                     row[detail_col], max_dist_m=600
                                 )
-
                                 if pois_within_walkable:
                                     poi_str = ", ".join(pois_within_walkable)
                                     st.markdown(
-                                        f"**Karakteristik Geospasial:** Sangat mendukung prioritas **{prioritas}** Anda. Terdapat fasilitas: *{poi_str}*."
+                                        f"**Karakteristik Geospasial:** Sangat mendukung prioritas **{prioritas}** Anda. Fasilitas dalam radius <= 600m: *{poi_str}*."
                                     )
                                 else:
-                                    # Fallback
                                     closest_pois = str(row[detail_col]).split(",")[:1]
                                     poi_str = ", ".join(closest_pois).strip()
                                     st.markdown(
@@ -673,10 +676,10 @@ if st.button("Cari Rekomendasi") or user_query:
                                     )
                             else:
                                 st.markdown(
-                                    f"**Karakteristik Geospasial:** Memenuhi standar kecocokan radius spasial sistem (1.25 km) untuk kelengkapan fasilitas publik di sekitar properti ini."
+                                    f"**Karakteristik Geospasial:** Memenuhi standar kecocokan radius spasial sistem (1.25 km) untuk kelengkapan fasilitas publik di sekitar properti."
                                 )
 
-                        # Fitur Negative Feedback
+                        # ITEM-LEVEL NEGATIVE FEEDBACK
                         with st.expander("👎 Kurang Suka dengan Properti Ini?"):
                             opsi_eksklusi = []
                             if pd.notna(row["Fasilitas"]):
