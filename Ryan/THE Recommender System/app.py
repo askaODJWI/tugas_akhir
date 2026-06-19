@@ -17,6 +17,30 @@ EMBEDDING_FILE = os.path.join(
 )
 MODEL_NAME = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
 
+UNEXCLUDABLE_FACILITIES = {
+    "air",
+    "listrik",
+    "dapur terpadu",
+    "internet",
+    "keamanan",
+    "kitchen set",
+    "pemandangan panorama",
+    "tangki air",
+    "teras",
+    "ruang layanan",
+    "berperabot lengkap",
+    "ruang kantor",
+    "gym",
+    "kompor",
+    "kulkas",
+    "pemanas air",
+    "lemari pakaian bawaan",
+    "gorden",
+    "apar (alat pemadam api ringan)",
+    "telepon",
+    "akses bagi penyandang disabilitas",
+}
+
 # Memori Sesi untuk Exclusion List
 if "exclusion_list" not in st.session_state:
     st.session_state.exclusion_list = []
@@ -44,25 +68,21 @@ def determine_persona(kamar_tidur, kamar_mandi, lantai, prioritas):
     score_single = 0
     score_family = 0
 
-    # Kamar Tidur
     if kamar_tidur == 1:
         score_single += 2
     elif kamar_tidur > 1:
         score_family += 2
 
-    # Kamar Mandi
     if kamar_mandi == 1:
         score_single += 1
     elif kamar_mandi > 1:
         score_family += 1
 
-    # Lantai
     if lantai == 1:
         score_single += 1
     elif lantai >= 2:
         score_family += 1
 
-    # Prioritas
     if prioritas == "Akses Pendidikan":
         score_family += 2
     elif prioritas == "Akses Transportasi Umum":
@@ -228,7 +248,7 @@ def filter_poi_by_radius(poi_str, max_dist_m=600):
 
 
 # UI PENGGUNA (SIDEBAR)
-st.title("🏡 Sistem Rekomendasi Properti")
+st.title("Sistem Rekomendasi Properti")
 st.markdown("Pendekatan Semantic-Geospatial dengan Negative Feedback Handling")
 
 st.sidebar.header("Kriteria Wajib")
@@ -281,7 +301,7 @@ st.sidebar.success(f"**Persona Terdeteksi:**\n{persona}")
 # Panel Memori Eksklusi
 st.sidebar.header("Memori Eksklusi")
 if len(st.session_state.exclusion_list) > 0:
-    st.sidebar.warning("Atribut & Kata Kunci berikut sedang dihindari:")
+    st.sidebar.warning("Hal berikut sedang dihindari:")
     for excl in st.session_state.exclusion_list:
         st.sidebar.markdown(f"- 🚫 {excl}")
     if st.sidebar.button("Bersihkan Memori Eksklusi"):
@@ -297,14 +317,14 @@ col_pos, col_neg = st.columns(2)
 
 with col_pos:
     user_query = st.text_area(
-        "Apa yang ANDA CARI?",
+        "Apa yang **ANDA CARI?**",
         placeholder="Contoh: rumah asri dan tenang, memiliki parkiran mobil dan halaman terbuka, serta dekat dengan pusat bisnis.",
         height=100,
     )
 
 with col_neg:
     negative_query = st.text_area(
-        "Apa yang ANDA HINDARI?",
+        "Apa yang **ANDA HINDARI?**",
         placeholder="Contoh: sutet, banjir, tusuk sate, gang sempit (Masukkan keyword(s), pisahkan dengan koma.)",
         height=100,
     )
@@ -317,7 +337,6 @@ if st.button("Cari Rekomendasi") or user_query:
     else:
         with st.spinner("Mempersiapkan rekomendasi terbaik untuk Anda..."):
 
-            # Menangkap input Negative Feedback ke Memori Eksklusi
             if negative_query.strip() != "":
                 neg_terms = [
                     term.strip() for term in negative_query.split(",") if term.strip()
@@ -354,7 +373,6 @@ if st.button("Cari Rekomendasi") or user_query:
                     "Tidak ada properti yang memenuhi kriteria. Coba longgarkan budget atau bersihkan memori eksklusi Anda."
                 )
             else:
-                # SBERT SIMILARITY
                 query_vector = model.encode([user_query], convert_to_numpy=True)
                 filtered_indices = df_filtered.index.tolist()
                 filtered_embeddings = embeddings[filtered_indices]
@@ -365,7 +383,13 @@ if st.button("Cari Rekomendasi") or user_query:
                 df_filtered["SBERT_Raw"] = sim_scores_raw
 
                 filtered_poi = poi_matrix[filtered_indices]
+
                 final_scores = []
+                k1_scores, k2_scores, k3_scores = [], [], []
+
+                k1_cfs, k1_sfs = [], []
+                k2_cfs, k2_sfs = [], []
+                k3_cfs, k3_sfs = [], []
 
                 for i, (_, row) in enumerate(df_filtered.iterrows()):
                     poi_vals = [scale_value(val) for val in filtered_poi[i]]
@@ -473,7 +497,7 @@ if st.button("Cari Rekomendasi") or user_query:
                                 ),
                                 (
                                     5
-                                    if row["Kamar_Tidur"] > 2
+                                    if row["Kamar_Tidur"] > 1
                                     else gap_to_weight(row["Kamar_Tidur"] - 3)
                                 ),
                                 (
@@ -568,143 +592,253 @@ if st.button("Cari Rekomendasi") or user_query:
                         score_k3 = (cf_k3 * 0.6) + (sf_k3 * 0.4)
 
                     total_score = (score_k1 * 0.4) + (score_k2 * 0.3) + (score_k3 * 0.3)
+
+                    k1_cfs.append(cf_k1)
+                    k1_sfs.append(sf_k1)
+                    k2_cfs.append(cf_k2)
+                    k2_sfs.append(sf_k2)
+                    k3_cfs.append(cf_k3)
+                    k3_sfs.append(sf_k3)
+
+                    k1_scores.append(score_k1)
+                    k2_scores.append(score_k2)
+                    k3_scores.append(score_k3)
                     final_scores.append(total_score)
 
-                df_filtered["Total_Score"] = final_scores
+                df_filtered["K1_CF"] = k1_cfs
+                df_filtered["K1_SF"] = k1_sfs
+                df_filtered["Skor_K1_Fisik"] = k1_scores
+
+                df_filtered["K2_CF"] = k2_cfs
+                df_filtered["K2_SF"] = k2_sfs
+                df_filtered["Skor_K2_Lokasi"] = k2_scores
+
+                df_filtered["K3_CF"] = k3_cfs
+                df_filtered["K3_SF"] = k3_sfs
+                df_filtered["Skor_K3_Fasilitas"] = k3_scores
+
+                df_filtered["Final_Score"] = final_scores
+
                 df_ranked = df_filtered.sort_values(
-                    by="Total_Score", ascending=False
+                    by="Final_Score", ascending=False
                 ).head(10)
 
-                # UI HASIL REKOMENDASI
-                st.write(f"### Menampilkan Top {len(df_ranked)} Rekomendasi Teratas")
+                # UI TABS REKOMENDASI & ANALISIS PERHITUNGAN
+                st.write("---")
+                tab1, tab2 = st.tabs(
+                    [
+                        "Rekomendasi",
+                        "Analisis Perhitungan",
+                    ]
+                )
 
-                for rank, (idx, row) in enumerate(df_ranked.iterrows(), start=1):
-                    with st.container():
-                        st.markdown(f"#### {rank}. {row['Judul']}")
+                with tab1:
+                    st.write(
+                        f"### Menampilkan Top {len(df_ranked)} Rekomendasi Teratas"
+                    )
 
-                        km_tamu = (
-                            f"{int(row['Kamar_Mandi_Tamu'])} Kamar Mandi Tamu"
-                            if pd.notna(row["Kamar_Mandi_Tamu"])
-                            else "Kamar Mandi Tamu: None"
-                        )
-                        fasilitas = (
-                            row["Fasilitas"] if pd.notna(row["Fasilitas"]) else "None"
-                        )
-                        daya_listrik = (
-                            f"{(row['Daya_Listrik_Watt'])} Watt"
-                            if pd.notna(row["Daya_Listrik_Watt"])
-                            else "None"
-                        )
-                        sertifikat = (
-                            row["Sertifikat"] if pd.notna(row["Sertifikat"]) else "None"
-                        )
-                        arah_hadap = (
-                            row["Arah_Hadap"] if pd.notna(row["Arah_Hadap"]) else "None"
-                        )
-                        url_sumber = (
-                            row["URL_Sumber"] if pd.notna(row["URL_Sumber"]) else "#"
-                        )
-
-                        lantai_val = row["Lantai"]
-                        if pd.notna(lantai_val):
-                            lantai_str = (
-                                f"{int(lantai_val)}"
-                                if float(lantai_val).is_integer()
-                                else f"{lantai_val}"
-                            )
-                        else:
-                            lantai_str = "None"
-
-                        st.markdown(
-                            f"**Harga:** Rp {row['Harga']:,.0f} | **Lokasi:** {row['Kecamatan']}, {row['Kota_Kabupaten']}"
-                        )
-                        st.markdown(
-                            f"**Spesifikasi:** {row['Tipe_Properti'].title()} | {lantai_str} Lantai | {row['Kamar_Tidur']} Kamar Tidur | {row['Kamar_Mandi']} Kamar Mandi | {km_tamu}"
-                        )
-                        st.caption(f"Fasilitas: {fasilitas}")
-                        st.caption(
-                            f"Daya Listrik: {daya_listrik} | Sertifikat: {sertifikat} | Arah Hadap: {arah_hadap}"
-                        )
-
-                        st.markdown(f"[🔗 **Link Iklan**]({url_sumber})")
-
-                        # FITUR EXPLAINABILITY
-                        with st.expander(
-                            "💡 Mengapa properti ini direkomendasikan untuk Anda?"
-                        ):
-                            match_pct = round(row["SBERT_Raw"] * 100, 1)
-                            matched_kws = get_matched_keywords(
-                                user_query, row["Korpus_Properti"]
+                    for rank, (idx, row) in enumerate(df_ranked.iterrows(), start=1):
+                        with st.container():
+                            st.markdown(
+                                f"#### {rank}. {row['Judul']} *(Skor Final: {row['Final_Score']:.2f}/5.00)*"
                             )
 
-                            if matched_kws:
-                                kw_str = ", ".join([f"**{k}**" for k in matched_kws])
-                                st.markdown(
-                                    f"**Kesesuaian Narasi ({match_pct}%):** Narasi iklan ini selaras dengan pencarian Anda. Kata kunci relevan: {kw_str}."
+                            km_tamu = (
+                                f"{int(row['Kamar_Mandi_Tamu'])} Kamar Mandi Tamu"
+                                if pd.notna(row["Kamar_Mandi_Tamu"])
+                                else "Kamar Mandi Tamu: None"
+                            )
+                            fasilitas = (
+                                row["Fasilitas"]
+                                if pd.notna(row["Fasilitas"])
+                                else "None"
+                            )
+                            daya_listrik = (
+                                f"{(row['Daya_Listrik_Watt'])} Watt"
+                                if pd.notna(row["Daya_Listrik_Watt"])
+                                else "None"
+                            )
+                            sertifikat = (
+                                row["Sertifikat"]
+                                if pd.notna(row["Sertifikat"])
+                                else "None"
+                            )
+                            arah_hadap = (
+                                row["Arah_Hadap"]
+                                if pd.notna(row["Arah_Hadap"])
+                                else "None"
+                            )
+                            url_sumber = (
+                                row["URL_Sumber"]
+                                if pd.notna(row["URL_Sumber"])
+                                else "#"
+                            )
+
+                            lantai_val = row["Lantai"]
+                            if pd.notna(lantai_val):
+                                lantai_str = (
+                                    f"{int(lantai_val)}"
+                                    if float(lantai_val).is_integer()
+                                    else f"{lantai_val}"
                                 )
                             else:
-                                st.markdown(
-                                    f"**Kesesuaian Narasi ({match_pct}%):** Narasi iklan ini memiliki kedekatan konteks dengan deskripsi idaman Anda."
-                                )
+                                lantai_str = "None"
 
                             st.markdown(
-                                f"**Karakteristik Fisik:** Properti memenuhi standar minimum ({lantai_str} Lantai, {row['Kamar_Tidur']} Kamar Tidur, {row['Kamar_Mandi']} Kamar Mandi), cocok dengan gaya hidup **{persona}**."
+                                f"**Harga:** Rp {row['Harga']:,.0f} | **Lokasi:** {row['Kecamatan']}, {row['Kota_Kabupaten']}"
+                            )
+                            st.markdown(
+                                f"**Spesifikasi:** {row['Tipe_Properti'].title()} | {lantai_str} Lantai | {row['Kamar_Tidur']} Kamar Tidur | {row['Kamar_Mandi']} Kamar Mandi | {km_tamu}"
+                            )
+                            st.caption(f"Fasilitas: {fasilitas}")
+                            st.caption(
+                                f"Daya Listrik: {daya_listrik} | Sertifikat: {sertifikat} | Arah Hadap: {arah_hadap}"
                             )
 
-                            prioritas_map = {
-                                "Akses Transportasi Umum": "Detail_POI_Transportasi",
-                                "Akses Pendidikan": "Detail_POI_Pendidikan",
-                                "Akses Klinik & Rumah Sakit": "Detail_POI_Kesehatan_Kebugaran",
-                                "Akses Pusat Belanja & Kuliner": "Detail_POI_Perbelanjaan",
-                            }
-                            detail_col = prioritas_map.get(prioritas)
+                            st.markdown(f"[🔗 **Link Iklan**]({url_sumber})")
 
-                            if detail_col and pd.notna(row.get(detail_col)):
-                                pois_within_walkable = filter_poi_by_radius(
-                                    row[detail_col], max_dist_m=600
+                            # FITUR EXPLAINABILITY
+                            with st.expander(
+                                "💡 Mengapa properti ini direkomendasikan untuk Anda?"
+                            ):
+                                match_pct = round(row["SBERT_Raw"] * 100, 1)
+                                matched_kws = get_matched_keywords(
+                                    user_query, row["Korpus_Properti"]
                                 )
-                                if pois_within_walkable:
-                                    poi_str = ", ".join(pois_within_walkable)
+
+                                if matched_kws:
+                                    kw_str = ", ".join(
+                                        [f"**{k}**" for k in matched_kws]
+                                    )
                                     st.markdown(
-                                        f"**Karakteristik Geospasial:** Sangat mendukung prioritas **{prioritas}** Anda. Fasilitas dalam radius <= 600m: *{poi_str}*."
+                                        f"**Kesesuaian Narasi ({match_pct}%):** Narasi iklan ini selaras dengan pencarian Anda. Keyword(s) relevan: {kw_str}."
                                     )
                                 else:
-                                    closest_pois = str(row[detail_col]).split(",")[:1]
-                                    poi_str = ", ".join(closest_pois).strip()
                                     st.markdown(
-                                        f"**Karakteristik Geospasial:** Mendukung prioritas **{prioritas}** Anda. Fasilitas terdekat: *{poi_str}*."
+                                        f"**Kesesuaian Narasi ({match_pct}%):** Narasi iklan ini memiliki kedekatan konteks dengan deskripsi idaman Anda."
                                     )
-                            else:
+
                                 st.markdown(
-                                    f"**Karakteristik Geospasial:** Memenuhi standar kecocokan radius spasial sistem (1.25 km) untuk kelengkapan fasilitas publik di sekitar properti."
+                                    f"**Karakteristik Fisik:** Properti memenuhi standar minimum ({lantai_str} Lantai, {row['Kamar_Tidur']} Kamar Tidur, {row['Kamar_Mandi']} Kamar Mandi), cocok dengan gaya hidup **{persona}**."
                                 )
 
-                        # ITEM-LEVEL NEGATIVE FEEDBACK
-                        with st.expander("👎 Kurang Suka dengan Properti Ini?"):
-                            opsi_eksklusi = []
-                            if pd.notna(row["Fasilitas"]):
-                                fasilitas_list = [
-                                    f.strip() for f in str(row["Fasilitas"]).split(",")
-                                ]
-                                opsi_eksklusi.extend(fasilitas_list)
+                                prioritas_map = {
+                                    "Akses Transportasi Umum": "Detail_POI_Transportasi",
+                                    "Akses Pendidikan": "Detail_POI_Pendidikan",
+                                    "Akses Klinik & Rumah Sakit": "Detail_POI_Kesehatan_Kebugaran",
+                                    "Akses Pusat Belanja & Kuliner": "Detail_POI_Perbelanjaan",
+                                }
+                                detail_col = prioritas_map.get(prioritas)
 
-                            selected_excl = st.multiselect(
-                                "Pilih atribut spesifik yang ingin dihindari pada pencarian berikutnya:",
-                                opsi_eksklusi,
-                                key=f"multi_{row['ID_Iklan']}",
-                            )
-
-                            if st.button("Cari Ulang", key=f"btn_{row['ID_Iklan']}"):
-                                if selected_excl:
-                                    st.session_state.exclusion_list.extend(
-                                        selected_excl
+                                if detail_col and pd.notna(row.get(detail_col)):
+                                    pois_within_walkable = filter_poi_by_radius(
+                                        row[detail_col], max_dist_m=600
                                     )
-                                    st.session_state.exclusion_list = list(
-                                        set(st.session_state.exclusion_list)
-                                    )
-                                    st.rerun()
+                                    if pois_within_walkable:
+                                        poi_str = ", ".join(pois_within_walkable)
+                                        st.markdown(
+                                            f"**Karakteristik Geospasial:** Sangat mendukung prioritas **{prioritas}** Anda. **Fasilitas dalam radius 600m**: *{poi_str}*."
+                                        )
+                                    else:
+                                        closest_pois = str(row[detail_col]).split(",")[
+                                            :1
+                                        ]
+                                        poi_str = ", ".join(closest_pois).strip()
+                                        st.markdown(
+                                            f"**Karakteristik Geospasial:** Mendukung prioritas **{prioritas}** Anda. **Fasilitas terdekat**: *{poi_str}*."
+                                        )
                                 else:
-                                    st.warning(
-                                        "Pilih minimal satu atribut untuk dieksklusi."
+                                    st.markdown(
+                                        f"**Karakteristik Geospasial:** Memenuhi standar kecocokan radius spasial sistem (1.25 km) untuk kelengkapan fasilitas publik di sekitar properti."
                                     )
-                        st.divider()
+
+                            # ITEM-LEVEL NEGATIVE FEEDBACK
+                            with st.expander("👎 Kurang Suka dengan Properti Ini?"):
+                                opsi_eksklusi = []
+                                if pd.notna(row["Fasilitas"]):
+                                    fasilitas_list = [
+                                        f.strip()
+                                        for f in str(row["Fasilitas"]).split(",")
+                                    ]
+                                    for fas in fasilitas_list:
+                                        if fas.lower() not in UNEXCLUDABLE_FACILITIES:
+                                            opsi_eksklusi.append(fas)
+
+                                selected_excl = st.multiselect(
+                                    "Pilih atribut spesifik yang ingin dihindari pada pencarian berikutnya:",
+                                    opsi_eksklusi,
+                                    key=f"multi_{row['ID_Iklan']}",
+                                )
+
+                                if st.button(
+                                    "Cari Ulang", key=f"btn_{row['ID_Iklan']}"
+                                ):
+                                    if selected_excl:
+                                        st.session_state.exclusion_list.extend(
+                                            selected_excl
+                                        )
+                                        st.session_state.exclusion_list = list(
+                                            set(st.session_state.exclusion_list)
+                                        )
+                                        st.rerun()
+                                    else:
+                                        st.warning(
+                                            "Pilih minimal satu atribut untuk dieksklusi."
+                                        )
+                            st.divider()
+
+                with tab2:
+                    st.write("### Analisis Perhitungan Rekomendasi")
+                    st.markdown("""
+                    Sistem Rekomendasi ini bekerja menggunakan metode **Profile Matching** dengan membandingkan nilai aktual properti terhadap target ideal persona pengguna (*Gap Analysis*).
+                    """)
+
+                    st.info("""
+                    **1. Pembobotan Kriteria (K) & Final Score.** Skor akhir dihitung berdasarkan 3 kriteria dengan pembobotan sebagai berikut:
+                    - **K1 (Fisik Hunian):** 40%
+                    - **K2 (Lokasi & Semantik):** 30%
+                    - **K3 (Fasilitas Internal):** 30%
+                    
+                    $$Final\\_Score = (Skor\\_K1 \\times 0.4) + (Skor\\_K2 \\times 0.3) + (Skor\\_K3 \\times 0.3)$$
+                    """)
+
+                    st.info("""
+                    **2. Perhitungan Core Factor (CF) & Secondary Factor (SF).** Masing-masing Skor Kriteria di atas didapatkan dari penggabungan atribut primer (*Core*) dan pelengkap (*Secondary*) dengan rasio:
+                    - **Core Factor (CF):** 60%
+                    - **Secondary Factor (SF):** 40%
+                    
+                    $$Skor\\_K_n = (CF_n \\times 0.6) + (SF_n \\times 0.4)$$
+                    """)
+
+                    st.write("#### Tabel Detail Perhitungan (Top N Rekomendasi)")
+
+                    cols_to_show = [
+                        "ID_Iklan",
+                        "Judul",
+                        "K1_CF",
+                        "K1_SF",
+                        "Skor_K1_Fisik",
+                        "K2_CF",
+                        "K2_SF",
+                        "Skor_K2_Lokasi",
+                        "K3_CF",
+                        "K3_SF",
+                        "Skor_K3_Fasilitas",
+                        "Final_Score",
+                    ]
+
+                    styled_df = df_ranked[cols_to_show].style.format(
+                        {
+                            "K1_CF": "{:.2f}",
+                            "K1_SF": "{:.2f}",
+                            "Skor_K1_Fisik": "{:.2f}",
+                            "K2_CF": "{:.2f}",
+                            "K2_SF": "{:.2f}",
+                            "Skor_K2_Lokasi": "{:.2f}",
+                            "K3_CF": "{:.2f}",
+                            "K3_SF": "{:.2f}",
+                            "Skor_K3_Fasilitas": "{:.2f}",
+                            "Final_Score": "{:.2f}",
+                        }
+                    )
+                    st.dataframe(styled_df, use_container_width=True)

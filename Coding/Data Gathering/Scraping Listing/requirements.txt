@@ -1,4 +1,0 @@
-selenium==4.15.2
-tqdm==4.66.1
-python-dateparser==1.2.0
-msedge-selenium-tools==3.141.5
