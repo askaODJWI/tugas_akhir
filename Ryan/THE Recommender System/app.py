@@ -92,10 +92,10 @@ def determine_persona(kamar_tidur, kamar_mandi, lantai, prioritas):
     elif prioritas == "Akses Pusat Belanja & Kuliner":
         score_single += 1
 
-    if score_family > score_single:
-        return "Working Couple with Children"
-    else:
+    if score_single >= score_family:
         return "Single Professional"
+    else:
+        return "Working Couple with Children"
 
 
 def scale_value(val):
@@ -193,6 +193,25 @@ def get_matched_keywords(user_query, corpus_text):
         "tempat",
         "mobil",
         "pusat",
+        "sudah",
+        "fasilitas",
+        "jam",
+        "lingkungan",
+        "bebas",
+        "city",
+        "tengah",
+        "mandi",
+        "tidur",
+        "banyak",
+        "jalan",
+        "akses",
+        "hari",
+        "cocok",
+        "area",
+        "terdapat",
+        "tidak",
+        "tinggal",
+        "sangat",
     }
     words = re.findall(r"\b[a-zA-Z0-9]{3,}\b", str(user_query).lower())
 
@@ -273,7 +292,7 @@ kota_pilihan = st.sidebar.selectbox(
     ],
 )
 budget_maks = st.sidebar.number_input(
-    "Budget Maksimal (Rp):", min_value=1000000, value=100000000, step=100000000
+    "Budget Maksimal (Rp):", min_value=1000000, value=500000000, step=100000000
 )
 tipe_properti = st.sidebar.selectbox(
     "Tipe Properti:", ["Semua Tipe", "rumah", "apartemen"]
@@ -318,14 +337,14 @@ col_pos, col_neg = st.columns(2)
 with col_pos:
     user_query = st.text_area(
         "Apa yang **ANDA CARI?**",
-        placeholder="Contoh: rumah asri dan tenang, memiliki parkiran mobil dan halaman terbuka, serta dekat dengan pusat bisnis.",
+        placeholder="Contoh: rumah asri dan tenang, memiliki parkiran mobil dan halaman terbuka, bebas banjir, serta dekat dengan pusat bisnis.",
         height=100,
     )
 
 with col_neg:
     negative_query = st.text_area(
         "Apa yang **ANDA HINDARI?**",
-        placeholder="Contoh: sutet, banjir, tusuk sate, gang sempit (Masukkan keyword(s), pisahkan dengan koma.)",
+        placeholder="Contoh: sutet, banjir, tusuk sate, gang sempit (Pisahkan keyword(s) dengan koma).",
         height=100,
     )
 
@@ -361,10 +380,39 @@ if st.button("Cari Rekomendasi") or user_query:
             df_filtered = df_filtered[df_filtered["Lantai"] >= lantai]
 
             # NEGATIVE FEEDBACK FILTERING
+            def is_truly_containing(text, term):
+                if not isinstance(text, str):
+                    return False
+
+                text_lower = text.lower()
+                term_lower = term.lower()
+
+                negations = [
+                    r"bebas",
+                    r"tidak",
+                    r"anti",
+                    r"tanpa",
+                    r"bukan",
+                    r"jauh\s+dari",
+                    r"tidak\s+ada",
+                    r"tdk",
+                    r"tdk\s+ada",
+                    r"aman\s+dari",
+                ]
+
+                # Hapus frasa yang dinegasi
+                for neg in negations:
+                    pattern = r"\b" + neg + r"\s+" + re.escape(term_lower) + r"\b"
+                    text_lower = re.sub(pattern, "", text_lower)
+
+                # Cek apakah kata terlarang MASIH ADA
+                pattern_remaining = r"\b" + re.escape(term_lower) + r"\b"
+                return bool(re.search(pattern_remaining, text_lower))
+
             for excl_term in st.session_state.exclusion_list:
                 df_filtered = df_filtered[
-                    ~df_filtered["Korpus_Properti"].str.contains(
-                        excl_term, case=False, na=False
+                    ~df_filtered["Korpus_Properti"].apply(
+                        lambda x: is_truly_containing(x, excl_term)
                     )
                 ]
 
@@ -669,9 +717,10 @@ if st.button("Cari Rekomendasi") or user_query:
                                 else "None"
                             )
                             url_sumber = (
-                                row["URL_Sumber"]
+                                f"[🔗 **Link Iklan**]({row['URL_Sumber']})"
                                 if pd.notna(row["URL_Sumber"])
-                                else "#"
+                                and str(row["URL_Sumber"]).strip() != ""
+                                else "**Link iklan tidak tersedia**"
                             )
 
                             lantai_val = row["Lantai"]
@@ -695,7 +744,7 @@ if st.button("Cari Rekomendasi") or user_query:
                                 f"Daya Listrik: {daya_listrik} | Sertifikat: {sertifikat} | Arah Hadap: {arah_hadap}"
                             )
 
-                            st.markdown(f"[🔗 **Link Iklan**]({url_sumber})")
+                            st.markdown(url_sumber)
 
                             # FITUR EXPLAINABILITY
                             with st.expander(
@@ -741,7 +790,7 @@ if st.button("Cari Rekomendasi") or user_query:
                                         )
                                     else:
                                         closest_pois = str(row[detail_col]).split(",")[
-                                            :1
+                                            :5
                                         ]
                                         poi_str = ", ".join(closest_pois).strip()
                                         st.markdown(
