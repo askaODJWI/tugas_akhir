@@ -424,7 +424,6 @@ if st.button("Cari Rekomendasi") or user_query:
                 query_vector = model.encode([user_query], convert_to_numpy=True)
                 filtered_indices = df_filtered.index.tolist()
                 filtered_embeddings = embeddings[filtered_indices]
-
                 sim_scores_raw = cosine_similarity(query_vector, filtered_embeddings)[0]
                 sim_scores_scaled = [scale_value(score) for score in sim_scores_raw]
                 df_filtered["SBERT_Score"] = sim_scores_scaled
@@ -584,11 +583,11 @@ if st.button("Cari Rekomendasi") or user_query:
                                 gap_to_weight(row["SBERT_Score"] - 5),
                                 gap_to_weight(poi_vals[0] - 5),
                                 gap_to_weight(poi_vals[3] - 5),
+                                gap_to_weight(poi_vals[1] - 5),
                             ]
                         )
                         sf_k2 = np.mean(
                             [
-                                gap_to_weight(poi_vals[1] - 3),
                                 gap_to_weight(poi_vals[5] - 3),
                                 gap_to_weight(poi_vals[4] - 3),
                                 gap_to_weight(poi_vals[7] - 3),
@@ -681,9 +680,7 @@ if st.button("Cari Rekomendasi") or user_query:
                 )
 
                 with tab1:
-                    st.write(
-                        f"### Menampilkan Top {len(df_ranked)} Rekomendasi Teratas"
-                    )
+                    st.write(f"### Menampilkan Top-{len(df_ranked)} Rekomendasi")
 
                     for rank, (idx, row) in enumerate(df_ranked.iterrows(), start=1):
                         with st.container():
