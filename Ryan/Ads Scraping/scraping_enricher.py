@@ -302,9 +302,7 @@ def enrich_lamudi_data(input_filename, output_filename):
                                 f"   -> Kendala jaringan (Percobaan {attempt}/{max_retries}): {e}"
                             )
                             if attempt < max_retries:
-                                time.sleep(
-                                    random.uniform(5.0, 10.0)
-                                )  # Take a break agar DNS ISP pulih
+                                time.sleep(random.uniform(5.0, 10.0))
                             else:
                                 print(f"   -> Menyerah memproses URL secara permanen.")
 

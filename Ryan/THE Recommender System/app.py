@@ -212,6 +212,8 @@ def get_matched_keywords(user_query, corpus_text):
         "tidak",
         "tinggal",
         "sangat",
+        "desain",
+        "bergaya",
     }
     words = re.findall(r"\b[a-zA-Z0-9]{3,}\b", str(user_query).lower())
 
