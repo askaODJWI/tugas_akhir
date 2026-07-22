@@ -329,7 +329,7 @@ if len(st.session_state.exclusion_list) > 0:
         st.session_state.exclusion_list = []
         st.rerun()
 else:
-    st.sidebar.info("Belum ada atribut yang dieksklusi.")
+    st.sidebar.info("Belum ada atribut yang dieksklusi")
 
 # MAIN RECOMMENDATION ENGINE
 st.subheader("🔍 Temukan Hunian Idaman Anda")
@@ -346,7 +346,7 @@ with col_pos:
 with col_neg:
     negative_query = st.text_area(
         "Apa yang **ANDA HINDARI?**",
-        placeholder="Contoh: sutet, banjir, tusuk sate, gang sempit (Pisahkan keyword(s) dengan koma).",
+        placeholder="Contoh: sutet, banjir, tusuk sate, gang sempit (pisahkan keyword(s) dengan koma)",
         height=100,
     )
 
